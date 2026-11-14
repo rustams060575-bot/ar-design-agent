@@ -3442,6 +3442,126 @@
       "status": "rejected",
       "score": 1,
       "at": "2026-11-14T02:03:55+00:00"
+    },
+    "hn:50495302": {
+      "name": "Automatic extraction gets you structured data from web data",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-14T14:02:55+00:00"
+    },
+    "job:16368c2e31e2a4b8": {
+      "name": "Senior Software Engineer, Frontend | Product Engineering - TRM Labs",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-14T14:03:01+00:00"
+    },
+    "hn:50495398": {
+      "name": "Voice-first app onboarding experiment (UI, Pros, Cost)",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-14T14:03:07+00:00"
+    },
+    "job:56a4bbc6dddc26c9": {
+      "name": "Head of Product Design - TRM Labs",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-14T14:03:12+00:00"
+    },
+    "job:14daee0cb32f1cc1": {
+      "name": "Product Marketing Lead - Nash",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-14T14:03:15+00:00"
+    },
+    "job:770049a142bc8d8d": {
+      "name": "Staff Product Designer (Contract) - Flex",
+      "status": "alert_only",
+      "score": 10,
+      "at": "2026-11-14T14:03:30+00:00"
+    },
+    "job:9f910ecd06623215": {
+      "name": "Staff Product Designer - Fieldguide",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-14T14:03:35+00:00"
+    },
+    "signal:b2aed8faa386ee82": {
+      "name": "Stoa raises seed from 212 to build a GPU exchange",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-14T14:03:40+00:00"
+    },
+    "signal:2e1d8ae1a90d6f78": {
+      "name": "Nigerian-Born Engineer’s AI Startup Raises $3.8m After Seven rejections",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-14T14:03:46+00:00"
+    },
+    "signal:2abbdc0dc7932688": {
+      "name": "Tax Law Platform Blue J Raises $176M Series E Round",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-14T14:03:51+00:00"
+    },
+    "signal:d20e2803d3240eba": {
+      "name": "OpenAI, Anthropic Valuations Fuel VC Fears of Startup Correction",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-14T14:03:53+00:00"
+    },
+    "signal:8c4b5101b6341eab": {
+      "name": "millionways raises $6M for AI that reads human intent",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-14T14:03:58+00:00"
+    },
+    "signal:612ddfa45130f95b": {
+      "name": "Fierce Biotech Fundraising Tracker '26: China's Eli Radiopharma raises $60M; Neurosterix notches $105M",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-14T14:04:01+00:00"
+    },
+    "signal:ae2a582aac907b39": {
+      "name": "Benha University Launches 2026 Startup Summit With USD 41.47K in Funding Support",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-14T14:04:04+00:00"
+    },
+    "signal:6f726f2cabd2069d": {
+      "name": "Japanese brand unveils lightweight laptop with up to 32 GB RAM and Ryzen 7 APU",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-14T14:04:06+00:00"
+    },
+    "signal:ba75032de5877000": {
+      "name": "Qvyon Technologies emerges from stealth with $8 million USD to prepare physical AI for dangerous edge cases",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-14T14:04:12+00:00"
+    },
+    "signal:8e160b519fa9d457": {
+      "name": "Full list of Israeli high-tech funding rounds in 2026",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-14T14:04:14+00:00"
+    },
+    "signal:02e1594a6c3a2fa1": {
+      "name": "27 Top Healthcare Startup Accelerators To Know In 2026",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-14T14:04:16+00:00"
+    },
+    "signal:d8be287cbd92dbef": {
+      "name": "Apple Bought Silent Speech Tech. A YC Startup Wants to Sell It to You",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-14T14:04:19+00:00"
+    },
+    "signal:22ba558188f6f4db": {
+      "name": "Zama spin-off Raycash launches confidential stablecoin payments and private yield on Ethereum",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-14T14:04:24+00:00"
     }
   },
   "contacted_domains": [
