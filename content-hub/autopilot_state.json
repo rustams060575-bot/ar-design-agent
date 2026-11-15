@@ -194,6 +194,20 @@
         "instagram": "published:18116028269131210",
         "facebook": "published:1542301175627947_122110103115535097"
       }
+    },
+    {
+      "date": "2026-11-14",
+      "time": "21:00",
+      "slot": "evening",
+      "kind": "reel",
+      "id": "R20",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "instagram": "published:18172208881474103",
+        "facebook": "published:2712752229154379"
+      }
     }
   ],
   "reel_i": 4,

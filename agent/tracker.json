@@ -3562,6 +3562,90 @@
       "status": "rejected",
       "score": 5,
       "at": "2026-11-14T14:04:24+00:00"
+    },
+    "signal:34eda0030f4f1906": {
+      "name": "Bay Raises $37M Series A to Scale Enterprise AI Agent Security",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-15T02:02:31+00:00"
+    },
+    "hn:50501171": {
+      "name": "Domino Rally",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T02:02:34+00:00"
+    },
+    "hn:50498201": {
+      "name": "What HN community recommended learning in 2026",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T02:02:36+00:00"
+    },
+    "hn:50497513": {
+      "name": "SrcWranglr v0.13",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-15T02:02:40+00:00"
+    },
+    "job:a1181c8e37cbaa45": {
+      "name": "Senior Product Designer (Engagement) - NerdWallet",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-15T02:02:45+00:00"
+    },
+    "signal:c3850b59f9148281": {
+      "name": "Startups raise $1.88 billion as AI investment surges",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T02:02:47+00:00"
+    },
+    "signal:eb5db98317417910": {
+      "name": "Index Industries raises $50M to tokenize housing market — plus 7 more NYC VC deals to know",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-15T02:03:02+00:00"
+    },
+    "job:fc42303385a38b14": {
+      "name": "Business Analyst - Makai Labs",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T02:03:05+00:00"
+    },
+    "signal:3caf778a5e8ae33b": {
+      "name": "AI coworker startup raises $115 million",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-15T02:03:10+00:00"
+    },
+    "signal:95eaa0c1501b1fe7": {
+      "name": "Exclusive: Nubank Alum Raises $14M For Colombia’s Palomma To Tackle Rent Payments, Landlord Financing",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-15T02:03:15+00:00"
+    },
+    "signal:7e5d2a635dbe15d0": {
+      "name": "Palomma raises Series A funding to expand rent payments and landlord financing in Colombia",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-15T02:03:20+00:00"
+    },
+    "signal:a75049c720da05bc": {
+      "name": "Brava Security Emerges from Stealth with $15M to Expose Security Blind Spots",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-15T02:03:24+00:00"
+    },
+    "signal:9d7fdc5d3289fb21": {
+      "name": "YouArt Launches YouArt Desktop App, AI Creative Teammate on the Computer",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-15T02:03:28+00:00"
+    },
+    "signal:2cc2507cff70e5ef": {
+      "name": "Claude can now analyze your spending with its new Personal Finance tool",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-15T02:03:33+00:00"
     }
   },
   "contacted_domains": [
