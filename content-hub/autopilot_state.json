@@ -208,8 +208,22 @@
         "instagram": "published:18172208881474103",
         "facebook": "published:2712752229154379"
       }
+    },
+    {
+      "date": "2026-11-15",
+      "time": "09:00",
+      "slot": "morning",
+      "kind": "post",
+      "id": "C04",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "instagram": "published:17976399600168022",
+        "facebook": "published:1542301175627947_122110580631535097"
+      }
     }
   ],
   "reel_i": 4,
-  "ar02_i": 8
+  "ar02_i": 11
 }

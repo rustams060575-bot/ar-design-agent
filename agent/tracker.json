@@ -3646,6 +3646,90 @@
       "status": "rejected",
       "score": 2,
       "at": "2026-11-15T02:03:33+00:00"
+    },
+    "hn:50503017": {
+      "name": "What AI agent infrastructure are you using in 2026?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T14:02:13+00:00"
+    },
+    "hn:50504910": {
+      "name": "Dynaura",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-15T14:02:16+00:00"
+    },
+    "hn:50506734": {
+      "name": "Has Applemail UX/reliability been declining?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T14:02:19+00:00"
+    },
+    "signal:1a85cd19e84b0e4a": {
+      "name": "Insurtech StitchStudio raises $8 mn to expand AI automation in insurance",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-15T14:02:23+00:00"
+    },
+    "signal:2d2ef30503afba03": {
+      "name": "The New York Tech Daily Funding Report: 11/10/2026",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T14:02:25+00:00"
+    },
+    "signal:0a22c0cd4e96f2d3": {
+      "name": "Traversal raises $120 million at $1 billion valuation",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-15T14:02:31+00:00"
+    },
+    "job:834a7c2a96f4bf86": {
+      "name": "Social Media Manager - Reedsy",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-15T14:02:34+00:00"
+    },
+    "job:2234d3924032fa66": {
+      "name": "Senior Technical SEO Specialist - Reedsy",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T14:02:37+00:00"
+    },
+    "job:fa95cad2f97a348c": {
+      "name": "Senior Copywriter - Reedsy",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-15T14:02:40+00:00"
+    },
+    "job:58c4e9d9278748f8": {
+      "name": "Growth Marketing Intern (Discovery) - Reedsy",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T14:02:43+00:00"
+    },
+    "signal:fd1f2e7465503436": {
+      "name": "Phlur bolsters UK presence with first DTC expansion beyond North America and new holiday pop-up",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-15T14:02:50+00:00"
+    },
+    "signal:647bfefcc3cf17da": {
+      "name": "24 Fastest Growing Companies & Startups (October 2026)",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-15T14:02:52+00:00"
+    },
+    "signal:ae30ae2d1e278443": {
+      "name": "Vessel Emerges From Stealth With $5M in Funding to Help Brands Donate Excess Inventory",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-15T14:02:57+00:00"
+    },
+    "signal:d4b6da97286b7629": {
+      "name": "Grok Bots get phones, cards and Slack seats",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-15T14:03:01+00:00"
     }
   },
   "contacted_domains": [
