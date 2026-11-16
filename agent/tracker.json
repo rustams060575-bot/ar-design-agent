@@ -3988,6 +3988,84 @@
       "status": "rejected",
       "score": 6,
       "at": "2026-11-16T14:04:46+00:00"
+    },
+    "hn:50518749": {
+      "name": "Looking for a remote CTO for my micro SaaS ($600K ARR, $250k Profit)",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-16T17:08:46+00:00"
+    },
+    "hn:50519789": {
+      "name": "Emelyn, Your AI Social Media Manager",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T17:08:51+00:00"
+    },
+    "hn:50517973": {
+      "name": "Why is Stripe dashboard so slow?",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-16T17:08:56+00:00"
+    },
+    "hn:50518426": {
+      "name": "Link firewall log entries to the AI agent step behind them",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-16T17:09:01+00:00"
+    },
+    "signal:a986754f53ccdda9": {
+      "name": "Freshworks alums raise $53M to take on Salesforce, HubSpot with AI-native CRM",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T17:09:05+00:00"
+    },
+    "signal:b9ed539239619864": {
+      "name": "Dreamteam emerges from stealth with $53 million to build AI-native CRM",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T17:09:09+00:00"
+    },
+    "hn:50518647": {
+      "name": "Kafka-console",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-16T17:09:12+00:00"
+    },
+    "hn:50518770": {
+      "name": "Make a custom deck of playing cards with your family and friend's faces",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-16T17:09:18+00:00"
+    },
+    "signal:18b3ad4ead7fc784": {
+      "name": "Exclusive | Cyber Startup Corma Raises $125 Million for Defensive AI Agents",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T17:09:22+00:00"
+    },
+    "signal:36bfb54350a407c7": {
+      "name": "AI startup Numa raises $45 million to help car dealerships leave the paperwork behind",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T17:09:27+00:00"
+    },
+    "signal:15d60cb53b37a7c2": {
+      "name": "Over $600m was raised across 14 deals this week",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T17:09:29+00:00"
+    },
+    "signal:cf8e141535f92365": {
+      "name": "Where Startups Can Win Beyond OpenAI and Anthropic | HubSpot’s Dharmesh Shah｜a16z",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T17:09:32+00:00"
+    },
+    "signal:7eacea74c8077861": {
+      "name": "Grockbot's Lauren Tan Says AI Agents Now Ship 4,000 Pull Requests a Month — and the Bottleneck Is No Longer Code",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-16T17:09:35+00:00"
     }
   },
   "contacted_domains": [
