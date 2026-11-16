@@ -3730,6 +3730,156 @@
       "status": "rejected",
       "score": 2,
       "at": "2026-11-15T14:03:01+00:00"
+    },
+    "hn:50507971": {
+      "name": "Pizza",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-16T02:02:14+00:00"
+    },
+    "signal:7e265ebdaf144f70": {
+      "name": "Tab Emerges From Stealth at $300M to Put an AI Agent in iMessage",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T02:02:19+00:00"
+    },
+    "hn:50507341": {
+      "name": "A local-first AI agent for the desktop, no Electron, any LLM endpoint",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-16T02:02:22+00:00"
+    },
+    "hn:50509182": {
+      "name": "Why Didn't anyone design Infinite scroll for HN?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:25+00:00"
+    },
+    "hn:50512991": {
+      "name": "Agency",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-16T02:02:28+00:00"
+    },
+    "hn:50511761": {
+      "name": "Skillset: Easily curate and install agent skills collection",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:31+00:00"
+    },
+    "signal:fb8f8f02b2f68089": {
+      "name": "Innovative Products: 35 Examples and Trends (2026)",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:33+00:00"
+    },
+    "hn:50509208": {
+      "name": "I wrote 100 SaaS ideas with buyer, pricing, and MVP plan for each",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:36+00:00"
+    },
+    "hn:50509096": {
+      "name": "Performance-driven terminal diff renderer",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:38+00:00"
+    },
+    "hn:50510744": {
+      "name": "Strata Architecture",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:41+00:00"
+    },
+    "hn:50510058": {
+      "name": "Perfectclone",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:44+00:00"
+    },
+    "hn:50507205": {
+      "name": "SecureVibe",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-16T02:02:50+00:00"
+    },
+    "signal:270dd8733ab151b1": {
+      "name": "Exclusive: Spines, a 'hybrid publisher,' raises $64 million in funding for book publishing platform powered by AI agents",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T02:02:55+00:00"
+    },
+    "signal:ba05bb698c1bbd2e": {
+      "name": "Europe wants independence from America. Its entrepreneurs are heading to Miami.",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:02:57+00:00"
+    },
+    "signal:5172f754323df4f8": {
+      "name": "Seattle Startup Firmly Raises $15M for AI Shopping Agents",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-16T02:03:11+00:00"
+    },
+    "signal:00a0a9ea6ea53a20": {
+      "name": "Former Unit 8200 officers raise $50 million in just nine months for AI security startup",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-16T02:03:15+00:00"
+    },
+    "signal:9ddb8281b1ef828e": {
+      "name": "Zus Health secures $33M to build the infrastructure for AI-powered clinical workflows",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T02:03:20+00:00"
+    },
+    "signal:dbdf2be08bb3b21b": {
+      "name": "Nine Korean startups vie for a spot in Disrupt 2027’s Startup Battlefield 200 competition",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:03:23+00:00"
+    },
+    "signal:240b7b370c22de73": {
+      "name": "European company launches DTC brand in U.S., debuts vacuum-packed sofa bed",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-16T02:03:28+00:00"
+    },
+    "signal:58bf8877e4d0f664": {
+      "name": "Poppi founder Allison Ellsworth on launching Jetty, a new hydration brand",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T02:03:33+00:00"
+    },
+    "signal:9f2d209d0fa352df": {
+      "name": "Mattel brings Barbie, Hot Wheels to TikTok Shop",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-16T02:03:36+00:00"
+    },
+    "signal:0b167cb20d431f69": {
+      "name": "Mosaic Emerges from Stealth with $47 Million to Build Intelligent Surgical Machines - Treating the Body from Inside",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-16T02:03:41+00:00"
+    },
+    "signal:50ce56dbe57d27e8": {
+      "name": "YouArt Launches YouArt Desktop App, AI Creative Teammate on the Computer",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-16T02:03:47+00:00"
+    },
+    "signal:74e2d3e04f21670b": {
+      "name": "Palomma Secures $14M to Revolutionize Latin American Real Estate with AI-Driven Fintech",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-16T02:03:51+00:00"
+    },
+    "signal:49441a2cbd99fd83": {
+      "name": "OpenAI rolls out new business profiles, making ChatGPT just a little bit more like Google",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-16T02:03:54+00:00"
     }
   },
   "contacted_domains": [
