@@ -4066,6 +4066,78 @@
       "status": "rejected",
       "score": 2,
       "at": "2026-11-16T17:09:35+00:00"
+    },
+    "hn:50525250": {
+      "name": "Listodo",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-17T02:03:33+00:00"
+    },
+    "job:fda2b8fa05bc5dc1": {
+      "name": "Senior Sales Development Representative - UpCodes",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T02:03:35+00:00"
+    },
+    "hn:50522121": {
+      "name": "Self-Hosted Contact Forms for Your Web App in Go",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T02:03:38+00:00"
+    },
+    "hn:50521479": {
+      "name": "XDM",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-17T02:03:41+00:00"
+    },
+    "hn:50520744": {
+      "name": "A booking page that handles payment and sends a Zoom/Meet/Discord link",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-17T02:03:46+00:00"
+    },
+    "hn:50522773": {
+      "name": "sourcesli.st, browse Debian ISOs, packages and bug reports",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T02:03:50+00:00"
+    },
+    "signal:0bd7979a6c9c21ef": {
+      "name": "Graphon Labs Raises $35M Series A to Scale Persistent AI Memory",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-17T02:03:54+00:00"
+    },
+    "signal:f4c1b01988996910": {
+      "name": "Exclusive: Bedrock Energy raises $24M to build more AI-enabled geothermal drill rigs for enterprise buildings",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-17T02:03:58+00:00"
+    },
+    "signal:e073106d67662045": {
+      "name": "Exclusive: SE3, a German startup building ‘spatial intelligence’ for military drones, gets $30 million in Series A funding",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-17T02:04:03+00:00"
+    },
+    "signal:843bf6448356e456": {
+      "name": "Burgess takes Green Pantry international amid 20% jump in DTC sales",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-17T02:04:06+00:00"
+    },
+    "signal:c026142d0e3a78e2": {
+      "name": "Voice AI Startup ThunderPhone Launches v3 Architecture and Zeus, an Agentic Harness for Phone Agents",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-17T02:04:11+00:00"
+    },
+    "signal:c77a923e230103b6": {
+      "name": "Startups in Nigeria - 2026 Latest Funding Rounds, Trends and News",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T02:04:13+00:00"
     }
   },
   "contacted_domains": [
