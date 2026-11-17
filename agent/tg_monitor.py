@@ -70,6 +70,8 @@ class State:
         self.discovered: dict[str, dict] = raw.get("discovered", {})  # chats found by tg_discover.py
         self.rejected: dict[str, float] = raw.get("rejected", {})
         self.last_discovery: float = raw.get("last_discovery", 0)
+        self.joins_done: list[int] = raw.get("joins_done", [])[-100:]  # tg_join.yml run ids already handled
+        self.join_log: list[float] = raw.get("join_log", [])  # timestamps of joins (daily cap)
         self.dirty = False
 
     def reject(self, key: str, why: str = "") -> None:
@@ -107,7 +109,8 @@ class State:
         self.rejected = {k: v for k, v in self.rejected.items() if v > cutoff}  # old rejections are forgotten
         STATE_PATH.write_text(
             json.dumps({"chats": self.chats, "hashes": self.hashes, "alerts": self.alerts, "discovered": self.discovered,
-                        "rejected": self.rejected, "last_discovery": self.last_discovery}),
+                        "rejected": self.rejected, "last_discovery": self.last_discovery,
+                        "joins_done": self.joins_done[-100:], "join_log": self.join_log}),
             encoding="utf-8",
         )
         self.dirty = False
@@ -204,6 +207,53 @@ class Monitor:
             self._add(marked, peer, rec.get("title"), rec.get("username"))
             if rec.get("last_id") and not self.state.last_id(marked):
                 self.state.advance(marked, rec["last_id"])  # history that was checked at discovery time never raises alerts
+
+    # -- join requests from the owner (voice / text in the bot -> workflow tg_join.yml -> here)
+    def _pending_join_runs(self) -> list[tuple[int, list[str]]]:
+        import tg_join
+
+        repo, token = os.getenv("GITHUB_REPOSITORY"), os.getenv("GITHUB_TOKEN")
+        if not (repo and token):
+            return []
+        try:
+            r = requests.get(
+                f"https://api.github.com/repos/{repo}/actions/workflows/tg_join.yml/runs?per_page=15",
+                headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"},
+                timeout=10,
+            )
+            runs = r.json().get("workflow_runs", []) if r.ok else []
+        except (requests.RequestException, ValueError):
+            return []
+        out = []
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=6)
+        for run in runs:
+            created = datetime.fromisoformat(run["created_at"].replace("Z", "+00:00"))
+            if run["id"] in self.state.joins_done or created < cutoff:
+                continue
+            refs = tg_join.parse_refs(run.get("display_title", ""))  # the run name carries the links
+            if refs:
+                out.append((run["id"], refs))
+        return list(reversed(out))  # oldest first
+
+    async def process_joins(self) -> None:
+        import tg_join
+
+        loop = asyncio.get_running_loop()
+        for run_id, refs in await loop.run_in_executor(None, self._pending_join_runs):
+            self.state.joins_done.append(run_id)  # marked first: a crash must never repeat a join
+            self.state.dirty = True
+            log(f"join request {run_id}: {refs}")
+            results = await tg_join.join_refs(self.client, refs, self.state, log)
+            lines = []
+            for ref, res in results:
+                if res.get("rec"):
+                    self.state.discovered[res["key"]] = res["rec"]
+                    self.state.dirty = True
+                lines.append(("✅ " if res["ok"] else "⚠️ ") + html.escape(ref) + " — " + html.escape(res["text"]))
+            if any(r.get("rec") for _, r in results):
+                self.load_discovered()
+            bot_send("🤝 <b>Джеймс: вступление в чаты</b>\n\n" + "\n".join(lines), dry=self.args.dry_run)
+            self.state.save()
 
     async def discover_new(self) -> None:
         """Daily search for new public chats (tg_discover.py). The owner is told what was added; nothing is joined."""
@@ -344,6 +394,7 @@ class Monitor:
         poll_every, last_poll = int(os.getenv("TG_POLL_SECONDS", "90")), time.time()
         while time.time() < deadline and self.client.is_connected():
             await asyncio.sleep(min(20, max(1, deadline - time.time())))
+            await self.process_joins()  # owner's join requests are served within ~20 seconds
             if time.time() - last_poll >= poll_every:
                 last_poll = time.time()
                 await self.catch_up()
@@ -376,6 +427,7 @@ async def run(args) -> int:
             raise errors.AuthKeyUnregisteredError(request=None)
         mon = Monitor(client, cfg, state, args)
         await mon.resolve_chats()
+        await mon.process_joins()
         await mon.discover_new()
         if not mon.chats:
             log("no chats to watch yet: discovery found nothing and tg_chats.json is empty")

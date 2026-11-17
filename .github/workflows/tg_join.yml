@@ -1,0 +1,23 @@
+name: Telegram join request
+
+# Carrier for "join this chat" commands from the bot (voice or text). The job itself does nothing: the links travel in the
+# run name, and agent/tg_monitor.py, which owns the single Telegram session, reads them through the GitHub API, joins the
+# chats within ~20 seconds, adds them to the watch list and reports to the owner.
+run-name: "join ${{ inputs.chats }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      chats:
+        description: "Links or @usernames, separated by spaces (max 5)"
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "request queued; the monitor will pick it up"
