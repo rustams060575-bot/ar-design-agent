@@ -679,6 +679,55 @@
       "недорого|бюджетн\\w+\\s+вариант|за\\s+еду|бесплатно|за\\s+отзыв|за\\s+идею|копейк\\w+|на\\s+безвозмездной",
       "\\bfree\\s+of\\s+charge\\b|\\bfor\\s+free\\b|\\bunpaid\\b|\\bcheap(?:est)?\\b|\\blow[- ]budget\\b|\\bfor\\s+exposure\\b",
       "за\\s+портфолио|по\\s+дружбе|студент\\w*\\s+для\\s+практики"
-    ]
+    ],
+    "discovery": {
+      "_help": "Automatic search of public chats and channels (agent/tg_discover.py). Nothing is joined; chats are only read.",
+      "keywords": [
+        "веб дизайн",
+        "веб-дизайнер",
+        "дизайн сайтов",
+        "ui ux",
+        "ui/ux дизайн",
+        "дизайнеры заказы",
+        "заказы на сайты",
+        "фриланс заказы",
+        "фриланс дизайн",
+        "поиск дизайнера",
+        "разработка сайтов",
+        "лендинг заказ",
+        "стартап поиск команды",
+        "стартапы",
+        "digital агентство",
+        "digital agency",
+        "web design jobs",
+        "freelance design",
+        "freelance web",
+        "ux jobs",
+        "design jobs",
+        "nextjs jobs",
+        "startup founders",
+        "product design",
+        "diseño web",
+        "freelance diseño",
+        "agencias digitales",
+        "ofertas diseño web"
+      ],
+      "topic_words": [
+        "design|дизайн|diseñ|\\bux\\b|\\bui\\b|freelanc|фриланс|заказ|вакан|\\bjobs?\\b|\\bwork\\b|startup|стартап|agenc|агентств",
+        "digital|\\bweb\\b|веб|сайт|разработ|develop|next\\.?js|product|продакт|remote|удал[её]нк|trabajo|empleo"
+      ],
+      "reject_words": [
+        "porn|порно|18\\+|adult|xxx|sex|секс|эскорт|escort|казино|casino|ставк|betting|букмекер|1xbet|vavada|вавада",
+        "forex|форекс|трейд|trading|signals|сигнал|крипт|crypto|binance|airdrop|nft|p2p|обменник|займ|кредит",
+        "накрутк|подписчик|раскрутк|взлом|hack|карди|cvv|дроп|обнал|наркот|vpn|прокси|proxy|mlm|сетев"
+      ],
+      "min_members": 500,
+      "max_total": 50,
+      "max_new_per_run": 10,
+      "rediscovery_hours": 24,
+      "sample_size": 100,
+      "min_leads_in_sample": 2,
+      "reject_recheck_days": 7
+    }
   }
 }
