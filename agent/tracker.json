@@ -4138,6 +4138,156 @@
       "status": "rejected",
       "score": 1,
       "at": "2026-11-17T02:04:13+00:00"
+    },
+    "hn:50530216": {
+      "name": "An MCP server for searching 71 real, sourced AI agent deployments",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-17T14:02:24+00:00"
+    },
+    "signal:0ede4ea2637e573d": {
+      "name": "Don’t Redesign Your DTC Website. Replatform to Stop Bleeding Money on Legacy Tech",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-17T14:02:26+00:00"
+    },
+    "job:50ade32bd5cf4bb2": {
+      "name": "Senior Product Designer - Ashby",
+      "status": "rejected",
+      "score": 7,
+      "at": "2026-11-17T14:02:31+00:00"
+    },
+    "hn:50530141": {
+      "name": "Toolmaker Agent–Software project management for human and AI agent",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-17T14:02:36+00:00"
+    },
+    "signal:a61d8ef35122f3f6": {
+      "name": "Daydream’s New AI Agent Can Shop for You While You Sleep",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-17T14:02:41+00:00"
+    },
+    "job:f8147a7a261f5d56": {
+      "name": "Signature Bay Homes is hiring for a position of Creative Interior Designer Luxury Homes in Saint Petersburg, FL",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T14:02:44+00:00"
+    },
+    "hn:50528803": {
+      "name": "AI Agent Infrastructure and Memory Compaction Specifications",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-17T14:02:47+00:00"
+    },
+    "hn:50526527": {
+      "name": "A free interactive course on AI agent governance",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T14:02:50+00:00"
+    },
+    "job:9a7c25ff9ebdd600": {
+      "name": "Head of Design - Elation Health",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-17T14:02:54+00:00"
+    },
+    "job:c3cab24a183c806a": {
+      "name": "Contract Senior Content Designer - Fueled",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-17T14:02:58+00:00"
+    },
+    "signal:5be0c99c28af19dd": {
+      "name": "Dubai’s Al Ghurair Centre celebrates 45 years with car giveaway, gift card launch",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-17T14:03:01+00:00"
+    },
+    "hn:50528600": {
+      "name": "Northstack",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T14:03:04+00:00"
+    },
+    "hn:50527557": {
+      "name": "Blobby",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-17T14:03:08+00:00"
+    },
+    "signal:82ccc3b69852f824": {
+      "name": "Cyber startup Corma goes from stealth to unicorn in just three months with $125 million Series A",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-17T14:03:13+00:00"
+    },
+    "hn:50528475": {
+      "name": "Harness for building/cloning SaaS using open-weight models",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-17T14:03:19+00:00"
+    },
+    "signal:d5bd422e75f9f09e": {
+      "name": "Serena Williams’ New Firm Targets $200M to Back Early-Stage startups",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T14:03:22+00:00"
+    },
+    "job:cacea38716096199": {
+      "name": "Sales Engineer, Enterprise - Socket",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-17T14:03:24+00:00"
+    },
+    "job:fbff155b9b2081f0": {
+      "name": "Sales Engineer, Commercial - Socket",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T14:03:26+00:00"
+    },
+    "job:0c52e3f7cb3a9280": {
+      "name": "Forward Deployed Engineer, Python - Socket",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T14:03:28+00:00"
+    },
+    "signal:904c823ad24791ae": {
+      "name": "SignalPulse: Weekly Signals, Startups & Deals To Watch Alert",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-17T14:03:31+00:00"
+    },
+    "signal:155d0c93cc555a9e": {
+      "name": "Model ML is Europe's newest Unicorn with €227 million raise to put AI agents to work in finance makes",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-17T14:03:36+00:00"
+    },
+    "signal:be42a0a0cddc5a09": {
+      "name": "Woodlands startup Mavria raises $130M to mass-produce AI data centers",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-17T14:03:40+00:00"
+    },
+    "signal:3ac321b762eca247": {
+      "name": "Businesses in ChatGPT: OpenAI Launches Business Hub and Business Agents, Challenging GEO Startups",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-17T14:03:43+00:00"
+    },
+    "signal:e79f5de2bdaee851": {
+      "name": "Blue Phone gives Google's Pixel 10 Pro an AI assistant that goes beyond Gemini",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-17T14:03:47+00:00"
+    },
+    "signal:43d7fb64106dfd16": {
+      "name": "YC-backed Tendo pivots from reselling to AI commerce with Duke",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-17T14:03:52+00:00"
     }
   },
   "contacted_domains": [
