@@ -1,0 +1,56 @@
+name: Telegram lead monitor
+
+# Reads the chats from agent/tg_chats.json with a user account (Telethon) and sends Rustam a lead card with a reply draft.
+# Each run lasts ~9 minutes and the next one starts right after, so messages are handled within seconds, around the clock.
+# Private repositories have a monthly minutes quota: if this one is private, change the schedule to every 30 minutes.
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: tg-leads            # two runs never share one Telegram session
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: agent/requirements-monitor.txt
+
+      - run: pip install -r agent/requirements-monitor.txt
+
+      # Position in every chat (last message id) and hashes of handled texts survive between runs through the cache.
+      - uses: actions/cache/restore@v4
+        with:
+          path: agent/tg_state.json
+          key: tg-state-none
+          restore-keys: tg-state-
+
+      - name: Monitor chats
+        run: python agent/tg_monitor.py
+        env:
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          TG_SESSION: ${{ secrets.TG_SESSION }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TG_RUN_SECONDS: "540"
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: agent/tg_state.json
+          key: tg-state-${{ github.run_id }}
