@@ -61,6 +61,11 @@ def deliver_session(session: str) -> None:
         print("\n--- TG_SESSION (copy the whole line into a GitHub secret, then clear the terminal) ---\n")
         print(session)
         return
+    repo = os.getenv("TG_LOGIN_GH_REPO")
+    if repo:  # straight into the GitHub secret: the string is never printed, never written to disk, never on the clipboard
+        subprocess.run(["gh", "secret", "set", "TG_SESSION", "--repo", repo], input=session.encode("ascii"), check=True)
+        print(f"\nTG_SESSION was saved as a secret of {repo}.", flush=True)
+        return
     subprocess.run(["clip"], input=session.encode("ascii"), check=True)
     print("\nTG_SESSION was copied to the clipboard. Paste it into the GitHub secret TG_SESSION.", flush=True)
 

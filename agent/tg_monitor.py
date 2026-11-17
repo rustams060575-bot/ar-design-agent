@@ -67,7 +67,14 @@ class State:
         self.chats: dict[str, dict] = raw.get("chats", {})
         self.hashes: list[str] = raw.get("hashes", [])[-MAX_HASHES:]
         self.alerts: dict[str, float] = raw.get("alerts", {})
+        self.discovered: dict[str, dict] = raw.get("discovered", {})  # chats found by tg_discover.py
+        self.rejected: dict[str, float] = raw.get("rejected", {})
+        self.last_discovery: float = raw.get("last_discovery", 0)
         self.dirty = False
+
+    def reject(self, key: str, why: str = "") -> None:
+        self.rejected[key] = time.time()
+        self.dirty = True
 
     def last_id(self, chat_id: int) -> int | None:
         return self.chats.get(str(chat_id), {}).get("last_id")
@@ -96,7 +103,13 @@ class State:
     def save(self) -> None:
         if not self.dirty:
             return
-        STATE_PATH.write_text(json.dumps({"chats": self.chats, "hashes": self.hashes, "alerts": self.alerts}), encoding="utf-8")
+        cutoff = time.time() - 30 * 86400
+        self.rejected = {k: v for k, v in self.rejected.items() if v > cutoff}  # old rejections are forgotten
+        STATE_PATH.write_text(
+            json.dumps({"chats": self.chats, "hashes": self.hashes, "alerts": self.alerts, "discovered": self.discovered,
+                        "rejected": self.rejected, "last_discovery": self.last_discovery}),
+            encoding="utf-8",
+        )
         self.dirty = False
 
 
@@ -173,17 +186,52 @@ class Monitor:
                     bot_send(f"⚠️ Мониторинг: не удалось открыть чат {html.escape(str(item['ref']))} ({type(exc).__name__}). Проверьте имя и что аккаунт состоит в чате.", dry=self.args.dry_run)
                 continue
             self._add(utils.get_peer_id(ent), ent, item.get("title"))
+        self.load_discovered()
         if conf.get("include_all_joined"):
             async for d in self.client.iter_dialogs():
                 if d.is_group or d.is_channel:
                     self._add(d.id, d.entity, d.name)
         log(f"watching {len(self.chats)} chats")
 
-    def _add(self, chat_id: int, ent, title: str | None) -> None:
+    def load_discovered(self) -> None:
+        """Chats found by tg_discover.py: rebuilt from id + access hash, so no username lookups are needed."""
+        from telethon import utils
+        from telethon.tl.types import InputPeerChannel
+
+        for rec in self.state.discovered.values():
+            peer = InputPeerChannel(rec["id"], rec["access_hash"])
+            marked = utils.get_peer_id(peer)
+            self._add(marked, peer, rec.get("title"), rec.get("username"))
+            if rec.get("last_id") and not self.state.last_id(marked):
+                self.state.advance(marked, rec["last_id"])  # history that was checked at discovery time never raises alerts
+
+    async def discover_new(self) -> None:
+        """Daily search for new public chats (tg_discover.py). The owner is told what was added; nothing is joined."""
+        import tg_discover
+
+        disc = tg_discover.Discovery(self.cfg, self.filter)
+        force = self.args.discover
+        if not force and (self.args.once or not disc.due(self.state)):
+            return
+        new = await disc.run(self.client, self.state, set(self.chats), log)
+        if not new:
+            return
+        from telethon import utils
+        from telethon.tl.types import InputPeerChannel
+
+        for rec in new:
+            self.state.discovered[str(utils.get_peer_id(InputPeerChannel(rec["id"], rec["access_hash"])))] = rec
+        self.state.dirty = True
+        self.load_discovered()
+        lines = [f"• @{html.escape(r['username'])} · {html.escape(str(r['title']))}" + (f" · {r['members']} уч." if r.get("members") else "") for r in new]
+        bot_send("🔎 <b>Джеймс нашёл новые чаты и добавил в мониторинг</b>\n(только чтение, никуда не вступаю)\n\n" + "\n".join(lines[:15]), dry=self.args.dry_run)
+        self.state.save()
+
+    def _add(self, chat_id: int, ent, title: str | None, username: str | None = None) -> None:
         self.chats[chat_id] = {
             "entity": ent,
             "title": title or getattr(ent, "title", None) or getattr(ent, "username", None) or str(chat_id),
-            "username": getattr(ent, "username", None),
+            "username": username or getattr(ent, "username", None),
         }
 
     def message_link(self, chat_id: int, msg) -> str:
@@ -292,8 +340,13 @@ class Monitor:
                 log(f"handler error: {type(exc).__name__}")
 
         self.client.add_event_handler(on_new, events.NewMessage(incoming=True))
+        # Chats the account has not joined (found by tg_discover.py) push no updates: they are polled instead.
+        poll_every, last_poll = int(os.getenv("TG_POLL_SECONDS", "90")), time.time()
         while time.time() < deadline and self.client.is_connected():
             await asyncio.sleep(min(20, max(1, deadline - time.time())))
+            if time.time() - last_poll >= poll_every:
+                last_poll = time.time()
+                await self.catch_up()
             self.state.save()
 
 
@@ -323,8 +376,9 @@ async def run(args) -> int:
             raise errors.AuthKeyUnregisteredError(request=None)
         mon = Monitor(client, cfg, state, args)
         await mon.resolve_chats()
+        await mon.discover_new()
         if not mon.chats:
-            log("tg_chats.json has no usable chats: add some and run again")
+            log("no chats to watch yet: discovery found nothing and tg_chats.json is empty")
             return 0
         await mon.catch_up()
         if not args.once:
@@ -349,6 +403,7 @@ def main() -> None:
     ap.add_argument("--once", action="store_true", help="catch-up only")
     ap.add_argument("--dry-run", action="store_true", help="print cards instead of sending")
     ap.add_argument("--verbose", action="store_true", help="log rejections")
+    ap.add_argument("--discover", action="store_true", help="run the chat search now, even with --once")
     sys.exit(asyncio.run(run(ap.parse_args())))
 
 

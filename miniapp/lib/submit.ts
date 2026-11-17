@@ -1,6 +1,7 @@
 import { getWebApp } from "./tg";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://r-design-space-agent.vercel.app/api/miniapp_lead";
+// Same-origin path: miniapp/vercel.json proxies it to the bot's /api/miniapp_lead, so no CORS and it works on any domain.
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "/api/miniapp_lead";
 
 export interface Brief {
   task: string;

@@ -1,13 +1,5 @@
-import { Hero } from "@/components/Hero";
-import { Works } from "@/components/Works";
-import { Configurator } from "@/components/Configurator";
+import { Home } from "@/components/Home";
 
 export default function Page() {
-  return (
-    <main>
-      <Hero />
-      <Works />
-      <Configurator />
-    </main>
-  );
+  return <Home />;
 }
