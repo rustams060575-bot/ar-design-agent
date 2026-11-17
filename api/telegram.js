@@ -34,6 +34,7 @@ const { askClaude } = require("./_lib/claude");
 const voice = require("./_lib/voice");
 const leads = require("./_lib/leads");
 const channel = require("./_lib/channel");
+const joiner = require("./_lib/join");
 const { handleClient, handleFunnelCallback, handleLeadAction, renderAdmin } = require("./_lib/client_flow");
 
 const START_TEXT =
@@ -41,7 +42,7 @@ const START_TEXT =
   "• Лидогенерация: ищу стартапы и SaaS по миру, пишу письма на языке фаундера. Письмо уходит только после вашей кнопки.\n" +
   "• Диалог с памятью: пишите мне как ассистенту - я помню проекты, договорённости и интересы, даже спустя недели.\n" +
   "• Голос: отправьте голосовое сообщение - отвечу голосом.\n\n" +
-  "Команды:\n/admin - статистика лидов и источников\n/leads - последние лиды\n/search - поиск лидов сейчас (можно с запросом)\n/strategy - план поиска лидов US/EU на неделю\n/queue - очередь публикаций (09:00 и 21:00 по Майами)\n/post - пост в канал AR Design (черновик из голоса, текста или медиа)\n/idea - черновик заметки для канала сейчас\n/reach - охваты и статистика Instagram и Facebook\n/memory - что я помню\n/history - хронология\n" +
+  "Команды:\n/admin - статистика лидов и источников\n/leads - последние лиды\n/search - поиск лидов сейчас (можно с запросом)\n/strategy - план поиска лидов US/EU на неделю\n/queue - очередь публикаций (09:00 и 21:00 по Майами)\n/post - пост в канал AR Design (черновик из голоса, текста или медиа)\n/idea - черновик заметки для канала сейчас\n/join <ссылка или @имя> - вступить в чат и добавить в мониторинг (можно голосом: «вступи в …»)\n/reach - охваты и статистика Instagram и Facebook\n/memory - что я помню\n/history - хронология\n" +
   "/remember <текст> - запомнить\n/forget <id> - забыть запись\n/help - справка";
 
 const HELP_TEXT =
@@ -57,6 +58,8 @@ const HELP_TEXT =
   "📣 Канал AR Design. Пришлите боту скриншот или видео с подписью, либо без подписи, а затем голосовое или текст в течение 15 минут: " +
   "оформлю короткий пост на английском от первого лица и покажу с кнопками «Опубликовать» и «Переписать». /post включает режим поста на 10 минут для голоса и текста без медиа, " +
   "/idea присылает заметку по свежему материалу. По понедельникам, средам и пятницам заметка приходит сама. Без вашей кнопки в канал ничего не уходит.\n\n" +
+  "🤝 Вступление в чаты. Напишите или скажите «вступи в @имя» (или пришлите ссылку t.me/…), либо /join со ссылкой: я вступлю с аккаунта мониторинга, " +
+  "добавлю чат в список и пришлю результат. До 5 чатов за раз и до 10 вступлений в сутки.\n\n" +
   "✉️ Письма клиентам - на английском (рынок США); письмо уходит только после вашего подтверждения.";
 
 const CHAT_SYSTEM =
@@ -391,6 +394,13 @@ async function onVoice(msg, updateId, trace = {}) {
   if (!text) trace.result = "no-speech";
   if (!text) return tg("sendMessage", { chat_id: chat, text: "🎙 Не разобрал речь. Скажите ещё раз чётче или напишите текстом." });
 
+  // Spoken join command: "вступи в @name" is recognised and executed; the transcript is echoed so a misheard name is visible.
+  const joinRefs = joiner.joinIntent(text);
+  if (joinRefs || joiner.looksLikeJoin(text)) {
+    trace.result = "join";
+    const answer = joinRefs ? await joiner.handle(joinRefs) : joiner.HOWTO;
+    return tg("sendMessage", { chat_id: chat, text: `🎙 «${text.slice(0, 200)}»\n\n${answer}`, disable_web_page_preview: true });
+  }
   return onChat({ chat: { id: chat }, text }, updateId, { voice: true, replyTo: msg.message_id, trace });
 }
 
@@ -439,7 +449,13 @@ async function onStart(chat, payload) {
 async function onMessage(msg, updateId) {
   const chat = msg.chat.id;
   const cmd = parseCommand(msg.text);
-  if (!cmd) return onChat(msg, updateId);
+  if (!cmd) {
+    // The owner's join command in plain words ("вступи в @name", "join t.me/+..."): handled before the assistant sees it.
+    const refs = joiner.joinIntent(msg.text);
+    if (refs) return tg("sendMessage", { chat_id: chat, text: await joiner.handle(refs), disable_web_page_preview: true });
+    return onChat(msg, updateId);
+  }
+  if (cmd.name === "join") return tg("sendMessage", { chat_id: chat, text: await joiner.handle(cmd.arg), disable_web_page_preview: true });
 
   if (cmd.name === "start") return onStart(chat, cmd.arg);
   if (cmd.name === "help") return tg("sendMessage", { chat_id: chat, text: HELP_TEXT });
