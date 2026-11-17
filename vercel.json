@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "crons": [
+    { "path": "/api/channel_cron", "schedule": "0 15 * * 1,3,5" }
+  ],
   "installCommand": "",
   "buildCommand": "",
   "functions": {
@@ -8,6 +11,12 @@
       "maxDuration": 60
     },
     "api/instagram.js": {
+      "maxDuration": 30
+    },
+    "api/channel_cron.js": {
+      "maxDuration": 60
+    },
+    "api/miniapp_lead.js": {
       "maxDuration": 30
     },
     "api/cron.js": {

@@ -619,5 +619,66 @@
       "Y Combinator startup launches product",
       "startup launches public beta waitlist United States"
     ]
+  },
+  "tg_leads": {
+    "_help": "Telegram chat monitor (agent/tg_monitor.py). Chats live in agent/tg_chats.json. All patterns are case-insensitive regexes.",
+    "portfolio_url": "https://withardesign.com",
+    "model": "",
+    "min_text_len": 25,
+    "max_text_len": 3000,
+    "min_budget_usd": 300,
+    "max_notifications_per_run": 12,
+    "first_run_window_min": 60,
+    "keywords": [
+      "веб[- ]?дизайн\\w*",
+      "web[- ]?design\\w*",
+      "дизайнер\\w*\\s+(?:сайт\\w*|web|веб\\w*|интерфейс\\w*)",
+      "(?:ui\\s*/?\\s*ux|юай\\s*/?\\s*юикс)",
+      "редизайн\\w*",
+      "redesign\\w*",
+      "лендинг\\w*",
+      "landing\\s*page\\w*|\\blanding\\b",
+      "одностраничн\\w+\\s+сайт\\w*",
+      "\\bmvp\\b",
+      "next\\.?js",
+      "интерактивн\\w+\\s+(?:сайт\\w*|веб\\w*|лендинг\\w*)",
+      "interactive\\s+(?:website|site|web)",
+      "(?:разработ\\w+|сделать|создать|нужен|нужна|заказать)\\s+(?:современн\\w+\\s+)?(?:сайт\\w*|веб[- ]?сайт\\w*)",
+      "(?:develop|build|design)\\s+(?:a\\s+|an\\s+|our\\s+|my\\s+)?(?:website|web\\s*app|landing)"
+    ],
+    "intent": [
+      "\\bищ[уе]м?\\b",
+      "\\bнужн[аоы]?\\b",
+      "\\bтребу\\w+",
+      "\\bкто\\s+(?:может|сделает|делает|возьмётся|возьмется)",
+      "посоветуйте|подскажите|порекомендуйте",
+      "\\bзаказ\\w*|\\bзадач\\w+|\\bпроект\\w*|\\bбюджет\\w*|оплат\\w+",
+      "looking\\s+for|\\bneed\\w*\\b|\\bhir(?:e|ing)\\b|who\\s+can|can\\s+anyone|recommend",
+      "\\bbudget\\b|\\bpaid\\b|\\bproject\\b"
+    ],
+    "spam": [
+      "казино|ставки\\s+на\\s+спорт|букмекер|1xbet|крипто\\w*\\s+(?:сигнал|арбитраж)|арбитраж\\s+трафик",
+      "заработ\\w+\\s+(?:от|до|на)\\s+\\d|пассивн\\w+\\s+доход|быстрый\\s+заработок",
+      "подпиш(?:ись|итесь)\\s+на|переходи\\w*\\s+по\\s+ссылк|жми\\s+на\\s+ссылк",
+      "\\bairdrop\\b|\\bgiveaway\\b|\\bfree\\s+money\\b"
+    ],
+    "offers": [
+      "(?:предлагаю|оказываю|делаю|выполню|возьму)\\s+(?:услуги|заказ\\w*|сайт\\w*|лендинг\\w*)",
+      "(?:мо[ёе]|моё|мои)\\s+портфолио|портфолио\\s+в\\s+(?:лс|личк\\w*|профиле)",
+      "(?:принимаю|беру)\\s+заказ\\w*",
+      "(?:i['’]m|i\\s+am)\\s+a\\s+(?:freelance\\s+)?(?:web\\s+)?(?:designer|developer)",
+      "available\\s+for\\s+(?:hire|freelance|new\\s+projects)|open\\s+for\\s+(?:work|projects)",
+      "my\\s+portfolio|dm\\s+me\\s+for\\s+(?:work|services)|услуги\\s+дизайнер\\w*"
+    ],
+    "office": [
+      "в\\s+офис\\w*|офис\\w*\\s+(?:в|на|м\\.)|\\bon[- ]?site\\b|\\bin[- ]?office\\b|hybrid|гибридн\\w+\\s+формат",
+      "\\bв\\s+штат\\b|оформлени\\w+\\s+по\\s+тк|\\bоклад\\b|зарплат\\w+|\\bfull[- ]?time\\b|полная\\s+занятость|полный\\s+рабочий\\s+день",
+      "вакансия\\s+(?:в|на)\\s+офис|relocat\\w+|релокац\\w+"
+    ],
+    "cheap": [
+      "недорого|бюджетн\\w+\\s+вариант|за\\s+еду|бесплатно|за\\s+отзыв|за\\s+идею|копейк\\w+|на\\s+безвозмездной",
+      "\\bfree\\s+of\\s+charge\\b|\\bfor\\s+free\\b|\\bunpaid\\b|\\bcheap(?:est)?\\b|\\blow[- ]budget\\b|\\bfor\\s+exposure\\b",
+      "за\\s+портфолио|по\\s+дружбе|студент\\w*\\s+для\\s+практики"
+    ]
   }
 }

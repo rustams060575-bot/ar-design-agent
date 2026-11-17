@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Quiet luxury: warm paper and ink, one neutral palette, no accent colour, no all-caps. */
+:root {
+  --bg: #f5f3ee;
+  --surface: #ebe8e1;
+  --fg: #151513;
+  --muted: #6f6d66;
+  --line: rgba(21, 21, 19, 0.12);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0e0e0d;
+  --surface: #171715;
+  --fg: #ecebe5;
+  --muted: #8d8b83;
+  --line: rgba(236, 235, 229, 0.12);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e0e0d;
+    --surface: #171715;
+    --fg: #ecebe5;
+    --muted: #8d8b83;
+    --line: rgba(236, 235, 229, 0.12);
+    color-scheme: dark;
+  }
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+button {
+  font: inherit;
+  color: inherit;
+}
+textarea,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+/* Telegram fullscreen: system buttons overlay the top, so the page keeps clear of them.
+   --tg-* variables are set by the client (Bot API 8.0+); env() covers plain mobile browsers. */
+.safe-top {
+  padding-top: calc(max(env(safe-area-inset-top, 0px), var(--tg-safe-area-inset-top, 0px)) + var(--tg-content-safe-area-inset-top, 0px));
+}
+.safe-bottom {
+  padding-bottom: calc(max(env(safe-area-inset-bottom, 0px), var(--tg-safe-area-inset-bottom, 0px)) + var(--tg-content-safe-area-inset-bottom, 0px));
+}
+
+/* Work placeholders: transform-only motion, so it stays at 60 fps. Paused while off screen. */
+@keyframes drift {
+  from {
+    transform: translate3d(-7%, -5%, 0) scale(1.1);
+  }
+  to {
+    transform: translate3d(7%, 5%, 0) scale(1.22);
+  }
+}
+.placeholder {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(40% 40% at 30% 30%, hsl(var(--h) 18% 62% / 0.55), transparent 70%),
+    radial-gradient(45% 45% at 72% 68%, hsl(calc(var(--h) + 40) 14% 40% / 0.5), transparent 70%),
+    radial-gradient(60% 60% at 50% 50%, hsl(var(--h) 10% 24% / 0.35), transparent 75%);
+  animation: drift 14s ease-in-out infinite alternate;
+  animation-play-state: paused;
+  will-change: transform;
+}
+[data-live="true"] .placeholder {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .placeholder {
+    animation: none;
+  }
+}

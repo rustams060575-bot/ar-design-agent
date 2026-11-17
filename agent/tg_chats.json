@@ -1,0 +1,7 @@
+{
+  "_help": "Chats and channels watched by agent/tg_monitor.py. Add an object to \"chats\": {\"ref\": \"@username\", \"title\": \"optional label\"}. ref can be @username, https://t.me/username or a numeric id (-100...). The account behind TG_SESSION must already be a member; private invite links (t.me/+...) cannot be used. Set \"enabled\": false to pause one chat. Do not put anything secret here if the repository is public.",
+  "include_all_joined": false,
+  "chats": [
+    { "ref": "@example_public_chat", "title": "Example (replace me)", "enabled": false }
+  ]
+}

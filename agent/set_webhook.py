@@ -33,6 +33,8 @@ COMMANDS = [
     {"command": "strategy", "description": "План поиска лидов US/EU на неделю"},
     {"command": "reach", "description": "Охваты и статистика Instagram и Facebook"},
     {"command": "queue", "description": "Очередь публикаций: 09:00 и 21:00 по Майами"},
+    {"command": "post", "description": "Пост в канал AR Design: голос, текст или медиа"},
+    {"command": "idea", "description": "Черновик заметки для канала по свежему материалу"},
     {"command": "help", "description": "Справка"},
 ]
 

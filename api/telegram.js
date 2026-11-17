@@ -33,6 +33,7 @@ const { createStore, MemoryDisabled } = require("./_lib/store");
 const { askClaude } = require("./_lib/claude");
 const voice = require("./_lib/voice");
 const leads = require("./_lib/leads");
+const channel = require("./_lib/channel");
 const { handleClient, handleFunnelCallback, handleLeadAction, renderAdmin } = require("./_lib/client_flow");
 
 const START_TEXT =
@@ -40,7 +41,7 @@ const START_TEXT =
   "• Лидогенерация: ищу стартапы и SaaS по миру, пишу письма на языке фаундера. Письмо уходит только после вашей кнопки.\n" +
   "• Диалог с памятью: пишите мне как ассистенту - я помню проекты, договорённости и интересы, даже спустя недели.\n" +
   "• Голос: отправьте голосовое сообщение - отвечу голосом.\n\n" +
-  "Команды:\n/admin - статистика лидов и источников\n/leads - последние лиды\n/search - поиск лидов сейчас (можно с запросом)\n/strategy - план поиска лидов US/EU на неделю\n/queue - очередь публикаций (09:00 и 21:00 по Майами)\n/reach - охваты и статистика Instagram и Facebook\n/memory - что я помню\n/history - хронология\n" +
+  "Команды:\n/admin - статистика лидов и источников\n/leads - последние лиды\n/search - поиск лидов сейчас (можно с запросом)\n/strategy - план поиска лидов US/EU на неделю\n/queue - очередь публикаций (09:00 и 21:00 по Майами)\n/post - пост в канал AR Design (черновик из голоса, текста или медиа)\n/idea - черновик заметки для канала сейчас\n/reach - охваты и статистика Instagram и Facebook\n/memory - что я помню\n/history - хронология\n" +
   "/remember <текст> - запомнить\n/forget <id> - забыть запись\n/help - справка";
 
 const HELP_TEXT =
@@ -53,6 +54,9 @@ const HELP_TEXT =
   "/remember <текст> - сохранить заметку\n/forget <id> - удалить запись (id в скобках)\n\n" +
   "🎙 Голос. Отправьте голосовое (до 3 минут): распознаю речь (Whisper) и отвечу только голосовым. На текст отвечаю текстом. Логика и память те же. " +
   "Голосом команды не выполняются (письма и поиск - только кнопками и командами).\n\n" +
+  "📣 Канал AR Design. Пришлите боту скриншот или видео с подписью, либо без подписи, а затем голосовое или текст в течение 15 минут: " +
+  "оформлю короткий пост на английском от первого лица и покажу с кнопками «Опубликовать» и «Переписать». /post включает режим поста на 10 минут для голоса и текста без медиа, " +
+  "/idea присылает заметку по свежему материалу. По понедельникам, средам и пятницам заметка приходит сама. Без вашей кнопки в канал ничего не уходит.\n\n" +
   "✉️ Письма клиентам - на английском (рынок США); письмо уходит только после вашего подтверждения.";
 
 const CHAT_SYSTEM =
@@ -482,6 +486,7 @@ async function onMessage(msg, updateId) {
 async function onCallback(cb) {
   const chat = cb.message && cb.message.chat.id;
   if ((cb.data || "").startsWith("ls:")) return handleLeadAction(cb, { tg, env });
+  if ((cb.data || "").startsWith("ch:")) return channel.handleCallback(cb, {});
   const [action, ...rest] = (cb.data || "").split(":");
   const leadId = rest.join(":");
   if (!LEAD_ID.test(leadId) || !["send", "skip"].includes(action)) {
@@ -557,7 +562,11 @@ module.exports = async (req, res) => {
         return res.status(200).json({ ok: true });
       }
       if (ownerChat && isAdmin && String(chat) === String(sender.id)) {
-        if (message && (message.voice || message.audio)) await onVoice(message, update.update_id, trace);
+        // Channel module first: media, /post, /idea and voice/text notes that belong to a post draft. Everything else
+        // (false) continues to the assistant exactly as before.
+        const forChannel = message ? await channel.handleOwnerMessage(message, { downloadFile: downloadTelegramFile }) : false;
+        if (forChannel) { /* handled by the channel module */ }
+        else if (message && (message.voice || message.audio)) await onVoice(message, update.update_id, trace);
         else if (message && message.text) await onMessage(message, update.update_id);
         else if (callback) await onCallback(callback);
       } else if (message && ownerChat) {
