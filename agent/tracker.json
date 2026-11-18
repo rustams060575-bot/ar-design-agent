@@ -4486,6 +4486,36 @@
       "status": "rejected",
       "score": 6,
       "at": "2026-11-18T02:05:57+00:00"
+    },
+    "signal:ec1286380769a9f8": {
+      "name": "French startup Remanence raises $30m to train models on AI agent traces",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T06:23:23+00:00"
+    },
+    "signal:94dab3e1e703351c": {
+      "name": "Rox Raises $100 Million As Investors Bet AI Agents Can Outsell Salesforce’s CRM",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-18T06:23:28+00:00"
+    },
+    "signal:d03c90b41f6b2aa1": {
+      "name": "AI drugmaker Isomorphic restocks with $5B fundraise",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-18T06:23:33+00:00"
+    },
+    "signal:b6da5f4ab0430690": {
+      "name": "Genesis AI raises $500M to deploy glove-wearing robots",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T06:23:37+00:00"
+    },
+    "signal:ca5fb89b3b1a50b3": {
+      "name": "International travel to Miami-Dade rebounds as visitor spending climbs to $10.5B",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-18T06:23:39+00:00"
     }
   },
   "contacted_domains": [
