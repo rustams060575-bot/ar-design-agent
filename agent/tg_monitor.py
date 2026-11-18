@@ -311,8 +311,9 @@ class Monitor:
         loop = asyncio.get_running_loop()
         result = await loop.run_in_executor(None, lead_filter.analyze, text, info["title"], self.cfg)
         if result is None:
-            log("no model answer (key or quota): the message is skipped")
-            return
+            # The lead is never dropped because the model failed: the owner still gets a card with a template reply.
+            log("no usable model answer: sending a rule-based card instead")
+            result = lead_filter.fallback(text, self.cfg)
         if not result["relevant"]:
             if self.args.verbose:
                 log(f"model rejected: {result['reason']}")

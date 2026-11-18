@@ -158,8 +158,12 @@ def analyze(text: str, chat_title: str, cfg: dict) -> dict | None:
     system = SYSTEM.replace("{portfolio}", portfolio)
     prompt = f"Chat: {chat_title}\n<message>\n{text[:3000]}\n</message>"
     model = c.get("model") or None
-    data = _parse_json(llm.complete(system, prompt, cfg, max_tokens=700, model=model))
+    raw = llm.complete(system, prompt, cfg, max_tokens=700, model=model)
+    data = _parse_json(raw)
     if not data:
+        # Never silent: the run log says whether the model answered at all and in what shape (no message text is printed).
+        shape = "no answer (key, quota or provider error; see [llm] lines)" if raw is None else f"answer without a JSON object, {len(raw)} chars, starts with {raw.strip()[:24]!r}"
+        print(f"[lead_filter] model output unusable: {shape}")
         return None
     if not data.get("relevant"):
         return {"relevant": False, "reason": str(data.get("reason", ""))[:200], "summary": "", "budget": "", "reply": ""}
@@ -182,4 +186,31 @@ def analyze(text: str, chat_title: str, cfg: dict) -> dict | None:
         "verdict": {"take": "брать", "clarify": "уточнить", "skip": "отказаться"}.get(str(data.get("verdict", "")).lower(), "уточнить"),
         "reply": reply,
         "warnings": issues,
+    }
+
+
+# ---------------------------------------------------------------- safety net: a lead is never dropped because the model failed
+
+_FALLBACK_REPLY = {
+    "ru": "Здравствуйте. Увидел ваш запрос. Я занимаюсь дизайном, UX/UI и фронтендом (Next.js, React), делаю AI-ассистентов и Telegram Mini Apps. "
+          "Расскажите, пожалуйста, о задаче и сроках, и я предложу подход и оценку. Примеры работ: {portfolio}\n\nRustam, AR Design",
+    "en": "Hello. I saw your request. I design and build interfaces (UX/UI, Next.js, React), AI assistants and Telegram Mini Apps. "
+          "Tell me a little about the task and the timing and I will suggest an approach and an estimate. Selected work: {portfolio}\n\nRustam, AR Design",
+}
+
+
+def fallback(text: str, cfg: dict) -> dict:
+    """Card data built by rules when the model gave no usable answer: raw excerpt, budget if an amount is in the text, template reply."""
+    portfolio = cfg["tg_leads"].get("portfolio_url", "https://withardesign.com")
+    amounts = budgets_usd(text)
+    budget = f"~${max(amounts):,.0f}" if amounts else "в лс / не указан"
+    excerpt = re.sub(r"\s+", " ", text).strip()[:320]
+    return {
+        "relevant": True,
+        "reason": "разбор моделью недоступен",
+        "summary": f"(автоматический разбор недоступен, исходный текст) {excerpt}",
+        "budget": budget,
+        "verdict": "уточнить",
+        "reply": _FALLBACK_REPLY[reply_language(text)].replace("{portfolio}", portfolio),
+        "warnings": ["модель не ответила: черновик по шаблону, перечитайте заявку"],
     }
