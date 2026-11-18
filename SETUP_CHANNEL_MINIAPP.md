@@ -6,19 +6,19 @@ Three modules were added to James. Nothing runs on a personal computer: Vercel (
 |---|---|---|
 | Channel autoposting | `api/_lib/channel.js`, `api/_lib/channel_sources.js`, `api/channel_cron.js`, hooks in `api/telegram.js` | Vercel (webhook + Cron Mon/Wed/Fri 15:00 UTC) |
 | Chat monitor (Telethon) | `agent/tg_monitor.py`, `agent/lead_filter.py`, `agent/tg_chats.json`, `.github/workflows/tg_leads.yml` | GitHub Actions, around the clock |
-| Mini App | `miniapp/` (Next.js static export), `api/miniapp_lead.js` | Vercel (second project, `app.withardesign.com`) |
+| Mini App | `miniapp/` (Next.js static export), `api/miniapp_lead.js` | Vercel (second project, `ar-design-miniapp.vercel.app`) |
 
 ## 1. Variables
 
 **Vercel, bot project** — new:
 - `TELEGRAM_CHANNEL_ID` — `-100…` or `@handle` of the channel. Add the bot as channel **administrator** with the right to post.
-- `MINIAPP_URL` — `https://app.withardesign.com` (CORS for the brief endpoint).
+- `MINIAPP_URL` — `https://ar-design-miniapp.vercel.app` (CORS for the brief endpoint).
 - `CRON_SECRET` — any long random string; Vercel Cron sends it as a bearer token to `/api/channel_cron`.
 
 Already used and required: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `ANTHROPIC_API_KEY`, `OPENAI_API_KEY` (voice), `MEMORY_REPO`, `GH_MEMORY_TOKEN`.
 Optional: `CHANNEL_MODEL`, `CHANNEL_FOOTER` (e.g. `withardesign.com`, appended to every post), `CHANNEL_STT_LANGUAGE`.
 
-**Vercel, new project `ar-design-miniapp`** (Root Directory `miniapp`, framework Next.js, domain `app.withardesign.com`):
+**Vercel, new project `ar-design-miniapp`** (Root Directory `miniapp`, framework Next.js, default Vercel address `ar-design-miniapp.vercel.app`):
 - `NEXT_PUBLIC_API_URL` — `https://<bot project>.vercel.app/api/miniapp_lead`.
 
 **GitHub → Settings → Secrets and variables → Actions** — new for the chat monitor:
@@ -46,11 +46,11 @@ Optional: `CHANNEL_MODEL`, `CHANNEL_FOOTER` (e.g. `withardesign.com`, appended t
 
 ## 4. Mini App and @BotFather
 
-Deploy: new Vercel project from this repository, Root Directory `miniapp`, add the domain `app.withardesign.com` (CNAME as Vercel shows).
+Deploy: new Vercel project from this repository, Root Directory `miniapp`, use the default Vercel address.
 
 @BotFather (the bot that serves the Mini App):
-1. `/mybots` → the bot → **Bot Settings → Menu Button → Configure menu button** → URL `https://app.withardesign.com`, title `Open AR Design`.
-2. **Bot Settings → Configure Mini App → Enable Mini App** → URL `https://app.withardesign.com`. This is the Main Mini App: an "Open app" button on the bot profile and the link `t.me/<bot>?startapp`.
+1. `/mybots` → the bot → **Bot Settings → Menu Button → Configure menu button** → URL `https://ar-design-miniapp.vercel.app`, title `Open AR Design`.
+2. **Bot Settings → Configure Mini App → Enable Mini App** → URL `https://ar-design-miniapp.vercel.app`. This is the Main Mini App: an "Open app" button on the bot profile and the link `t.me/<bot>?startapp`.
 3. Optional: `/newapp` for a direct link `t.me/<bot>/<short_name>`.
 4. Full screen and "add to home screen" need Telegram 8.0+; older clients fall back to the normal window.
 

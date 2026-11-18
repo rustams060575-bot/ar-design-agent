@@ -1,4 +1,4 @@
-// Brief from the AR Design Telegram Mini App (app.withardesign.com) -> lead card in the owner's chat.
+// Brief from the AR Design Telegram Mini App (ar-design-miniapp.vercel.app) -> lead card in the owner's chat.
 //
 //   POST /api/miniapp_lead   { initData, task, budget, timeline, note?, contact? }
 //
@@ -7,7 +7,7 @@
 // initData and is rejected, so the endpoint cannot be used to flood the owner's chat with forged leads.
 //
 // Env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID / ADMIN_TELEGRAM_ID (owner), MINIAPP_URL (CORS origin, default
-//      https://app.withardesign.com), MEMORY_REPO + GH_MEMORY_TOKEN (leads.json, optional: the card is sent anyway).
+//      https://ar-design-miniapp.vercel.app), MEMORY_REPO + GH_MEMORY_TOKEN (leads.json, optional: the card is sent anyway).
 
 "use strict";
 
@@ -95,7 +95,7 @@ async function saveLead(user, b, now) {
 const getLeadFor = (db, user, now) => leads.getLead(db, user, user.id, now);
 
 module.exports = async function handler(req, res) {
-  const origin = (process.env.MINIAPP_URL || "https://app.withardesign.com").replace(/\/+$/, "");
+  const origin = (process.env.MINIAPP_URL || "https://ar-design-miniapp.vercel.app").replace(/\/+$/, "");
   res.setHeader("Access-Control-Allow-Origin", origin);
   res.setHeader("Vary", "Origin");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
