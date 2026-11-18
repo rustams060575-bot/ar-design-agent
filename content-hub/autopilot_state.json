@@ -278,6 +278,20 @@
         "instagram": "failed: meta 400: Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons. (code 190)",
         "facebook": "failed: meta 400: Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons. (code 190)"
       }
+    },
+    {
+      "date": "2026-11-17",
+      "time": "21:00",
+      "slot": "evening",
+      "kind": "reel",
+      "id": "R04",
+      "source": "ar02",
+      "live": true,
+      "ok": false,
+      "result": {
+        "instagram": "failed: meta 400: Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons. (code 190)",
+        "facebook": "failed: meta 400: Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons. (code 190)"
+      }
     }
   ],
   "reel_i": 4,
