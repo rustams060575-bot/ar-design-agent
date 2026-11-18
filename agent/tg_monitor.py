@@ -413,6 +413,13 @@ async def run(args) -> int:
     if not cfg or "tg_leads" not in cfg:
         log("config.json has no tg_leads block")
         return 2
+    manual = os.getenv("TG_FORCE_DISCOVER", "").lower() == "true"
+    topic = os.getenv("TG_QUERY", "").strip()[:100]
+    if topic:  # a topic from "найди заказы по react" joins the chat search keywords for this run
+        cfg["tg_leads"].setdefault("discovery", {}).setdefault("keywords", []).insert(0, topic)
+        args.discover = True
+    if manual:
+        args.discover = True
     import llm
 
     if not llm.available(cfg):
@@ -431,8 +438,12 @@ async def run(args) -> int:
         await mon.discover_new()
         if not mon.chats:
             log("no chats to watch yet: discovery found nothing and tg_chats.json is empty")
+            if manual:
+                bot_send("🔎 Сканирование Telegram: подходящих публичных чатов пока не нашёл. Пришлите ссылки командой /join или напишите «вступи в @имя», и я начну читать их сразу.", dry=args.dry_run)
             return 0
         await mon.catch_up()
+        if manual:
+            bot_send(f"🔎 Сканирование Telegram завершено: под наблюдением чатов и каналов — {len(mon.chats)}, новых карточек в эту проверку — {mon.sent}. Дальше мониторинг идёт сам, карточки приходят по мере появления заказов.", dry=args.dry_run)
         if not args.once:
             await mon.live(time.time() + int(os.getenv("TG_RUN_SECONDS", "540")))
         state.save()

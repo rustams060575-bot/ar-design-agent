@@ -33,7 +33,8 @@ module.exports = async function handler(req, res) {
   // ?action=autopilot publishes the next ar02 queue item (09:00 carousel / 21:00 reel America/New_York); ?action=strategy|content starts the weekly james jobs; anything else (or nothing) is the normal lead search.
   const action = ["strategy", "content", "publish", "autopilot"].includes(String((req.query && req.query.action) || "")) ? req.query.action : "search";
   const repo = process.env.GITHUB_REPO || "rustams060575-bot/ar-design-agent";
-  const workflow = process.env.GITHUB_WORKFLOW || "outreach.yml";
+  // The daily lead search is the Telegram monitor now (tg_leads.yml); the other actions still go to outreach.yml.
+  const workflow = action === "search" ? "tg_leads.yml" : process.env.GITHUB_WORKFLOW || "outreach.yml";
   const headers = {
     Authorization: `Bearer ${env.get("GH_DISPATCH_TOKEN")}`,
     Accept: "application/vnd.github+json",
@@ -42,7 +43,7 @@ module.exports = async function handler(req, res) {
   };
   // The ping is the reliable backup for GitHub's best-effort schedule, so a transient GitHub API error is retried
   // (3 attempts, 2 s apart) before answering 502; a 502 makes cron-job.org flag the run and retry/alert on its side.
-  const body = JSON.stringify({ ref: process.env.GITHUB_REF || "main", inputs: { action, query: "", lead_id: "", scheduled: action === "search" ? "true" : "" } });
+  const body = JSON.stringify({ ref: process.env.GITHUB_REF || "main", inputs: action === "search" ? { discover: "true", query: "" } : { action, query: "", lead_id: "", scheduled: "" } });
   let last = 0;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {

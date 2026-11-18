@@ -39,7 +39,7 @@ def format_report(stats: dict, cfg: dict, label: str) -> list[str]:
             lines.append(f"• {f['name']} · {f['score']}/10 · {f.get('need')} · {f.get('status', '')}\n  {f['url']}")
     near = sorted((f for f in found if not f["approved"] and f["score"] >= rc.get("near_miss_min_score", 6)), key=lambda f: -f["score"])
     if near:
-        lines.append("\n🟡 Почти подошли (не прошли строгий US / high-end фильтр, ссылка для ручного взгляда):")
+        lines.append("\n🟡 Почти подошли (не прошли фильтр, ссылка для ручного взгляда):")
         for f in near[: rc.get("near_miss_max", 8)]:
             lines.append(f"• {f['name']} · {f['score']}/10 · {f['reason'] or 'ниже порога'}\n  {f['url']}")
     boards = [f for f in found if f["source"] in BOARDS and f["score"] >= 4]
@@ -51,7 +51,7 @@ def format_report(stats: dict, cfg: dict, label: str) -> list[str]:
     if not found:
         lines.append("\nНовых объявлений сегодня нет: все найденные уже проверены в прошлых запусках. Источники сканируются каждый слот.")
     elif not approved:
-        lines.append("\nСтрогий фильтр (США, реальный бюджет, не шаблоны и не биржи микро-заказов) ничего не одобрил в этом слоте.")
+        lines.append("\nФильтр (задачи от ~$200, без спама и бесплатной работы) ничего не одобрил в этом слоте.")
     msgs, cur = [], ""
     for line in lines:  # Telegram limit is 4096 characters
         if len(cur) + len(line) > 3500:

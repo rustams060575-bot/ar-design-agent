@@ -6,7 +6,16 @@ name: Telegram lead monitor
 on:
   schedule:
     - cron: "*/10 * * * *"
-  workflow_dispatch:
+  workflow_dispatch:           # started by the bot ("найди заказы", /search) and by the daily Vercel cron
+    inputs:
+      discover:
+        description: "true = search for new public chats right now and report a summary"
+        type: string
+        default: "true"
+      query:
+        description: "Optional topic, added to the chat search (e.g. react, telegram боты)"
+        type: string
+        default: ""
 
 concurrency:
   group: tg-leads            # two runs never share one Telegram session
@@ -49,6 +58,8 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TG_RUN_SECONDS: "540"
+          TG_FORCE_DISCOVER: ${{ inputs.discover }}
+          TG_QUERY: ${{ inputs.query }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/cache/save@v4
