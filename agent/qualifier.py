@@ -17,7 +17,7 @@ import llm
 
 SYSTEM_PROMPT = """You are a lead-qualification analyst for AR Design (always written exactly as AR Design, never with Studio or Space), a boutique studio for flagship web engineering in the US and Western Europe (scroll-driven cinematic sites, custom animation) that also sells UI/UX design and \
 redesign (dashboards, CRM systems, web apps, client areas, design systems), website development (multi-page sites, \
-landing pages, e-commerce stores), front-end development (React, JavaScript, Tilda), and AI-agent implementation for \
+landing pages, e-commerce stores), front-end development (Next.js, React, TypeScript, Tailwind), Telegram Mini Apps, and AI-agent implementation for \
 SaaS and e-commerce (support bots, sales / onboarding assistants, workflow automation, AI features inside a product).
 
 We look for two kinds of leads: (1) an EXPLICIT REQUEST - a person or company that says they need such work done, or \
@@ -49,17 +49,16 @@ still an explicit request; a post about fundraising itself is never a lead.
 urgency: "urgent" (ASAP, deadline, this week, launching soon), "normal", or "unknown".
 
 Job-board postings (We Work Remotely, Dribbble, Remotive, Jobicy ...): a posting for a UI/UX, web design, prototyping, \
-front-end (React / JavaScript / Tilda) or AI-agent / automation role is an explicit_request. Contract, freelance or \
+front-end (Next.js / React / TypeScript) or AI-agent / automation role is an explicit_request. Contract, freelance or \
 project-based work scores 8-10 when the fit is clear; a permanent in-house role scores 6-7 (the studio sells projects, \
 so the pitch offers the studio as an external team). Roles in backend, data, sales, marketing or content are "other" \
 with need_type "none". \
 Premium, brand-led, luxury, fashion, hospitality, real-estate and fintech projects that value a restrained "quiet \
-luxury" visual style are a strong fit: add 1 point. Leads in the United States (Miami, Silicon Valley / Bay Area, New York, Austin, Los Angeles and anywhere else in the US) rank first; add 2 points for a US lead and 1 point for the UK / Western Europe (DE, NL, FR, Nordics) when they ask for a flagship or brand website, scroll-driven or WebGL experiences, custom animation, a design system or a high-end redesign (the score never goes above 10). Low-budget template or marketplace gigs score at most 5.
+luxury" visual style are a strong fit: add 1 point. Leads from every region are equal (United States, Europe, Asia, Latin America): never add or subtract points for location. Score on fit and clarity of the request (the score never goes above 10). Any adequate task counts, from a quick fix of one block or a landing page (from about $200) to large contracts. Free work and tasks clearly under about $200 score at most 5.
 
-Fixed vector (US, high-end ICP): we hunt US leads only (Miami, Silicon Valley / Bay Area, New York, Austin, Los Angeles and the rest of the US). \
+Vector: worldwide, no geographic limits and no budget floor above about $200. \
 Ideal clients are seed-to-series-B startups, AI products, DTC and luxury brands, fintech and agencies that need flagship web \
-engineering, complex animation systems, cinematic launch sites, custom interfaces, dashboards or a design system. Reject template / \
-theme work, marketplace gigs (Fiverr, Upwork, Freelancer, 99designs), micro-budgets and low-effort requests: score them 0-4. \
+engineering, complex animation systems, cinematic launch sites, custom interfaces, dashboards or a design system. Reject spam, free work and tasks clearly under about $200: score them 0-4. Never reject a lead for its location or for being small. \
 Set "us_based" to true only when the author or company is in the US, false when clearly elsewhere, null when unknown. \
 "budget_signal" is "high" for funded companies / explicit budgets / premium brands, "low" for hobby, template or bargain asks, else "medium" or "unknown".
 
@@ -125,7 +124,7 @@ REQUEST_CUE = re.compile(
 SCOPE = re.compile(
     r"(dashboard|\bcrm\b|web ?app|admin panel|back ?office|client (area|portal)|customer portal|portal|cabinet|личн\w+ кабинет|"
     r"redesign|re-design|landing|web ?site|multi-?page|\bui\b|\bux\b|ui/ux|front-?end|interface|design system|figma|designer|"
-    r"e-?commerce|online (store|shop)|shopify|woocommerce|storefront|checkout|react|next\.?js|tilda|"
+    r"e-?commerce|online (store|shop)|shopify|woocommerce|storefront|checkout|react|next\.?js|"
     r"ai agents?|\bagents?\b|chat ?bots?|llm|automation|copilot|assistant)", re.I)
 
 URGENT = re.compile(r"(asap|urgent\w*|immediately|this week|right away|срочно|deadline)", re.I)
@@ -136,7 +135,7 @@ NEED_RULES = [  # first match wins
     ("web_app", r"web ?app"), ("landing", r"landing"), ("redesign", r"redesign|re-design|rebuild"),
     ("ecommerce", r"e-?commerce|online (store|shop)|shopify|woocommerce|storefront|checkout"),
     ("ai_agent", r"ai agents?|\bagents?\b|chat ?bots?|llm|automation|copilot|assistant"),
-    ("frontend", r"front-?end|react|next\.?js|tilda"),
+    ("frontend", r"front-?end|react|next\.?js"),
     ("multipage_site", r"multi-?page|web ?site"),
 ]
 
@@ -256,9 +255,9 @@ def _qualify(lead: dict, cfg: dict) -> dict:
     return _heuristic(lead, min_score)
 
 
-# ---------------------------------------------------------------- fixed vector: US only, high-end ICP, no template / marketplace work
+# ---------------------------------------------------------------- vector: worldwide, any adequate task from about $200, no spam / free work
 
-MARKETPLACE = re.compile(r"(fiverr|upwork|freelancer\.com|peopleperhour|99designs|\bgig\b|\$\s?\d{1,3}\b(?!\d|,)|\bcheap\b|low[- ]budget|budget[: ]+(under|<)\s*\$?\d{3}\b|wordpress theme|template (only|based)|\bthemeforest\b)", re.I)
+MARKETPLACE = re.compile(r"(fiverr|upwork|freelancer\.com|peopleperhour|99designs|\bgig\b|\$\s?(?:[1-9]?\d|1\d\d)\b(?!\d|,)|\bunpaid\b|\bfor free\b|budget[: ]+(under|<)\s*\$?(?:\d{1,2}|1\d\d)\b|\bthemeforest\b)", re.I)
 US_CUE = re.compile(r"(united states|american|\bmiami\b|silicon valley|bay area|san francisco|palo alto|new york|\bnyc\b|brooklyn|"
                     r"\baustin\b|los angeles|\bflorida\b|\bcalifornia\b|\btexas\b|\busa\b|\bu\.s\.)", re.I)
 US_ABBR = re.compile(r"(\bUS\b|\bSF\b|\bLA\b|, (CA|NY|TX|FL|WA|MA|IL|CO)\b)")  # case-sensitive: "us" is also a pronoun
@@ -269,16 +268,14 @@ def policy_text(lead: dict) -> str:
 
 
 def apply_policy(result: dict, lead: dict, cfg: dict) -> dict:
-    """The code enforces the vector whatever the model says: US-based, real budget, no template or marketplace gigs."""
+    """The code enforces only the floor: no free work or micro-tasks under about $200. No geography."""
     policy = cfg.get("james", {}).get("lead_policy")
     if not policy or not result.get("relevant"):
         return result
     text = policy_text(lead)
     reason = None
     if lead.get("source") != "signal" and MARKETPLACE.search(text):  # "$12M" in a funding headline is not a gig price
-        reason = "Шаблонный заказ или биржа микро-заказов: не наш ICP."
-    elif result.get("budget_signal") == "low":
-        reason = "Низкий бюджет: не flagship-проект."
+        reason = "Бесплатная работа или микро-задача до ~$200."
     elif policy.get("us_only"):
         us = result.get("us_based")
         if us is None:

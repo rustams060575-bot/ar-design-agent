@@ -85,7 +85,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden pt-2 text-[14px] text-sub"
           >
-            {t.works.note}
+            {t.works.notes[index]}
           </motion.p>
         )}
       </AnimatePresence>

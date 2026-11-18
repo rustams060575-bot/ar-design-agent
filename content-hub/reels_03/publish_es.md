@@ -10,7 +10,7 @@ Tu precio es premium. ¿Tu web lo sostiene? 3 errores invisibles que hacen dudar
 #diseñoweb #webdesign #uxdesign #marketingdigital #emprendedores #pymes
 
 ## Закреплённый комментарий (CTA вне подписи, без «gratis» в тексте поста)
-¿Quieres que revisemos tu web? Escríbenos en Telegram: https://t.me/r_design_space_bot?start=ig_reel_3
+¿Quieres que revisemos tu web? Escríbenos en Telegram: https://t.me/aur_design_bot?start=ig_reel_3
 
 ## Публикация
 - Обложка: кадр 0–2 с (заголовок целиком); в Reels выберите кадр вручную или загрузите PNG.

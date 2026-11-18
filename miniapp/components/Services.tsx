@@ -56,6 +56,7 @@ export function Services() {
           <h2 className="text-[clamp(2rem,9vw,3rem)] leading-[1.05]">
             <Em text={t.process.title} />
           </h2>
+          <p className="mt-3 text-[16px] text-sub">{t.process.tagline}</p>
         </Reveal>
         <ol className="mt-8 flex flex-col gap-3">
           {t.process.steps.map((s, i) => (

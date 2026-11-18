@@ -26,7 +26,7 @@
       "Las citas son textos originales de marca, sin atribuciones externas."
     ]
   },
-  "cta_destination": "https://t.me/r_design_space_bot",
+  "cta_destination": "https://t.me/aur_design_bot",
   "scripts": [
     {
       "id": "02_01",
@@ -57,7 +57,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_BENTO",
           "text": "Solicita tu auditoría UX gratuita",
-          "secondary_text": "Telegram · @r_design_space_bot",
+          "secondary_text": "Telegram · @aur_design_bot",
           "voiceover": "Solicita tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Tarjeta horizontal en el tercio inferior. Nombre de marca arriba y CTA dentro de la tarjeta."
         }
@@ -94,7 +94,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_HERO",
           "text": "Simplifica el siguiente paso.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Pide tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Mensaje centrado con línea dorada. Identificador de Telegram fijo debajo."
         }
@@ -129,7 +129,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_BENTO",
           "text": "Revisemos cómo se percibe tu marca.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Solicita tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Tarjeta vertical desplazada a la derecha con una pequeña etiqueta superior: AR DESIGN."
         }
@@ -166,7 +166,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_HERO",
           "text": "Empieza por la claridad.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Pide tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Titular centrado sobre fondo marfil con línea dorada y CTA en negro."
         }
@@ -202,7 +202,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_QUOTE",
           "text": "¿Tu web da razones para confiar?",
-          "secondary_text": "Solicita una auditoría UX gratuita\nTelegram · @r_design_space_bot",
+          "secondary_text": "Solicita una auditoría UX gratuita\nTelegram · @aur_design_bot",
           "voiceover": "Solicita tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Pregunta en formato de cita a la izquierda. CTA separado debajo mediante espacio negativo."
         }
@@ -238,7 +238,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_BENTO",
           "text": "Revisemos tu experiencia móvil.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Pide tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Tarjeta inspirada en una interfaz móvil, con CTA amplio y texto legible."
         }
@@ -274,7 +274,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_HERO",
           "text": "Haz que elegirte sea sencillo.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Solicita tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Frase centrada sobre negro con línea dorada. Marca discreta en la parte superior."
         }
@@ -309,7 +309,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_QUOTE",
           "text": "Una buena conversación empieza con un paso claro.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Pide tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Cita breve en la mitad superior. Identificador del bot en sans serif grande debajo."
         }
@@ -346,7 +346,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_HERO",
           "text": "Empecemos por tu web.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Solicita tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Titular centrado sobre fondo marfil. Línea dorada corta y CTA oscuro debajo."
         }
@@ -382,7 +382,7 @@
           "end_seconds": 15,
           "layout": "LAYOUT_BENTO",
           "text": "Detecta qué frena la decisión.",
-          "secondary_text": "Auditoría UX gratuita · Telegram\n@r_design_space_bot",
+          "secondary_text": "Auditoría UX gratuita · Telegram\n@aur_design_bot",
           "voiceover": "Pide tu auditoría UX gratuita en nuestro bot de Telegram.",
           "visual_direction": "Tarjeta central con borde fino dorado. CTA y bot visibles durante los cinco segundos."
         }

@@ -42,7 +42,7 @@ function looksLikeJoin(text) {
 }
 
 async function dispatchJoin(refs) {
-  const repo = process.env.GITHUB_REPO || "rustams060575-bot/r_design_space";
+  const repo = process.env.GITHUB_REPO || "rustams060575-bot/ar-design-agent";
   const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/tg_join.yml/dispatches`, {
     method: "POST",
     headers: {

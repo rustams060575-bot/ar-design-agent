@@ -1,6 +1,6 @@
 """james · growth modules: weekly lead strategy and the instagram content machine.
 
-    python agent/scraper.py --action strategy   # US/EU lead-hunting plan for the week
+    python agent/scraper.py --action strategy   # worldwide lead-hunting plan for the week
     python agent/scraper.py --action content    # trend scan + 3 reel concepts for @ar_design_agency
 
 Both write into content-hub/weekly/<YYYY-Www>/ and send a short summary to Telegram. They work without any API key
@@ -97,14 +97,14 @@ offer: {offers}.
 ## sources this week
 {used}
 
-e-mail alerts only (no scraping, forward alerts to the bot):
+e-mail alerts:
 {alerts}
 
 ## signal keywords
 {kw}
 
 ## daily rhythm (europe/madrid)
-- 09:00 and 21:00: automated scan (`/api/cron`) → qualified cards in telegram, threshold 7/10, premium US/EU leads +1.
+- 09:00 and 21:00: automated scan (`/api/cron`) → qualified cards in telegram, threshold 7/10, worldwide, no location bonus.
 - mon: refresh ICP list by hand (10 funded startups from public funding news, no investor-only leads).
 - tue-thu: send approved outreach (cap {cfg['limits']['max_emails_per_run']} per run), 4-step angle below.
 - fri: review replies, update tracker, adjust queries.
@@ -124,7 +124,7 @@ e-mail alerts only (no scraping, forward alerts to the bot):
 
 ## quality bar
 - explicit ask for design/development, or premium brand + visible budget signal. funding news alone is never a lead.
-- skip template gigs and marketplaces; skip anyone outside US/UK/EU unless the budget is clearly flagship.
+- worldwide, no geographic limits; skip only spam, free work and micro-tasks under about $200.
 """
 
 

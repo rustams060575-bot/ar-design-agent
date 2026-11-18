@@ -378,7 +378,7 @@ def scene_cta(img, t, dur):
     ca = ease_out((t - 1.6) / 0.7)
     rect(img, (140, 1080, W - 140, 1340), SURFACE, ca, outline=GOLD, radius=36, width=2)
     draw_text(img, (W / 2, 1160), "Telegram-бот в шапке профиля", text_font(40), STONE, ca, anchor="mm", rise=14 * (1 - ca))
-    draw_text(img, (W / 2, 1255), "@r_design_space_bot", serif(66, 500), GOLD, ca, anchor="mm", rise=14 * (1 - ca))
+    draw_text(img, (W / 2, 1255), "@aur_design_bot", serif(66, 500), GOLD, ca, anchor="mm", rise=14 * (1 - ca))
     draw_text(img, (W / 2, 1450), "оценит задачу и бюджет сразу", text_font(38), LIGHT, ease_out((t - 2.2) / 0.7), anchor="mm")
     # стрелка вверх к шапке профиля
     pulse = 0.5 + 0.5 * math.sin(t * 4)
@@ -676,13 +676,13 @@ def spec_from_json(item: dict) -> dict:
     num = int(m.group(1)) if m else 0
     lang = "ru" if re.search(r"[А-Яа-я]", voice) else "en"
     ru = lang == "ru"
-    handle = "@r_design_space_bot"
+    handle = "@aur_design_bot"
     scenes = [Scene("hook", 3.2, lambda img, t, d, h=hook: j_hook(img, t, d, h), text=groups[0])]
     for i, line in enumerate(middle):
         scenes.append(Scene(f"p{i + 1}", 2.8, lambda img, t, d, x=line, n=i + 1: j_point(img, t, d, x, n), text=groups[i + 1]))
     scenes.append(Scene("cta", 4.0, lambda img, t, d, x=cta or "Free audit", hd=handle, r=ru: j_cta(img, t, d, x, hd, r), text=" ".join(cta_sents)))
-    links = {"instagram": f"https://t.me/r_design_space_bot?start=ig_reel_{num}",
-             "tiktok": f"https://t.me/r_design_space_bot?start=tt_reel_{num}"} if num else {}
+    links = {"instagram": f"https://t.me/aur_design_bot?start=ig_reel_{num}",
+             "tiktok": f"https://t.me/aur_design_bot?start=tt_reel_{num}"} if num else {}
     return {"id": rid, "title": item.get("title", rid), "scenes": scenes, "lang": lang, "deeplinks": links}
 
 
@@ -693,7 +693,7 @@ SANS = Path(os.environ.get("WINDIR", "C:/Windows")) / "Fonts" / "segoeui.ttf"
 SANS_BD = Path(os.environ.get("WINDIR", "C:/Windows")) / "Fonts" / "segoeuib.ttf"
 SANS_FALLBACK = Path(os.environ.get("WINDIR", "C:/Windows")) / "Fonts" / "arial.ttf"
 SAFE_X = 96  # поля области безопасности
-HANDLE = "@r_design_space_bot"
+HANDLE = "@aur_design_bot"
 
 
 def sans_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
@@ -1123,8 +1123,8 @@ def spec_from_batch(script: dict, meta: dict, palettes: dict, idx: int) -> dict:
         scenes.append(Scene(key, nominal, draw, text=s.get("voiceover", ""), bgfn=bgfn))
     m = re.fullmatch(r"(\d+)_(\d+)", sid)
     num = int(m.group(1)) * 100 + int(m.group(2)) if m else 0  # 02_01 -> 201: метки ig_reel_201 / tt_reel_201
-    links = {"instagram": f"https://t.me/r_design_space_bot?start=ig_reel_{num}",
-             "tiktok": f"https://t.me/r_design_space_bot?start=tt_reel_{num}"} if num else {}
+    links = {"instagram": f"https://t.me/aur_design_bot?start=ig_reel_{num}",
+             "tiktok": f"https://t.me/aur_design_bot?start=tt_reel_{num}"} if num else {}
     return {"id": sid, "title": script.get("title", sid), "scenes": scenes, "lang": meta.get("language", "es"), "deeplinks": links}
 
 
@@ -1135,8 +1135,8 @@ def spec_default() -> dict:
     if missing:
         raise SystemExit(f"В блоке voiceover нет строк: {', '.join(missing)}")
     return {"id": "reel_01", "title": "Before / After", "scenes": scenes, "lang": "ru", "out": OUT,
-            "deeplinks": {"instagram": "https://t.me/r_design_space_bot?start=ig_reel_1",
-                          "tiktok": "https://t.me/r_design_space_bot?start=tt_reel_1"}}
+            "deeplinks": {"instagram": "https://t.me/aur_design_bot?start=ig_reel_1",
+                          "tiktok": "https://t.me/aur_design_bot?start=tt_reel_1"}}
 
 
 # ----------------------------------------------------------------------------- build one reel

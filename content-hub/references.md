@@ -6,7 +6,7 @@
 |---|---|
 | Instagram | https://www.instagram.com/r_design_space |
 | TikTok | https://www.tiktok.com/@r_design_space |
-| Telegram-бот | https://t.me/r_design_space_bot |
+| Telegram-бот | https://t.me/aur_design_bot |
 
 > Ссылка на Instagram очищена от трекинг-параметров (`exln`, `utm_source`). Исходная: `https://www.instagram.com/r_design_space?exln=MXgwNWc0YnEzNzFncQ%3D%3D&utm_source=qr`
 
@@ -31,15 +31,6 @@
 - Курсор и микро-взаимодействия: лёгкий magnetic/hover-эффект, не более одного на экран.
 - Контраст и доступность: WCAG AA минимум, даже на тёмном фоне.
 - Навигация: минимум пунктов (4–5), крупный интервал, прозрачный/blur header.
-
-### Tilda Zero Block
-- Работать на сетке 1200 px с брейкпоинтами 1200 / 960 / 640 / 480 / 320; для каждого — отдельная проверка.
-- Шрифты подключать через Custom Fonts; заголовки — Playfair Display, текст — Inter/Georgia.
-- Анимации — через встроенные триггеры (появление при скролле, параллакс), задержки не более 0.6 с.
-- Использовать «Container»-привязку и фиксированные отступы вместо абсолютных координат.
-- Тонкие разделители: Shape/линия 1 px с прозрачностью 15–25%.
-- Кастомные эффекты — через T123 (HTML-блок) и пользовательский CSS/JS, без тяжёлых библиотек.
-- Оптимизация: WebP, lazy-load, вес страницы до 2 МБ.
 
 ### Палитра (рабочая)
 | Роль | HEX |

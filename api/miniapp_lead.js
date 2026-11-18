@@ -16,8 +16,8 @@ const env = require("./_lib/env");
 const leads = require("./_lib/leads");
 const { createStore } = require("./_lib/store");
 
-const TASKS = ["Landing Page", "Corporate Redesign", "Interactive MVP", "Custom Web App"];
-const BUDGETS = ["$3k–$5k", "$5k–$10k", "$10k+"];
+const TASKS = ["Website", "Digital Product", "AI Agent", "Integrations"];
+const BUDGETS = ["Teardown · $390", "Sprint · $12,500", "System · $18,500+"];
 const TIMELINES = ["As soon as possible", "Within a month", "In 2–3 months", "Flexible"];
 const MAX_AGE_S = 24 * 3600;
 const recent = new Map(); // warm-instance rate limit: one brief per user per 30 s

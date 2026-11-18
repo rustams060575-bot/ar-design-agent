@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "rewrites": [
-    { "source": "/api/miniapp_lead", "destination": "https://r-design-space-agent-sigma.vercel.app/api/miniapp_lead" }
+    { "source": "/api/miniapp_lead", "destination": "https://ar-design-agent.vercel.app/api/miniapp_lead" }
   ],
   "headers": [
     {

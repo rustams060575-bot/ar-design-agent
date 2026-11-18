@@ -30,7 +30,7 @@ COMMANDS = [
     {"command": "history", "description": "Хронология памяти"},
     {"command": "remember", "description": "Запомнить заметку"},
     {"command": "forget", "description": "Забыть запись по id"},
-    {"command": "strategy", "description": "План поиска лидов US/EU на неделю"},
+    {"command": "strategy", "description": "План поиска лидов на неделю"},
     {"command": "reach", "description": "Охваты и статистика Instagram и Facebook"},
     {"command": "queue", "description": "Очередь публикаций: 09:00 и 21:00 по Майами"},
     {"command": "post", "description": "Пост в канал AR Design: голос, текст или медиа"},

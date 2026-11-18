@@ -10,7 +10,7 @@ Three modules were added to James. Nothing runs on a personal computer: Vercel (
 
 ## 1. Variables
 
-**Vercel, bot project (r-design-space-agent)** — new:
+**Vercel, bot project** — new:
 - `TELEGRAM_CHANNEL_ID` — `-100…` or `@handle` of the channel. Add the bot as channel **administrator** with the right to post.
 - `MINIAPP_URL` — `https://app.withardesign.com` (CORS for the brief endpoint).
 - `CRON_SECRET` — any long random string; Vercel Cron sends it as a bearer token to `/api/channel_cron`.

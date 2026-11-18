@@ -3,7 +3,7 @@
 
 Дизайн Quiet Luxury: графитовый фон #141414 с тонкой рамкой, внутри UI-карточка #232323 со скруглением и золотым
 бордюром #B89B67; заголовок - Playfair Display, подзаголовок - чистый sans (Segoe UI / Arial); слева сверху бренд,
-справа сверху маркер N/M; на CTA-слайде @r_design_space_bot выделен золотым.
+справа сверху маркер N/M; на CTA-слайде @aur_design_bot выделен золотым.
 
 Запуск (pillow, шрифт Playfair лежит в ../reels_01/assets/fonts):
   python build_carousel.py                                  # carousel_01_es.json -> output_01/
@@ -31,7 +31,7 @@ STONE = tuple(int(TEXT[i] * 0.62 + BG[i] * 0.38) for i in range(3))
 FRAME = 28  # отступ внешней рамки
 CARD = (72, 128, W - 72, H - 128)  # UI-карточка
 PAD = 76  # внутренний отступ карточки
-HANDLE = "@r_design_space_bot"
+HANDLE = "@aur_design_bot"
 
 _cache: dict = {}
 

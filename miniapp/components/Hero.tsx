@@ -38,7 +38,13 @@ export function Hero({ onStart }: { onStart: () => void }) {
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, reduce ? 1 : 0.2]);
 
   // "I design and build *interactive* websites." -> words, the starred one gets the serif accent
-  const words = hero.title.split(" ").map((w) => ({ text: w.replace(/\*/g, ""), em: w.startsWith("*") }));
+  let inEm = false;
+  const words = hero.title.split(" ").map((w) => {
+    if (w.startsWith("*")) inEm = true;
+    const word = { text: w.replace(/\*/g, ""), em: inEm };
+    if (w.endsWith("*")) inEm = false;
+    return word;
+  });
 
   return (
     <section ref={ref} className="safe-top relative flex min-h-[100svh] flex-col overflow-hidden px-6 pb-10">
@@ -88,6 +94,7 @@ export function Hero({ onStart }: { onStart: () => void }) {
           >
             {hero.lead}
           </motion.p>
+          <p className="label mt-5">{hero.badge}</p>
 
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 14 }}
@@ -106,7 +113,7 @@ export function Hero({ onStart }: { onStart: () => void }) {
               }}
               className="btn-ghost"
             >
-              withardesign.com
+              {t.cta.teardown} <span aria-hidden>↗</span>
             </button>
           </motion.div>
         </motion.div>
@@ -125,6 +132,14 @@ export function Hero({ onStart }: { onStart: () => void }) {
             </li>
           ))}
         </motion.ul>
+        <ul className="mt-2 grid grid-cols-3 gap-2">
+          {hero.stats.map((st) => (
+            <li key={st.label} className="plate px-3 py-3">
+              <span className="block text-[18px] font-semibold tracking-[-0.01em]">{st.value}</span>
+              <span className="label mt-1 block">{st.label}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

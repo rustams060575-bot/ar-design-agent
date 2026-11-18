@@ -2,7 +2,7 @@
 
 Концепт: **Before / After — шаблон → Quiet Luxury**. Тайминги — по [script.md](script.md).
 
-> Важно: AI-генераторы плохо рисуют читаемый текст и интерфейсы. Используйте их для **атмосферных кадров, фонов, переходов и эффектов света**, а сам сайт (экран A и B) записывайте реальной записью экрана с вашей Tilda/HTML-страницы, текст накладывайте в CapCut/DaVinci шрифтами Playfair Display и Georgia.
+> Важно: AI-генераторы плохо рисуют читаемый текст и интерфейсы. Используйте их для **атмосферных кадров, фонов, переходов и эффектов света**, а сам сайт (экран A и B) записывайте реальной записью экрана с вашей Next.js-страницы, текст накладывайте в CapCut/DaVinci шрифтами Playfair Display и Georgia.
 
 ## Общие параметры
 
@@ -149,4 +149,4 @@ Dark graphite frame with very slow gold light gradient moving upward, subtle gra
 
 ## G. Обложка и описание
 - Обложка: кадр A6 + «$300 / $3 000», Playfair Display.
-- Описание и закреплённый комментарий — по [script.md](script.md); ссылка: **https://t.me/r_design_space_bot?start=ig_reel_1**
+- Описание и закреплённый комментарий — по [script.md](script.md); ссылка: **https://t.me/aur_design_bot?start=ig_reel_1**

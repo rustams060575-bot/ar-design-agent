@@ -38,9 +38,9 @@ export function TelegramProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const app = getWebApp();
-    // Dark is the studio's identity; the pearl variant is used only when the Telegram client itself is light.
+    // One palette only: the live site is dark, so the Mini App is dark in every Telegram theme.
     const apply = () => {
-      const scheme: Scheme = app && app.colorScheme === "light" ? "light" : "dark";
+      const scheme: Scheme = "dark";
       document.documentElement.dataset.theme = scheme;
       if (app) paintChrome(app);
       setState({ app, mounted: true, scheme });

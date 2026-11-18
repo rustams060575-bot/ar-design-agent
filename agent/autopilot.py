@@ -170,7 +170,7 @@ def done_today(state: dict, kind: str, today: str) -> int:
 # ---------------------------------------------------------------- hosting (public repo raw URLs)
 
 def repo_slug() -> str:
-    return mp.os.environ.get("GITHUB_REPOSITORY") or "rustams060575-bot/r_design_space"
+    return mp.os.environ.get("GITHUB_REPOSITORY") or "rustams060575-bot/ar-design-agent"
 
 
 def raw_url(path: Path) -> str:
