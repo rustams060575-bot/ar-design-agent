@@ -4516,6 +4516,84 @@
       "status": "rejected",
       "score": 1,
       "at": "2026-11-18T06:23:39+00:00"
+    },
+    "hn:50544566": {
+      "name": "Prototype of a product management tool for AI agent companies",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-18T14:03:22+00:00"
+    },
+    "job:0d33454c160b2388": {
+      "name": "Graphic Design Intern (Remote) - SHIRVANO",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-18T14:03:25+00:00"
+    },
+    "signal:8ad43bf6d93a55ff": {
+      "name": "AI agent startup Model ML raises $250M at $1.5B valuation, led by General Atlantic and QED",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T14:03:30+00:00"
+    },
+    "hn:50544348": {
+      "name": "Qpilot",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T14:03:34+00:00"
+    },
+    "signal:cd7896da5aa6c6f5": {
+      "name": "Tennis star Djokovic helps brand super tall luxury condo tower on Brickell",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-18T14:03:38+00:00"
+    },
+    "hn:50546294": {
+      "name": "Better Helpdesk",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T14:03:42+00:00"
+    },
+    "hn:50545709": {
+      "name": "Finished my letter tile game",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-18T14:03:44+00:00"
+    },
+    "signal:c836c439afe15bb6": {
+      "name": "YC-backed Luminal raises $25M from Standard Capital to loosen Nvidia’s grip on AI inference",
+      "status": "alert_only",
+      "score": 7,
+      "at": "2026-11-18T14:03:59+00:00"
+    },
+    "signal:3a50f4a9aa638656": {
+      "name": "Unsiloed AI Raises $7.5M Seed to Grow Research, Engineering and Sales",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T14:04:04+00:00"
+    },
+    "signal:400d3f79031b74ea": {
+      "name": "Arva AI Raises $20M Series A to Expand Bank Compliance AI and Sales",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T14:04:08+00:00"
+    },
+    "signal:d9daac18dae11cd6": {
+      "name": "AI fashion technology startup Fermat raises $8 million seed as customers include Asos and New Look",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-18T14:04:12+00:00"
+    },
+    "signal:deb1fb0cdd09dd3b": {
+      "name": "Pedestal AI raises $4.7 million to agentify the supply chain",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-18T14:04:16+00:00"
+    },
+    "signal:df3a39a485d2b3b2": {
+      "name": "LeBron James sues makers of AI sports-betting app, saying they used his likeness and nickname",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-18T14:04:18+00:00"
     }
   },
   "contacted_domains": [
