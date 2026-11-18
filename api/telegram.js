@@ -35,6 +35,7 @@ const voice = require("./_lib/voice");
 const leads = require("./_lib/leads");
 const channel = require("./_lib/channel");
 const joiner = require("./_lib/join");
+const scan = require("./_lib/scan");
 const { handleClient, handleFunnelCallback, handleLeadAction, renderAdmin } = require("./_lib/client_flow");
 
 const START_TEXT =
@@ -71,7 +72,7 @@ const CHAT_SYSTEM =
   "engineering: кастомные сайты и веб-приложения, scroll-driven кинематографичные сайты, кастомные анимации, интерфейсы дашбордов, " +
   "CRM и SaaS-продуктов, дизайн-системы; клиенты - B2B, стартапы и бренды. Эстетика и тон: quiet luxury, хардкорная цифровая " +
   "инженерия, минимализм, чистый код, кинетическая типографика, сложный UX/UI; без хайпа, эмодзи и восклицаний в текстах для клиентов. " +
-  "Лиды: принимай любые адекватные задачи (дизайн, UX/UI, фронтенд, React / Next.js, AI-агенты, Telegram-боты и Mini Apps, автоматизации) из любой страны: от быстрой правки одного блока или лендинга (от $200) до крупных контрактов. Ты работаешь как активный автономный сканер: сам читаешь Telegram-чаты и каналы, где состоит аккаунт мониторинга, и внешние потоки, квалифицируешь посты и сразу выдаёшь готовые лиды с прямой ссылкой, вердиктом и черновиком ответа. Никогда не говори, что не можешь читать каналы, что используешь только RSS/API, и не проси пересылать сообщения вручную. Вступление в чаты и любое сообщение клиенту - только после подтверждения Рустама. Контент: для Reels всегда давай 1,5-секундный " +
+  "Лиды: принимай любые адекватные задачи (дизайн, UX/UI, фронтенд, React / Next.js, AI-агенты, Telegram-боты и Mini Apps, автоматизации) из любой страны: от быстрой правки одного блока или лендинга (от $200) до крупных контрактов. Ты работаешь как активный автономный сканер: сам читаешь Telegram-чаты и каналы, где состоит аккаунт мониторинга, и внешние потоки, квалифицируешь посты и сразу выдаёшь готовые лиды с прямой ссылкой, вердиктом и черновиком ответа. Никогда не говори, что не можешь читать каналы, что используешь только RSS/API, что «поток не ведёшь» или что у тебя нет доступа, и не проси пересылать сообщения вручную. ПОСТОЯННЫЙ ЦИКЛ СКАНИРОВАНИЯ: (1) круглосуточно работает мониторинг Telegram-чатов и каналов (Telethon, GitHub Actions) и сам присылает карточки; (2) job-борды, RSS и агрегаторы по веб-дизайну, фронтенду, UX/UI и AI-агентам сканируются по расписанию каждый день и по команде («найди заказы», «ищи лиды по React», /search); (3) любая просьба найти заказы, лиды или клиентов запускает сканирование, а не обсуждается: отвечай одной строкой, что сканирование запущено и карточки придут сюда. Формат лида на ревью: суть задачи, бюджет как указан, автор, прямая ссылка на сообщение или вакансию, вердикт «брать / уточнить / отказаться» и готовый черновик отклика; отправка и вступление в чат - только после кнопки Рустама. Вступление в чаты и любое сообщение клиенту - только после подтверждения Рустама. Контент: для Reels всегда давай 1,5-секундный " +
   "визуальный хук (движение в первом кадре, ≤5 слов на экране), покадровый видеоряд (скринкасты кода, терминала, плавных " +
   "интерфейсов), сильный CTA и хэштеги #uidesign #webdevelopment #webengineering #minimalistdesign #awwwards #digitalagency. " +
   "Команда /strategy (план лидов на неделю) запускает недельную задачу. РЕЖИМ ПУБЛИКАЦИЙ ЗАФИКСИРОВАН: готовые рилсы и карусели владельца выходят сами в 09:00 и 21:00 по Майами, строго по порядку очереди. Ты НЕ производишь, НЕ придумываешь и НЕ запускаешь рилсы, карусели или концепты по просьбе в чате и не меняешь расписание: на такие просьбы отвечай, что очередь работает по часам. " +
@@ -139,6 +140,16 @@ async function sendLong(chat, text) {
     rest = rest.slice(cut).trimStart();
   }
   return tg("sendMessage", { chat_id: chat, text: rest, disable_web_page_preview: true });
+}
+
+// One scan cycle: job boards, RSS / startup media, signals (GitHub Actions) and, in parallel and around the clock, the
+// Telegram chat monitor (tg_leads.yml). Ready lead cards arrive in this chat for the owner's review.
+async function startScan(query) {
+  const ok = await dispatch({ action: "search", query: String(query || "").slice(0, 100), lead_id: "" });
+  const what = query ? ` по запросу «${query}»` : "";
+  return ok
+    ? `🔎 Запускаю сканирование${what}: job-борды, RSS и агрегаторы по дизайну, фронтенду, UX/UI, AI-агентам. Готовые карточки лидов (суть, бюджет, ссылка, черновик отклика) придут сюда через 2-4 минуты. Мониторинг Telegram-чатов и каналов работает круглосуточно и присылает карточки сам.`
+    : "⚠️ Не удалось запустить сканирование (GitHub Actions). Проверьте GH_DISPATCH_TOKEN и имя репозитория в настройках Vercel.";
 }
 
 async function dispatch(inputs) {
@@ -395,6 +406,11 @@ async function onVoice(msg, updateId, trace = {}) {
   if (!text) return tg("sendMessage", { chat_id: chat, text: "🎙 Не разобрал речь. Скажите ещё раз чётче или напишите текстом." });
 
   // Spoken join command: "вступи в @name" is recognised and executed; the transcript is echoed so a misheard name is visible.
+  const scanReq = scan.scanIntent(text);
+  if (scanReq) {
+    trace.result = "scan";
+    return tg("sendMessage", { chat_id: chat, text: `🎙 «${text.slice(0, 200)}»\n\n${await startScan(scanReq.query)}`, disable_web_page_preview: true });
+  }
   const joinRefs = joiner.joinIntent(text);
   if (joinRefs || joiner.looksLikeJoin(text)) {
     trace.result = "join";
@@ -453,6 +469,8 @@ async function onMessage(msg, updateId) {
     // The owner's join command in plain words ("вступи в @name", "join t.me/+..."): handled before the assistant sees it.
     const refs = joiner.joinIntent(msg.text);
     if (refs) return tg("sendMessage", { chat_id: chat, text: await joiner.handle(refs), disable_web_page_preview: true });
+    const scanReq = scan.scanIntent(msg.text);
+    if (scanReq) return tg("sendMessage", { chat_id: chat, text: await startScan(scanReq.query), disable_web_page_preview: true });
     return onChat(msg, updateId);
   }
   if (cmd.name === "join") return tg("sendMessage", { chat_id: chat, text: await joiner.handle(cmd.arg), disable_web_page_preview: true });
@@ -462,17 +480,7 @@ async function onMessage(msg, updateId) {
   if (["memory", "history", "forget", "remember"].includes(cmd.name)) return onMemoryCommand(chat, cmd);
   if (cmd.name === "leads") return onLeadsCommand(chat, cmd);
   if (cmd.name === "admin" || cmd.name === "stats") return sendLong(chat, await renderAdmin(env));
-  if (cmd.name === "search") {
-    const query = cmd.arg.slice(0, 100);
-    const ok = await dispatch({ action: "search", query, lead_id: "" });
-    const what = query ? ` по запросу «${query}»` : "";
-    return tg("sendMessage", {
-      chat_id: chat,
-      text: ok
-        ? `🔎 Запускаю поиск${what}. Карточки придут через 2-4 минуты.`
-        : "⚠️ Не удалось запустить поиск (GitHub Actions). Проверьте GH_DISPATCH_TOKEN и имя репозитория в настройках Vercel.",
-    });
-  }
+  if (cmd.name === "search") return tg("sendMessage", { chat_id: chat, text: await startScan(cmd.arg.slice(0, 100)) });
   if (cmd.name === "content" || cmd.name === "queue") {  // James never produces reels: the owner makes them, the autopilot only publishes the finished queue
     return tg("sendMessage", {
       chat_id: chat,

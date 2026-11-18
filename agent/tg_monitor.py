@@ -333,8 +333,8 @@ class Monitor:
         author = esc(name) + (f" @{esc(username)}" if username else "")
         link = self.message_link(chat_id, msg)
         lines = [f"<b>Новый заказ</b> · {esc(info['title'])}", "", f"<b>Суть:</b> {esc(r['summary'] or '—')}"]
-        if r["budget"]:
-            lines.append(f"<b>Бюджет:</b> {esc(r['budget'])}")
+        lines.append(f"<b>Бюджет:</b> {esc(r['budget'] or 'не указан')}")
+        lines.append(f"<b>Вердикт:</b> {esc(r.get('verdict') or 'уточнить')}")
         lines += [f"<b>Автор:</b> {author}", f"<b>Совпало:</b> {esc(', '.join(hits[:5]))}", ""]
         if r.get("warnings"):
             lines.append(f"<i>проверьте черновик: {esc('; '.join(r['warnings']))}</i>")

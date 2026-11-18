@@ -25,7 +25,10 @@ module.exports = async function handler(req, res) {
   // from TELEGRAM_BOT_TOKEN (agent/cron_key.py). Either one authorises the call.
   const given = String((req.query && req.query.key) || "");
   const accepted = [env.get("CRON_URL_KEY"), cronKey(env.get("TELEGRAM_BOT_TOKEN"))].filter((k) => k && k.length >= 24);
-  if (!given || !accepted.some((k) => same(k, given))) return res.status(401).end();
+  const bearer = String(req.headers.authorization || "").replace(/^Bearer\s+/i, "");
+  const secret = env.get("CRON_SECRET");
+  const viaVercelCron = !!(secret && bearer && same(secret, bearer));
+  if (!viaVercelCron && (!given || !accepted.some((k) => same(k, given)))) return res.status(401).end();
 
   // ?action=autopilot publishes the next ar02 queue item (09:00 carousel / 21:00 reel America/New_York); ?action=strategy|content starts the weekly james jobs; anything else (or nothing) is the normal lead search.
   const action = ["strategy", "content", "publish", "autopilot"].includes(String((req.query && req.query.action) || "")) ? req.query.action : "search";
