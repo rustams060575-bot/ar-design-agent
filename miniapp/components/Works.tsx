@@ -7,6 +7,7 @@ import { useI18n } from "@/lib/i18n";
 import { haptic, openLink } from "@/lib/tg";
 import { Em } from "./Em";
 import { Reveal } from "./Reveal";
+import { WorkVisual } from "./WorkVisual";
 
 function WorkCard({ work, index }: { work: Work; index: number }) {
   const { t } = useI18n();
@@ -58,7 +59,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
             {work.video ? (
               <video ref={videoRef} src={work.video} poster={work.poster} muted loop playsInline preload="metadata" className="h-full w-full object-cover" />
             ) : (
-              <div className="ph" />
+              <div className="ph"><WorkVisual id={work.id} /></div>
             )}
           </motion.div>
           <span className="label absolute left-4 top-4">

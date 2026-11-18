@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
@@ -47,7 +47,7 @@ export function Hero({ onStart }: { onStart: () => void }) {
   });
 
   return (
-    <section ref={ref} className="safe-top relative flex min-h-[100svh] flex-col overflow-hidden px-6 pb-10">
+    <section ref={ref} className="safe-top relative flex min-h-[100svh] flex-col overflow-hidden px-6 pb-28">
       {/* ambient field */}
       <div className="pointer-events-none absolute inset-0 -z-0" aria-hidden>
         <div className="field-grid absolute inset-0" />
@@ -71,7 +71,7 @@ export function Hero({ onStart }: { onStart: () => void }) {
         </motion.div>
 
         <motion.div style={{ y, opacity }} className="flex flex-1 flex-col justify-center py-14">
-          <h1 className="text-[clamp(2.3rem,10.5vw,4rem)] leading-[1.02]" aria-label={hero.title.replace(/\*/g, "")}>
+          <h1 className="text-[clamp(1.9rem,8.6vw,4rem)] leading-[1.02]" aria-label={hero.title.replace(/\*/g, "")}>
             {words.map((w, i) => (
               <span key={`${i}-${w.text}`} className="mr-[0.2em] inline-block overflow-hidden align-top" aria-hidden>
                 <motion.span

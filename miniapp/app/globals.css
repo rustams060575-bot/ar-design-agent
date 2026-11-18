@@ -212,3 +212,52 @@
     animation: none;
   }
 }
+
+/* Work card visuals (components/WorkVisual.tsx): drawn in SVG, animated only while the card is on screen. */
+.ph svg {
+  z-index: 1;
+}
+.wv-flow {
+  animation: wv-flow 1.6s linear infinite;
+  animation-play-state: paused;
+}
+.wv-draw {
+  stroke-dashoffset: 0;
+  animation: wv-draw 5s ease-in-out -2.5s infinite;
+  animation-play-state: paused;
+}
+.wv-pulse {
+  animation: wv-pulse 3.2s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.wv-bar {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: wv-bar 3.6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+[data-live="true"] .wv-flow,
+[data-live="true"] .wv-draw,
+[data-live="true"] .wv-pulse,
+[data-live="true"] .wv-bar {
+  animation-play-state: running;
+}
+@keyframes wv-flow {
+  to { stroke-dashoffset: -14; }
+}
+@keyframes wv-draw {
+  0% { stroke-dashoffset: 1; }
+  45%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -1; }
+}
+@keyframes wv-pulse {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+@keyframes wv-bar {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.72); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wv-flow, .wv-draw, .wv-pulse, .wv-bar { animation: none; }
+}
