@@ -19,7 +19,8 @@
     "SaaS",
     "Dashboard",
     "UI/UX",
-    "Tilda Zero Block",
+    "Next.js",
+    "Telegram Mini App",
     "React",
     "Frontend",
     "Web Design",
@@ -44,7 +45,7 @@
     "MVP",
     "beta",
     "launch",
-    "Tilda",
+    "Next.js",
     "design",
     "landing",
     "product designer",
@@ -520,7 +521,7 @@
       }
     },
     "lead_policy": {
-      "us_only": true,
+      "us_only": false,
       "us_hubs": [
         "Miami, FL",
         "Silicon Valley / Bay Area, CA",
@@ -545,11 +546,11 @@
       "rejects": [
         "template or theme work",
         "marketplace gigs (fiverr, upwork, freelancer, 99designs, peopleperhour)",
-        "low or unstated micro-budgets",
-        "non-us leads unless budget is clearly flagship"
+        "free work and micro-tasks under about $200",
+        "nothing for location: the search is worldwide"
       ],
       "min_score": 8,
-      "unknown_location_penalty": 1,
+      "unknown_location_penalty": 0,
       "angles": [
         "flagship launch",
         "redesign with proof",
@@ -626,7 +627,7 @@
     "model": "",
     "min_text_len": 25,
     "max_text_len": 3000,
-    "min_budget_usd": 300,
+    "min_budget_usd": 200,
     "max_notifications_per_run": 12,
     "first_run_window_min": 60,
     "keywords": [
@@ -639,8 +640,10 @@
       "лендинг\\w*",
       "landing\\s*page\\w*|\\blanding\\b",
       "одностраничн\\w+\\s+сайт\\w*",
-      "\\bmvp\\b",
+      "\\bmvp\\b", "telegram[- ]?bot\\w*|телеграм[- ]?бот\\w*|бот\\w*\\s+для\\s+телеграм\\w*", "mini\\s*app\\w*|мини[- ]?апп\\w*", "ai[- ]?agent\\w*|ии[- ]?агент\\w*|ai[- ]?ассистент\\w*|chat[- ]?bot\\w*|чат[- ]?бот\\w*", "saas|дашборд\\w*|dashboard\\w*", "автоматизаци\\w+|automation\\w*", "фронтенд\\w*|front[- ]?end\\w*|react\\b|figma|фигм\\w*",
       "next\\.?js",
+      "ux\\s*/?\\s*ui|(?:ui|ux|web|product|graphic|интерфейс\\w*)\\s*[- ]?designer\\w*",
+      "dise[ñn]ador\\w*|desarrollador\\w*|p[áa]gina\\s+web|sitio\\s+web|tienda\\s+online",
       "интерактивн\\w+\\s+(?:сайт\\w*|веб\\w*|лендинг\\w*)",
       "interactive\\s+(?:website|site|web)",
       "(?:разработ\\w+|сделать|создать|нужен|нужна|заказать)\\s+(?:современн\\w+\\s+)?(?:сайт\\w*|веб[- ]?сайт\\w*)",
@@ -654,7 +657,8 @@
       "посоветуйте|подскажите|порекомендуйте",
       "\\bзаказ\\w*|\\bзадач\\w+|\\bпроект\\w*|\\bбюджет\\w*|оплат\\w+",
       "looking\\s+for|\\bneed\\w*\\b|\\bhir(?:e|ing)\\b|who\\s+can|can\\s+anyone|recommend",
-      "\\bbudget\\b|\\bpaid\\b|\\bproject\\b"
+      "\\bbudget\\b|\\bpaid\\b|\\bproject\\b",
+      "necesit\\w+|busc\\w+|buscamos|presupuesto|contrat\\w+|se\\s+necesita|requiero"
     ],
     "spam": [
       "казино|ставки\\s+на\\s+спорт|букмекер|1xbet|крипто\\w*\\s+(?:сигнал|арбитраж)|арбитраж\\s+трафик",

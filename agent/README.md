@@ -90,10 +90,10 @@ Product Hunt, Hacker News (Show HN и Ask HN), **Google News RSS** на 15 ре�
 не приватный репозиторий.
 
 Настройка:
-1. Создайте **приватный** репозиторий, например `r_design_space_memory` (можно пустой).
+1. Создайте **приватный** репозиторий, например `agent-memory` (можно пустой).
 2. Fine-grained токен GitHub: доступ к двум репозиториям — код (**Actions: Read and write**) и память
    (**Contents: Read and write**). Один токен может быть и в `GH_DISPATCH_TOKEN`, и в `GH_MEMORY_TOKEN`.
-3. Vercel → Environment Variables: `ANTHROPIC_API_KEY`, `MEMORY_REPO=<владелец>/r_design_space_memory`,
+3. Vercel → Environment Variables: `ANTHROPIC_API_KEY`, `MEMORY_REPO=<владелец>/agent-memory`,
    `GH_MEMORY_TOKEN` (опционально `CHAT_MODEL`, `MEMORY_PATH`). Redeploy.
 4. Повторно выполните `python agent/set_webhook.py https://<проект>.vercel.app/api/telegram` — обновится меню команд.
 

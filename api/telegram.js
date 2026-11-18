@@ -21,7 +21,7 @@
 //   ANTHROPIC_API_KEY        enables the conversation (optional CHAT_MODEL, default claude-sonnet-5-5)
 //   OPENAI_API_KEY           enables voice messages (optional OPENAI_STT_MODEL=whisper-1, OPENAI_TTS_MODEL=tts-1,
 //                            OPENAI_TTS_VOICE=alloy; "onyx" is a deeper voice)
-//   MEMORY_REPO              PRIVATE repo for memory.json, e.g. rustams060575-bot/r_design_space_memory
+//   MEMORY_REPO              PRIVATE repo for memory.json, e.g. rustams060575-bot/agent-memory
 //   GH_MEMORY_TOKEN          fine-grained token, "Contents: Read and write" on MEMORY_REPO (falls back to GH_DISPATCH_TOKEN)
 //   optional: GITHUB_REPO, GITHUB_REF, GITHUB_WORKFLOW, MEMORY_PATH, MEMORY_BRANCH
 
@@ -42,7 +42,7 @@ const START_TEXT =
   "• Лидогенерация: ищу стартапы и SaaS по миру, пишу письма на языке фаундера. Письмо уходит только после вашей кнопки.\n" +
   "• Диалог с памятью: пишите мне как ассистенту - я помню проекты, договорённости и интересы, даже спустя недели.\n" +
   "• Голос: отправьте голосовое сообщение - отвечу голосом.\n\n" +
-  "Команды:\n/admin - статистика лидов и источников\n/leads - последние лиды\n/search - поиск лидов сейчас (можно с запросом)\n/strategy - план поиска лидов US/EU на неделю\n/queue - очередь публикаций (09:00 и 21:00 по Майами)\n/post - пост в канал AR Design (черновик из голоса, текста или медиа)\n/idea - черновик заметки для канала сейчас\n/join <ссылка или @имя> - вступить в чат и добавить в мониторинг (можно голосом: «вступи в …»)\n/reach - охваты и статистика Instagram и Facebook\n/memory - что я помню\n/history - хронология\n" +
+  "Команды:\n/admin - статистика лидов и источников\n/leads - последние лиды\n/search - поиск лидов сейчас (можно с запросом)\n/strategy - план поиска лидов на неделю\n/queue - очередь публикаций (09:00 и 21:00 по Майами)\n/post - пост в канал AR Design (черновик из голоса, текста или медиа)\n/idea - черновик заметки для канала сейчас\n/join <ссылка или @имя> - вступить в чат и добавить в мониторинг (можно голосом: «вступи в …»)\n/reach - охваты и статистика Instagram и Facebook\n/memory - что я помню\n/history - хронология\n" +
   "/remember <текст> - запомнить\n/forget <id> - забыть запись\n/help - справка";
 
 const HELP_TEXT =
@@ -60,21 +60,18 @@ const HELP_TEXT =
   "/idea присылает заметку по свежему материалу. По понедельникам, средам и пятницам заметка приходит сама. Без вашей кнопки в канал ничего не уходит.\n\n" +
   "🤝 Вступление в чаты. Напишите или скажите «вступи в @имя» (или пришлите ссылку t.me/…), либо /join со ссылкой: я вступлю с аккаунта мониторинга, " +
   "добавлю чат в список и пришлю результат. До 5 чатов за раз и до 10 вступлений в сутки.\n\n" +
-  "✉️ Письма клиентам - на английском (рынок США); письмо уходит только после вашего подтверждения.";
+  "✉️ Письма клиентам - на языке клиента; письмо уходит только после вашего подтверждения.";
 
 const CHAT_SYSTEM =
   "Ты - James: Chief of Staff студии «AR Design» (бренд ВСЕГДА пишется ровно «AR Design»: без «Studio», без «Space», без строчных) и правая рука " +
-  "основателя Рустама. Ты совмещаешь две роли: (A) автономный поисковик контрактов и лидов, ПЕРВЫЙ рынок - США (Miami, Silicon Valley / " +
-  "Bay Area, New York, Austin, LA), второй - Великобритания и Западная Европа; (B) главный контент-стратег и креативный продюсер " +
+  "основателя Рустама. Ты совмещаешь две роли: (A) активный автономный сканер лидов: ты сам читаешь публичные Telegram-чаты и каналы (мониторинг на Telethon), job-борды, новостные и внешние потоки и ничего не просишь пересылать вручную; география - весь мир (США, Европа, Азия, Латинская Америка), без сужений; (B) главный контент-стратег и креативный продюсер " +
   "Instagram @ar_design_agency, Facebook и LinkedIn (для LinkedIn готовишь черновики постов и заметки для знакомств, публикует Рустам " +
-  "вручную). Все решения по умолчанию под американского покупателя: US-английский, прайм-тайм 12:00 и 19:30 ET, города США в подписях. " +
-  "Цель - масштабировать студию на US-рынок, привлечь " +
-  "высокобюджетных клиентов и вывести аккаунт на 1M+ охвата (обещать конкретные цифры охвата нельзя). Студия делает flagship web " +
+  "вручную). Клиенту отвечай на языке его сообщения (английский, русский, испанский и др.). " +
+  "Цель - масштабировать студию по всему миру, привлекать клиентов с любыми адекватными чеками и вывести аккаунт на 1M+ охвата (обещать конкретные цифры охвата нельзя). Студия делает полный цикл: дизайн, UX/UI, фронтенд (React / Next.js / TypeScript / Tailwind), кастомные AI-агенты, Telegram-боты и Mini Apps, автоматизации под ключ; флагманский уровень - flagship web " +
   "engineering: кастомные сайты и веб-приложения, scroll-driven кинематографичные сайты, кастомные анимации, интерфейсы дашбордов, " +
   "CRM и SaaS-продуктов, дизайн-системы; клиенты - B2B, стартапы и бренды. Эстетика и тон: quiet luxury, хардкорная цифровая " +
   "инженерия, минимализм, чистый код, кинетическая типографика, сложный UX/UI; без хайпа, эмодзи и восклицаний в текстах для клиентов. " +
-  "Лиды: приоритет US/UK/DE/NL/FR/Nordics, запросы на flagship/brand-сайт, scroll-анимации, WebGL, дизайн-систему или high-end " +
-  "редизайн; источники только публичные (RSS/API), без скрапинга закрытых площадок. Контент: для Reels всегда давай 1,5-секундный " +
+  "Лиды: принимай любые адекватные задачи (дизайн, UX/UI, фронтенд, React / Next.js, AI-агенты, Telegram-боты и Mini Apps, автоматизации) из любой страны: от быстрой правки одного блока или лендинга (от $200) до крупных контрактов. Ты работаешь как активный автономный сканер: сам читаешь Telegram-чаты и каналы, где состоит аккаунт мониторинга, и внешние потоки, квалифицируешь посты и сразу выдаёшь готовые лиды с прямой ссылкой, вердиктом и черновиком ответа. Никогда не говори, что не можешь читать каналы, что используешь только RSS/API, и не проси пересылать сообщения вручную. Вступление в чаты и любое сообщение клиенту - только после подтверждения Рустама. Контент: для Reels всегда давай 1,5-секундный " +
   "визуальный хук (движение в первом кадре, ≤5 слов на экране), покадровый видеоряд (скринкасты кода, терминала, плавных " +
   "интерфейсов), сильный CTA и хэштеги #uidesign #webdevelopment #webengineering #minimalistdesign #awwwards #digitalagency. " +
   "Команда /strategy (план лидов на неделю) запускает недельную задачу. РЕЖИМ ПУБЛИКАЦИЙ ЗАФИКСИРОВАН: готовые рилсы и карусели владельца выходят сами в 09:00 и 21:00 по Майами, строго по порядку очереди. Ты НЕ производишь, НЕ придумываешь и НЕ запускаешь рилсы, карусели или концепты по просьбе в чате и не меняешь расписание: на такие просьбы отвечай, что очередь работает по часам. " +
@@ -82,8 +79,7 @@ const CHAT_SYSTEM =
   "Твоя работа: (1) Проекты - держи в голове статус, риски, дедлайны, владельца и ближайший шаг; сам напоминай о сроках из " +
   "памяти. (2) Лиды - квалифицируй по явной потребности (дашборд, CRM, веб-приложение, редизайн, сайт, лендинг), срочности, " +
   "бюджету, лицу, принимающему решение, и срокам; давай вердикт «брать / уточнить / отказаться» с причиной и первым шагом " +
-  "(2-3 вопроса для созвона или готовая формулировка ответа). Инвестиции, раунды и общие новости - не лиды. Скоринг по бюджету: до 1 000 € - холодный лид; от 1 000 € - стандарт; от 3 000 € и выше - премиум (приоритет, " +
-  "горячий лид). Если в контексте указан источник обращения (ролик Instagram/TikTok), учитывай тему ролика и упомяни источник в резюме лида. (3) Решения - " +
+  "(2-3 вопроса для созвона или готовая формулировка ответа). Инвестиции, раунды и общие новости - не лиды. Порог бюджета - от $200: задачи дешевле и бесплатные отсеивай; любые адекватные чеки от $200 - рабочие лиды, крупные контракты - приоритет (горячий лид). Скорь по ясности задачи и срочности, а не по стране. Если в контексте указан источник обращения (ролик Instagram/TikTok), учитывай тему ролика и упомяни источник в резюме лида. (3) Решения - " +
   "сравнивай варианты, называй компромиссы и рекомендуй один. Не выдумывай факты о клиентах, цифры и обещания; если данных " +
   "не хватает, задай один самый важный вопрос.\n\n" +
   "Стиль: уверенно, кратко, по делу; сначала вывод, потом детали. удобно читать с телефона, без лишней воды и Markdown-разметки.\n\n" +
@@ -146,7 +142,7 @@ async function sendLong(chat, text) {
 }
 
 async function dispatch(inputs) {
-  const repo = process.env.GITHUB_REPO || "rustams060575-bot/r_design_space";
+  const repo = process.env.GITHUB_REPO || "rustams060575-bot/ar-design-agent";
   const workflow = process.env.GITHUB_WORKFLOW || "outreach.yml";
   const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/${workflow}/dispatches`, {
     method: "POST",
@@ -239,7 +235,11 @@ async function onChat(msg, updateId, opts = {}) {
   } else {
     memoryNote = `\n\n🧠 Память выключена: ${store.reason}.`;
   }
-  if (updateId && updateId <= memory.last_update_id) return; // Telegram redelivered an update we already handled
+  if (updateId && updateId <= memory.last_update_id) {
+    // Telegram redelivered an update we already handled. Never stay silent: say so, the owner can resend.
+    console.error("skipped update", updateId, "<= last_update_id", memory.last_update_id);
+    return tg("sendMessage", { chat_id: chat, text: `⚠️ Сообщение пропущено: номер обновления ${updateId} не больше сохранённого в памяти (${memory.last_update_id}). Нужно сбросить last_update_id в памяти.` });
+  }
   const today = new Date(now).toISOString().slice(0, 10);
   if (memory.usage && memory.usage.day === today && memory.usage.count >= CHAT_DAILY_LIMIT) {
     return tg("sendMessage", { chat_id: chat, text: `⏸ Дневной лимит диалога с ИИ исчерпан (${CHAT_DAILY_LIMIT} запросов). Команды /memory, /history и кнопки писем работают, диалог продолжится завтра.` });
@@ -422,7 +422,7 @@ async function onLeadsCommand(chat, cmd) {
   }
 }
 
-// /start <payload> from a deep link (t.me/r_design_space_bot?start=ig_reel_12): remember which reel the client came from.
+// /start <payload> from a deep link (t.me/aur_design_bot?start=ig_reel_12): remember which reel the client came from.
 async function onStart(chat, payload) {
   const source = mem.parseSource(payload);
   if (!source) return tg("sendMessage", { chat_id: chat, text: START_TEXT });
@@ -488,7 +488,7 @@ async function onMessage(msg, updateId) {
   }
   if (cmd.name === "strategy") {
     const ok = await dispatch({ action: cmd.name, query: "", lead_id: "" });
-    const what = "стратегию поиска лидов US/EU";
+    const what = "стратегию поиска лидов";
     return tg("sendMessage", {
       chat_id: chat,
       text: ok
@@ -550,6 +550,7 @@ module.exports = async (req, res) => {
   }
 
   const trace = {}; // outcome and step timings of a voice request, exposed in response headers for debugging
+  let errChat = null; // owner chat to tell about an internal failure instead of staying silent
   try {
     const update = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
     const message = update.message;
@@ -578,6 +579,7 @@ module.exports = async (req, res) => {
         return res.status(200).json({ ok: true });
       }
       if (ownerChat && isAdmin && String(chat) === String(sender.id)) {
+        errChat = chat;
         // Channel module first: media, /post, /idea and voice/text notes that belong to a post draft. Everything else
         // (false) continues to the assistant exactly as before.
         const forChannel = message ? await channel.handleOwnerMessage(message, { downloadFile: downloadTelegramFile }) : false;
@@ -593,6 +595,9 @@ module.exports = async (req, res) => {
     }
   } catch (err) {
     console.error("webhook error:", err && err.message);
+    if (errChat) {
+      try { await tg("sendMessage", { chat_id: errChat, text: `⚠️ Внутренняя ошибка: ${String((err && err.message) || err).slice(0, 300)}` }); } catch (_) { /* nothing more to do */ }
+    }
   }
   if (trace.result && typeof res.setHeader === "function") {
     // Only an outcome code and millisecond timings: no text, ids or keys.

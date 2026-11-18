@@ -99,9 +99,9 @@ class Prefilter:
 # ---------------------------------------------------------------- stage 2: the model
 
 SYSTEM = """You help Rustam, a solo designer and AI engineer (brand: AR Design, portfolio: {portfolio}), triage messages from Telegram chats where people look for web work.
-His work: interactive websites, scroll choreography, typography, landing pages, redesigns, MVPs, Next.js, UI/UX; he builds with Claude Code and Cursor.
+His work: websites and landing pages, UI/UX and product design, front-end (Next.js, React, TypeScript, Tailwind, GSAP, Figma), custom AI agents, Telegram bots and Mini Apps, automations; he builds with Claude Code and Cursor. Clients from any country; any adequate task from about $200 (a quick fix of one block, a landing page) up to large contracts.
 
-Decide whether the message is a real, paid request to hire a web designer / developer for a project. Reject: job ads for an office or a staff position, spam, people offering their own services, tiny or unpaid tasks, questions with no project behind them.
+Decide whether the message is a real, paid request to hire a web designer / developer for a project. Reject: job ads for an office or a staff position, spam, people offering their own services, unpaid tasks or tasks clearly under about $200, questions with no project behind them.
 
 If it is relevant, write:
 - "summary": the task in 1-2 plain sentences, in RUSSIAN, for Rustam. Only what the message says; never invent details.

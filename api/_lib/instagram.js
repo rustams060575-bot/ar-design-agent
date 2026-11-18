@@ -16,7 +16,7 @@
 
 const crypto = require("crypto");
 
-const FUNNEL_LINK = "https://t.me/r_design_outreach_bot?start=motion";
+const FUNNEL_LINK = "https://t.me/aur_design_bot?start=motion";
 const DM_TEXT = (link) =>
   "¡Hola! Soy James, del equipo de AR Design. Aquí tienes la guía Motion, paso a paso: wireframe, estética, código y animación.\n\n" +
   `${link}\n\n` +

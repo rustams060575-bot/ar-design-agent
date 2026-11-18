@@ -5,7 +5,7 @@ Actions (CLI flag --action, or the ACTION environment variable set by GitHub Act
   search  Collect fresh startups / SaaS launches worldwide (Product Hunt, Hacker News, regional news in many
           languages via Google News RSS, startup media feeds), qualify them strictly, write a pitch in the
           founder's language and send Telegram cards. Emails wait for a confirmation tap by default.
-  strategy  james: weekly US/EU lead-hunting plan (agent/growth.py), saved to content-hub/weekly/.
+  strategy  james: weekly worldwide lead-hunting plan (agent/growth.py), saved to content-hub/weekly/.
   content   james: trend scan + 3 instagram reel concepts for @ar_design_agency (agent/growth.py).
   send    Send the email for one confirmed lead (--lead-id / LEAD_ID) from agent/pending.json.
 
@@ -45,7 +45,7 @@ CONFIG_PATH = ROOT / "config.json"
 TRACKER_PATH = ROOT / "tracker.json"
 PENDING_PATH = ROOT / "pending.json"
 PENDING_TTL_DAYS = 14
-UA = "Mozilla/5.0 (compatible; RSpaceOutreachBot/1.0; +https://www.instagram.com/ar_design_agency)"
+UA = "Mozilla/5.0 (compatible; ARDesignJames/1.0; +https://www.instagram.com/ar_design_agency)"
 AGGREGATOR_HOSTS = ("producthunt.com", "ycombinator.com", "news.ycombinator.com", "indiehackers.com",
                     "twitter.com", "x.com", "linkedin.com", "facebook.com", "github.com", "apple.com",
                     "google.com", "youtube.com", "instagram.com")

@@ -12,8 +12,8 @@ const MAX_HISTORY = 24; // messages kept per client
 const DAILY_LIMIT = 60; // messages per client per day: protects the Anthropic budget from abuse
 const MAX_LEADS = 500;
 
-const STANDARD_EUR = 1000; // minimum check
-const PREMIUM_EUR = 3000; // premium
+const STANDARD_EUR = 200; // working lead: any adequate task from about 200
+const PREMIUM_EUR = 2000; // priority
 
 const LANGS = ["es", "en", "ru"];
 const AUDIT_STATUSES = ["new", "in_work", "audit_sent", "done"];
@@ -40,7 +40,7 @@ function tierFromBudget(eur) {
   if (n >= STANDARD_EUR) return "standard";
   return "cold";
 }
-const TIER_RU = { unknown: "бюджет не назван", cold: "холодный (до 1 000 €)", standard: "стандарт (от 1 000 €)", premium: "ПРЕМИУМ (от 3 000 €)" };
+const TIER_RU = { unknown: "бюджет не назван", cold: "мелкая задача (до 200 €)", standard: "рабочий (от 200 €)", premium: "ПРИОРИТЕТ (от 2 000 €)" };
 const TIER_RANK = { unknown: 0, cold: 1, standard: 2, premium: 3 };
 
 function getLead(db, from, chatId, now) {

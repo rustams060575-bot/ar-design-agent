@@ -20,7 +20,7 @@
       "Usar composiciones distintas entre escenas."
     ]
   },
-  "cta_destination": "https://t.me/r_design_space_bot?start=ig_reel_3",
+  "cta_destination": "https://t.me/aur_design_bot?start=ig_reel_3",
   "scripts": [
     {
       "id": "03_01",
@@ -71,7 +71,7 @@
           "end_seconds": 23,
           "layout": "LAYOUT_HERO",
           "text": "Antes de bajar tu precio, revisa tu web.",
-          "secondary_text": "Guarda este vídeo\nTelegram · @r_design_space_bot",
+          "secondary_text": "Guarda este vídeo\nTelegram · @aur_design_bot",
           "voiceover": "Antes de bajar tu precio, revisa tu web. Guarda este vídeo para tu próxima revisión.",
           "visual_direction": "Mensaje centrado con línea dorada. Identificador de Telegram fijo debajo."
         }

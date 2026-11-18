@@ -1,6 +1,6 @@
 """Prints the URL for an external scheduler (cron-job.org etc.) that starts the lead search exactly on time.
 
-    python agent/cron_key.py https://r-design-space-agent-sigma.vercel.app
+    python agent/cron_key.py https://ar-design-agent.vercel.app
 
 Reads TELEGRAM_BOT_TOKEN from the environment (or agent/.env). The key is derived from the token (same formula as
 api/cron.js), so it changes when the token is rotated. Treat the URL as a secret.

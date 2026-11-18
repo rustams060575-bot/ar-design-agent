@@ -1,5 +1,5 @@
 // FUNNEL_MOTION_SPAIN: Spanish lead magnet for the Reels / TikTok funnel. Trigger: "motion", "/motion" or the deep link
-// t.me/r_design_outreach_bot?start=motion (optionally motion_<source>, e.g. motion_tt_reel_12).
+// t.me/aur_design_bot?start=motion (optionally motion_<source>, e.g. motion_tt_reel_12).
 //
 // James (the studio assistant) hands out four short pieces of the method, one per message, each behind an inline button:
 //   wireframe -> estetica -> codigo -> motion, then asks a qualifying question. Choosing "renew" or "new" notifies the

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* AR Design: obsidian and deep sapphire, the same language as the studio site.
-   Colours are R G B channels so Tailwind alpha modifiers work. Dark is the identity; a pearl variant follows a light Telegram. */
+   Colours are R G B channels so Tailwind alpha modifiers work. Dark only, exactly like the live site (withardesign.com). */
 :root {
   --bg: 4 7 17;
   --bg-2: 5 8 20;
@@ -21,24 +21,6 @@
   --danger: 251 113 133;
   color-scheme: dark;
 }
-:root[data-theme="light"] {
-  --bg: 243 245 251;
-  --bg-2: 236 240 249;
-  --elevated: 255 255 255;
-  --ink: 10 16 34;
-  --head: 10 16 34;
-  --sub: 62 75 104;
-  --dim: 108 122 152;
-  --line: 20 40 90;
-  --accent: 37 99 235;
-  --accent-ink: 255 255 255;
-  --blue: 37 99 235;
-  --em: 2 132 199;
-  --ok: 5 150 105;
-  --danger: 220 38 38;
-  color-scheme: light;
-}
-
 @layer base {
   html {
     background: rgb(var(--bg));

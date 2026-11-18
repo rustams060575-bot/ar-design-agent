@@ -1,6 +1,6 @@
 # Воронка: соцсети → Telegram-бот
 
-Бот: **@r_design_space_bot** (https://t.me/r_design_space_bot)
+Бот: **@aur_design_bot** (https://t.me/aur_design_bot)
 Агент: **Chief of Staff** — отвечает, квалифицирует лиды и передаёт горячих владельцу.
 
 ## Схема
@@ -27,7 +27,7 @@ Reels / TikTok  →  CTA в ролике  →  Bio / ссылка / коммен
 
 ## Deep-links с метками
 
-Формат: `https://t.me/r_design_space_bot?start=<метка>`
+Формат: `https://t.me/aur_design_bot?start=<метка>`
 
 | Метка | Значение |
 |---|---|

@@ -21,7 +21,7 @@ on:
   workflow_dispatch:         # started by /api/cron, Telegram (api/telegram.js) or by hand
     inputs:
       action:
-        description: "search = scan and send cards, send = send one confirmed email, strategy = weekly US/EU lead plan, content = weekly reel concepts"
+        description: "search = scan and send cards, send = send one confirmed email, strategy = weekly worldwide lead plan, content = weekly reel concepts"
         type: choice
         options: [search, send, strategy, content, publish, autopilot, reeltest, linkedin, weekly, audit, stats, engage]
         default: search

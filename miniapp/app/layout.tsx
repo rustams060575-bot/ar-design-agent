@@ -10,7 +10,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", displ
 
 export const metadata: Metadata = {
   title: "AR Design",
-  description: "Interactive websites, scroll choreography and AI engineering by Rustam.",
+  description: "Websites, digital products, AI agents and integrations in 14-day sprints.",
   robots: { index: false },
 };
 

@@ -29,7 +29,7 @@ module.exports = async function handler(req, res) {
 
   // ?action=autopilot publishes the next ar02 queue item (09:00 carousel / 21:00 reel America/New_York); ?action=strategy|content starts the weekly james jobs; anything else (or nothing) is the normal lead search.
   const action = ["strategy", "content", "publish", "autopilot"].includes(String((req.query && req.query.action) || "")) ? req.query.action : "search";
-  const repo = process.env.GITHUB_REPO || "rustams060575-bot/r_design_space";
+  const repo = process.env.GITHUB_REPO || "rustams060575-bot/ar-design-agent";
   const workflow = process.env.GITHUB_WORKFLOW || "outreach.yml";
   const headers = {
     Authorization: `Bearer ${env.get("GH_DISPATCH_TOKEN")}`,
