@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+from collections import Counter
 import hashlib
 import html
 import json
@@ -164,6 +165,7 @@ class Monitor:
         self.client, self.cfg, self.state, self.args = client, cfg, state, args
         self.filter = lead_filter.Prefilter(cfg)
         self.sent = 0
+        self.stats: Counter = Counter()
         self.limit = int(cfg["tg_leads"].get("max_notifications_per_run", 12))
         self.chats: dict[int, dict] = {}
 
@@ -297,14 +299,19 @@ class Monitor:
         text = (getattr(msg, "message", "") or "").strip()
         if getattr(msg, "out", False) or not text:
             return
+        self.stats["прочитано сообщений"] += 1
         ok, why, hits = self.filter.check(text)
         if not ok:
+            self.stats["отсев: " + why.split(" (")[0]] += 1
             if self.args.verbose:
                 log(f"reject ({why}): {text[:70]!r}")
             return
         if self.state.seen_text(text):
+            self.stats["повтор текста"] += 1
             return
+        self.stats["прошло префильтр"] += 1
         if self.sent >= self.limit:
+            self.stats["лимит карточек за запуск"] += 1
             log("notification limit for this run reached")
             return
         info = self.chats[chat_id]
@@ -313,8 +320,10 @@ class Monitor:
         if result is None:
             # The lead is never dropped because the model failed: the owner still gets a card with a template reply.
             log("no usable model answer: sending a rule-based card instead")
+            self.stats["модель не ответила, карточка по шаблону"] += 1
             result = lead_filter.fallback(text, self.cfg)
         if not result["relevant"]:
+            self.stats["модель отклонила"] += 1
             if self.args.verbose:
                 log(f"model rejected: {result['reason']}")
             return
@@ -324,7 +333,10 @@ class Monitor:
         card, buttons = self.card(chat_id, msg, sender, hits, result)
         if bot_send(card, buttons, dry=self.args.dry_run):
             self.sent += 1
+            self.stats["карточек отправлено"] += 1
             log(f"lead sent from {info['title']}")
+        else:
+            self.stats["доставка не удалась"] += 1
 
     def card(self, chat_id: int, msg, sender, hits: list[str], r: dict) -> tuple[str, list[dict]]:
         info = self.chats[chat_id]
@@ -443,10 +455,12 @@ async def run(args) -> int:
                 bot_send("🔎 Сканирование Telegram: подходящих публичных чатов пока не нашёл. Пришлите ссылки командой /join или напишите «вступи в @имя», и я начну читать их сразу.", dry=args.dry_run)
             return 0
         await mon.catch_up()
+        log("stats after catch-up: " + json.dumps(dict(mon.stats), ensure_ascii=False))
         if manual:
             bot_send(f"🔎 Сканирование Telegram завершено: под наблюдением чатов и каналов — {len(mon.chats)}, новых карточек в эту проверку — {mon.sent}. Дальше мониторинг идёт сам, карточки приходят по мере появления заказов.", dry=args.dry_run)
         if not args.once:
             await mon.live(time.time() + int(os.getenv("TG_RUN_SECONDS", "540")))
+            log("stats at the end of the run: " + json.dumps(dict(mon.stats), ensure_ascii=False))
         state.save()
         return 0
     except (errors.AuthKeyDuplicatedError, errors.AuthKeyUnregisteredError, errors.SessionRevokedError, errors.SessionExpiredError,

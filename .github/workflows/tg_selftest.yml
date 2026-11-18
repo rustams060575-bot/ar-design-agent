@@ -1,0 +1,20 @@
+name: Telegram delivery self-test
+
+# Manual: checks that the bot token and TELEGRAM_CHAT_ID can deliver a message to the owner. Separate from the monitor, so it never
+# touches the Telegram user session.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - run: python agent/selftest.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
