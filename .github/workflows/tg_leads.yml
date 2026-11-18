@@ -23,13 +23,16 @@ concurrency:
 
 permissions:
   contents: read
-  actions: read              # lets the monitor see "join chat" requests (tg_join.yml runs)
+  actions: write             # read: the monitor sees "join chat" requests (tg_join.yml runs); write: a finished run queues the next one
 
 jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
+      - name: Start clock
+        run: echo "T0=$(date +%s)" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
@@ -67,3 +70,17 @@ jobs:
         with:
           path: agent/tg_state.json
           key: tg-state-${{ github.run_id }}
+
+      # GitHub throttles a "*/10" schedule to a few runs a day, which left gaps. A run that lasted a normal stretch queues the next one
+      # itself (the concurrency group makes it wait for this one to finish), so reading is continuous. A run that failed fast does not
+      # chain: no tight loop, the schedule above and the alert to the owner take over.
+      - name: Queue the next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          elapsed=$(( $(date +%s) - ${T0:-0} ))
+          echo "run lasted ${elapsed}s"
+          if [ "$elapsed" -ge 300 ]; then
+            gh workflow run tg_leads.yml --repo "$GITHUB_REPOSITORY" -f discover=false || echo "could not queue the next run"
+          fi
