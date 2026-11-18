@@ -1,4 +1,9 @@
-"""Joins Telegram chats on the owner's command (voice or text in the bot) and adds them to the monitor.
+"""READ-ONLY since the account must never join chats (bans): the owner's "join" command now only ADDS A PUBLIC chat to the watch list.
+
+Nothing is joined, no invite is imported, nothing is written. Public chats are resolved by username and polled; closed chats
+(invite links) are refused unless the account is already a member.
+
+Original flow (command name kept so the bot, the workflow and the history stay compatible):
 
 Flow:
   owner: "вступи в @name" / "join https://t.me/+AbC..." / /join <links>
@@ -17,7 +22,7 @@ import random
 import re
 import time
 
-DAILY_CAP = 10
+DAILY_CAP = 30   # resolving a public username is cheap; the cap only stops floods
 MAX_PER_REQUEST = 5
 
 # @username, t.me/username, t.me/+hash, t.me/joinchat/hash
@@ -55,29 +60,25 @@ def cap_left(state) -> int:
 async def join_one(client, ref: str) -> dict:
     """-> {ok, text, rec?}. `rec` is the watch-list record (same shape as tg_discover) when the chat can be monitored."""
     from telethon import errors, utils
-    from telethon.tl.functions.channels import JoinChannelRequest
-    from telethon.tl.functions.messages import CheckChatInviteRequest, ImportChatInviteRequest
+    from telethon.tl.functions.messages import CheckChatInviteRequest
     from telethon.tl.types import Channel, ChatInviteAlready
 
     try:
         if ref.startswith("https://t.me/+"):
             h = ref.rsplit("+", 1)[1]
             info = await client(CheckChatInviteRequest(h))
-            if isinstance(info, ChatInviteAlready):
-                ent, joined = info.chat, "уже состоял"
-            else:
-                upd = await client(ImportChatInviteRequest(h))
-                ent, joined = upd.chats[0], "вступил"
+            if not isinstance(info, ChatInviteAlready):
+                return {"ok": False, "text": "закрытый чат: без вступления его прочитать нельзя, а режим у меня только чтение. Пришлите публичный @канал или чат"}
+            ent, joined = info.chat, "аккаунт уже состоит в нём"
         else:
             ent = await client.get_entity(ref.lstrip("@"))
             if not isinstance(ent, Channel):
                 return {"ok": False, "text": "это не чат и не канал (пользователь или бот)"}
-            await client(JoinChannelRequest(ent))
-            joined = "вступил"
+            joined = "публичный чат, читаю без вступления"
     except errors.UserAlreadyParticipantError:
-        return {"ok": True, "text": "уже состоял в чате"}
+        return {"ok": True, "text": "уже в списке"}
     except errors.InviteRequestSentError:
-        return {"ok": False, "text": "чат принимает по заявке: заявка отправлена админам, после одобрения повторите команду"}
+        return {"ok": False, "text": "чат принимает по заявке: без вступления его не прочитать, повторите команду"}
     except (errors.InviteHashExpiredError, errors.InviteHashInvalidError):
         return {"ok": False, "text": "ссылка-приглашение недействительна или истекла"}
     except (errors.UsernameNotOccupiedError, errors.UsernameInvalidError, ValueError):
@@ -104,14 +105,14 @@ async def join_one(client, ref: str) -> dict:
         "last_id": latest[0].id if latest else 0,  # old history never raises alerts
         "source": "owner",
     }
-    return {"ok": True, "text": f"{joined} и добавил в мониторинг", "rec": rec, "key": str(utils.get_peer_id(ent))}
+    return {"ok": True, "text": f"{joined}; добавил в мониторинг (только чтение)", "rec": rec, "key": str(utils.get_peer_id(ent))}
 
 
 async def join_refs(client, refs: list[str], state, log) -> list[tuple[str, dict]]:
     results: list[tuple[str, dict]] = []
     for i, ref in enumerate(refs[:MAX_PER_REQUEST]):
         if cap_left(state) <= 0:
-            results.append((ref, {"ok": False, "text": f"дневной лимит вступлений ({DAILY_CAP}) исчерпан, повторите завтра"}))
+            results.append((ref, {"ok": False, "text": f"дневной лимит добавлений ({DAILY_CAP}) исчерпан, повторите завтра"}))
             continue
         res = await join_one(client, ref)
         if res["ok"] and "rec" in res:
@@ -120,5 +121,5 @@ async def join_refs(client, refs: list[str], state, log) -> list[tuple[str, dict
         results.append((ref, res))
         log(f"join {ref}: {res['text']}")
         if i < len(refs) - 1:
-            await asyncio.sleep(random.uniform(20, 40))  # joining in a burst is what limits accounts
+            await asyncio.sleep(random.uniform(2, 4))  # nothing is joined; a short pause keeps the lookups polite
     return results

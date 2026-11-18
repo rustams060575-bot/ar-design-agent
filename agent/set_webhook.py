@@ -35,7 +35,7 @@ COMMANDS = [
     {"command": "queue", "description": "Очередь публикаций: 09:00 и 21:00 по Майами"},
     {"command": "post", "description": "Пост в канал AR Design: голос, текст или медиа"},
     {"command": "idea", "description": "Черновик заметки для канала по свежему материалу"},
-    {"command": "join", "description": "Вступить в чат и добавить в мониторинг (или голосом)"},
+    {"command": "join", "description": "Добавить публичный чат в мониторинг (только чтение)"},
     {"command": "help", "description": "Справка"},
 ]
 

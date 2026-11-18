@@ -5,7 +5,7 @@ name: Telegram lead monitor
 # Private repositories have a monthly minutes quota: if this one is private, change the schedule to every 30 minutes.
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "17 * * * *"      # hourly safety net; a finished run queues the next one itself (see the last step)
   workflow_dispatch:           # started by the bot ("найди заказы", /search) and by the daily Vercel cron
     inputs:
       discover:
@@ -61,6 +61,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           TG_RUN_SECONDS: "540"
+          TG_POLL_SECONDS: "120"     # public chats the account is not a member of are polled, read-only
           TG_FORCE_DISCOVER: ${{ inputs.discover }}
           TG_QUERY: ${{ inputs.query }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

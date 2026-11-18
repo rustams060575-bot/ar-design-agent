@@ -252,7 +252,7 @@ class Monitor:
                 lines.append(("✅ " if res["ok"] else "⚠️ ") + html.escape(ref) + " — " + html.escape(res["text"]))
             if any(r.get("rec") for _, r in results):
                 self.load_discovered()
-            bot_send("🤝 <b>Джеймс: вступление в чаты</b>\n\n" + "\n".join(lines), dry=self.args.dry_run)
+            bot_send("👀 <b>Джеймс: чаты добавлены в мониторинг (только чтение, без вступления)</b>\n\n" + "\n".join(lines), dry=self.args.dry_run)
             self.state.save()
 
     async def discover_new(self) -> None:

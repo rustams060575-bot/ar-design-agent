@@ -625,7 +625,7 @@
     "_help": "Telegram chat monitor (agent/tg_monitor.py). Chats live in agent/tg_chats.json. All patterns are case-insensitive regexes.",
     "portfolio_url": "https://withardesign.com",
     "model": "",
-    "min_text_len": 25,
+    "min_text_len": 15,
     "max_text_len": 3000,
     "min_budget_usd": 200,
     "max_notifications_per_run": 12,
@@ -653,7 +653,19 @@
       "интерактивн\\w+\\s+(?:сайт\\w*|веб\\w*|лендинг\\w*)",
       "interactive\\s+(?:website|site|web)",
       "(?:разработ\\w+|сделать|создать|нужен|нужна|заказать)\\s+(?:современн\\w+\\s+)?(?:сайт\\w*|веб[- ]?сайт\\w*)",
-      "(?:develop|build|design)\\s+(?:a\\s+|an\\s+|our\\s+|my\\s+)?(?:website|web\\s*app|landing)"
+      "(?:develop|build|design)\\s+(?:a\\s+|an\\s+|our\\s+|my\\s+)?(?:website|web\\s*app|landing)",
+      "верстк\\w*|верстальщик\\w*|сверста\\w+",
+      "\\btilda\\b|тильд\\w*|зеро[- ]?блок\\w*|zero\\s*block",
+      "\\bfigma\\b|фигм\\w*|макет\\w*",
+      "(?:оценить|оцените|посмотреть|глянуть|ревью|review)\\s+(?:мой\\s+|наш\\s+)?(?:проект\\w*|сайт\\w*|дизайн\\w*|макет\\w*|landing)",
+      "сколько\\s+стоит\\s+(?:сделать|разработать|создать|заказать)",
+      "\\bui\\b|\\bux\\b|юай|юикс",
+      "мини[- ]?апп\\w*|mini[- ]?app\\w*|tma\\b|телеграм[- ]?мини",
+      "ai[- ]?ассистент\\w*|ии[- ]?ассистент\\w*|ai[- ]?агент\\w*|нейро[- ]?(?:сотрудник|ассистент|бот)\\w*",
+      "бот\\w*\\s+(?:для|под)\\s+(?:бизнес\\w*|заказ\\w*|продаж\\w*|клиент\\w*|запис\\w*)",
+      "(?:нужен|нужна|ищу|ищем|требуется|надо)\\s+(?:\\w+\\s+){0,2}(?:разработчик\\w*|программист\\w*|дизайнер\\w*|верстальщик\\w*|фронтенд\\w*|developer|designer|frontend|front-end)",
+      "(?:looking\\s+for|need|hiring|seeking)\\s+(?:an?\\s+)?(?:\\w+\\s+){0,2}(?:developer|designer|front-?end|react|next\\.?js)",
+      "(?:busco|necesito|buscamos|se\\s+necesita)\\s+(?:un\\s+|una\\s+)?(?:desarrollador|dise[ñn]ador|programador)\\w*"
     ],
     "intent": [
       "\\bищ[уе]м?\\b",
@@ -664,7 +676,11 @@
       "\\bзаказ\\w*|\\bзадач\\w+|\\bпроект\\w*|\\bбюджет\\w*|оплат\\w+",
       "looking\\s+for|\\bneed\\w*\\b|\\bhir(?:e|ing)\\b|who\\s+can|can\\s+anyone|recommend",
       "\\bbudget\\b|\\bpaid\\b|\\bproject\\b",
-      "necesit\\w+|busc\\w+|buscamos|presupuesto|contrat\\w+|se\\s+necesita|requiero"
+      "necesit\\w+|busc\\w+|buscamos|presupuesto|contrat\\w+|se\\s+necesita|requiero",
+      "оцен\\w+|прикин\\w+|рассчита\\w+|стоимост\\w+|сколько\\s+(?:это\\s+)?(?:будет\\s+)?стоить|сколько\\s+стоит",
+      "возьм[её]т\\w*|возьм[её]тесь|поможет\\w*|помощь|помогите|посоветуйте",
+      "how\\s+much|\\bquote\\b|\\bestimate\\b|can\\s+you\\s+(?:build|make|design|help)|anyone\\s+(?:who|to)",
+      "cu[aá]nto\\s+cuesta|cotiz\\w+|alguien\\s+que"
     ],
     "spam": [
       "казино|ставки\\s+на\\s+спорт|букмекер|1xbet|крипто\\w*\\s+(?:сигнал|арбитраж)|арбитраж\\s+трафик",
@@ -751,12 +767,13 @@
         "накрутк|подписчик|раскрутк|взлом|hack|карди|cvv|дроп|обнал|наркот|vpn|прокси|proxy|mlm|сетев"
       ],
       "min_members": 500,
-      "max_total": 80,
-      "max_new_per_run": 15,
+      "max_total": 50,
+      "max_new_per_run": 10,
       "rediscovery_hours": 24,
       "sample_size": 100,
       "min_leads_in_sample": 2,
       "reject_recheck_days": 7
-    }
+    },
+    "_budget_note": "A missing budget never rejects a message; only an explicit amount below min_budget_usd does."
   }
 }

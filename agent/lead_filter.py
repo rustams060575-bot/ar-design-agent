@@ -102,6 +102,7 @@ SYSTEM = """You help Rustam, a solo designer and AI engineer (brand: AR Design, 
 His work: websites and landing pages, UI/UX and product design, front-end (Next.js, React, TypeScript, Tailwind, GSAP, Figma), custom AI agents, Telegram bots and Mini Apps, automations; he builds with Claude Code and Cursor. Clients from any country; any adequate task from about $200 (a quick fix of one block, a landing page) up to large contracts.
 
 Decide whether the message is a real, paid request to hire a web designer / developer for a project. Reject: job ads for an office or a staff position, spam, people offering their own services, unpaid tasks or tasks clearly under about $200, questions with no project behind them.
+A missing budget is NOT a reason to reject: clients often discuss the price in private messages. A request for an estimate, a review of a project, a question about cost, a mock-up or front-end markup task, Tilda / Figma / Next.js / React / UI-UX work, an AI assistant or a Telegram bot / Mini App all count as leads. When the budget is not stated, set budget to "в лс / не указан" and verdict to "clarify".
 
 If it is relevant, write:
 - "summary": the task in 1-2 plain sentences, in RUSSIAN, for Rustam. Only what the message says; never invent details.
