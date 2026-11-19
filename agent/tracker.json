@@ -4768,6 +4768,96 @@
       "status": "rejected",
       "score": 2,
       "at": "2026-11-19T02:04:34+00:00"
+    },
+    "job:2a0ae5d9b8cda12d": {
+      "name": "Staff Software Engineer (Interfaces) - Netlify",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T14:02:40+00:00"
+    },
+    "signal:67d0ecd556dbc16d": {
+      "name": "Nectar launches an AI agent to automate creator discovery and outreach for brands",
+      "status": "alert_only",
+      "score": 7,
+      "at": "2026-11-19T14:02:58+00:00"
+    },
+    "hn:50560051": {
+      "name": "ToolJet 4.0",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T14:03:02+00:00"
+    },
+    "hn:50560067": {
+      "name": "ZXC 1.0",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T14:03:04+00:00"
+    },
+    "signal:c3d06ef9d95f8200": {
+      "name": "Skale Solutions Ranked #1 Best Launch Video Agency in San Francisco by Linux Assembly",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T14:03:08+00:00"
+    },
+    "signal:7950fc2ee5c9cc2f": {
+      "name": "Series A funding has skyrocketed in 2026. Founders aren’t getting more chances",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T14:03:10+00:00"
+    },
+    "job:cfa919f2cca9c04e": {
+      "name": "Instructional Designer, TRM Academy (Compliance) - TRM Labs",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T14:03:13+00:00"
+    },
+    "job:4357d4398adbc044": {
+      "name": "Founding Staff Software Engineer • Python/FastAPI - Neuroscale AI",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T14:03:17+00:00"
+    },
+    "signal:9b6679e9ae6fcf29": {
+      "name": "Funding Tracker '26: Ours Privacy, Arintra and Happy Health",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T14:03:22+00:00"
+    },
+    "signal:1f4a3a32965c6187": {
+      "name": "AI Data Startup LanceDB Raises Series B; 100x Parquet Speed Claim Rests on Its Own Preliminary Test",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T14:03:28+00:00"
+    },
+    "signal:a342198ee463a369": {
+      "name": "First Circle Capital: Austrian Investor Raises $26 Million for African Fintechs",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T14:03:30+00:00"
+    },
+    "signal:60b8b978267b91b9": {
+      "name": "Egypt's Connect Money raises $3.5 million pre-Series A",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-19T14:03:35+00:00"
+    },
+    "signal:f11be5f78d80c47d": {
+      "name": "Audeo Ventures will close on $65m for Fund II by end of March",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T14:03:38+00:00"
+    },
+    "signal:fbb0281846927e42": {
+      "name": "ColdTrack opens larger New Jersey facility, expanding Northeast, Mid-Atlantic fulfillment footprint",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T14:03:41+00:00"
+    },
+    "signal:8bf5daa515803ebc": {
+      "name": "Constructor Launches Commerce AEO to Help Retailers Turn AI Visibility Into Sales",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T14:03:48+00:00"
     }
   },
   "contacted_domains": [
