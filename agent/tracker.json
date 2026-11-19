@@ -4594,6 +4594,180 @@
       "status": "rejected",
       "score": 1,
       "at": "2026-11-18T14:04:18+00:00"
+    },
+    "hn:50555010": {
+      "name": "Solid 2.0 + Lily Design System = seeking alpha testers",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:02:33+00:00"
+    },
+    "hn:50549762": {
+      "name": "Are your non-technical colleagues vibecoding? How are the apps hosted?",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:02:36+00:00"
+    },
+    "hn:50548480": {
+      "name": "Can an AI Agent Bypass Your Website Security?",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-19T02:02:41+00:00"
+    },
+    "job:99bb48c2b270301a": {
+      "name": "Senior Product Designer, Mobile - Homebound",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T02:02:46+00:00"
+    },
+    "hn:50553802": {
+      "name": "I open-sourced an AI loop for RISC-V CPU design months prior to OpenAI",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T02:02:49+00:00"
+    },
+    "job:1c7f922a00228695": {
+      "name": "Overseas Media Group is hiring for a position of Graphic Designer: Print, Brand & Web in Remote",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-19T02:02:53+00:00"
+    },
+    "hn:50554686": {
+      "name": "When does your app need its own UI vs. using it via MCP?",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:02:56+00:00"
+    },
+    "hn:50548013": {
+      "name": "RedCat an open-source AI agent for your desktop",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-19T02:03:00+00:00"
+    },
+    "hn:50549207": {
+      "name": "GitHub Down?",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-19T02:03:02+00:00"
+    },
+    "hn:50547451": {
+      "name": "RetryFix",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T02:03:06+00:00"
+    },
+    "hn:50547214": {
+      "name": "Space-Core, a free browser MMO your own AI agent plays over MCP",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-19T02:03:12+00:00"
+    },
+    "hn:50548740": {
+      "name": "Klistra",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T02:03:17+00:00"
+    },
+    "job:37429fbb12a4f415": {
+      "name": "Director UX Research - GoDaddy",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-19T02:03:21+00:00"
+    },
+    "hn:50552508": {
+      "name": "InfraSim, a system design simulator game for iOS and Android",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:03:25+00:00"
+    },
+    "job:e46bf1b02856cb91": {
+      "name": "Senior Design Engineer - Consensys",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T02:03:28+00:00"
+    },
+    "hn:50551614": {
+      "name": "PocketOps for SigNoz: The Open Source Datadog Alternative",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-19T02:03:34+00:00"
+    },
+    "hn:50554061": {
+      "name": "GTA 6 is out, so I built an agent to do my job in Chrome",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:03:38+00:00"
+    },
+    "hn:50553109": {
+      "name": "Starquix",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:03:41+00:00"
+    },
+    "signal:0e01a861a9e45125": {
+      "name": "Bret Taylor’s Sierra in Talks to Raise at $30 Billion Valuation",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:03:44+00:00"
+    },
+    "signal:8d7d429adfc9648e": {
+      "name": "Hardware-Testing Startup Nominal Valued at $3 Billion in Round",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-19T02:03:49+00:00"
+    },
+    "signal:628a0ccdae989b29": {
+      "name": "Miami-Dade commits $2.2 million to keep Orange Bowl in South Florida",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T02:03:52+00:00"
+    },
+    "signal:e795e532d6ff852f": {
+      "name": "Birmingham startup raises $90M Series B as Silicon Valley giant joins board",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-19T02:04:08+00:00"
+    },
+    "signal:df69a684866ab22f": {
+      "name": "Sequel.io Raises $15M Series B to Expand AI Agents and Personalization",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T02:04:12+00:00"
+    },
+    "signal:732dbad15d15f522": {
+      "name": "Morgan raises AUD $3.65 million seed round led by Blackbird",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-19T02:04:16+00:00"
+    },
+    "signal:8031554da0fbb24f": {
+      "name": "DTC launches new comms tech for warfighters, unmanned platforms",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T02:04:20+00:00"
+    },
+    "signal:b007996a8e1b55d2": {
+      "name": "LeBron James sues makers of AI sports-betting app, saying they used his likeness and nickname",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-19T02:04:22+00:00"
+    },
+    "signal:2a615d9ddcccedb2": {
+      "name": "Y Combinator-backed Conviction Launches the First Agentic Trading Desk That Lets Retail Investors Trade Across Asset Classes - Enabling Anyone to Trade Like a Quant",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-19T02:04:27+00:00"
+    },
+    "signal:73677ab25061148c": {
+      "name": "A 68-Year-Old Retiree Turns AI Video Into Birthday Cards That Make the Recipient the Star",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:04:31+00:00"
+    },
+    "signal:27be550ea20e633f": {
+      "name": "From Software Engineering Student to Startup Success",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-19T02:04:34+00:00"
     }
   },
   "contacted_domains": [
