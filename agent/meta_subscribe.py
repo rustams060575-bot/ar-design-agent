@@ -27,6 +27,9 @@ def call(method, path, token, **params):
         return e.code, {"error": f"{err.get('message', 'unknown')} (code {err.get('code')})"}
 
 
+print("== app behind this token ==")
+print(call("GET", "app", TOKEN, fields="id,name"))
+
 print("== Instagram account: subscribe comments + messages ==")
 print(call("POST", f"{IG}/subscribed_apps", TOKEN, subscribed_fields="comments,messages"))
 print("current:", call("GET", f"{IG}/subscribed_apps", TOKEN))
