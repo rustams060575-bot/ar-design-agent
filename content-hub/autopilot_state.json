@@ -376,6 +376,62 @@
         "instagram": "published:17890080672622340",
         "facebook": "published:1826703438660881"
       }
+    },
+    {
+      "date": "2026-11-16",
+      "time": "manual",
+      "slot": "manual",
+      "kind": "post",
+      "id": "C05",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "manual": true,
+      "result": {
+        "note": "posted by the owner by hand"
+      }
+    },
+    {
+      "date": "2026-11-17",
+      "time": "manual",
+      "slot": "manual",
+      "kind": "post",
+      "id": "C06",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "manual": true,
+      "result": {
+        "note": "posted by the owner by hand"
+      }
+    },
+    {
+      "date": "2026-11-17",
+      "time": "manual",
+      "slot": "manual",
+      "kind": "reel",
+      "id": "R22",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "manual": true,
+      "result": {
+        "note": "posted by the owner by hand"
+      }
+    },
+    {
+      "date": "2026-11-18",
+      "time": "manual",
+      "slot": "manual",
+      "kind": "post",
+      "id": "C07",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "manual": true,
+      "result": {
+        "note": "posted by the owner by hand"
+      }
     }
   ],
   "reel_i": 4,
