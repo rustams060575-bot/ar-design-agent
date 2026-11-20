@@ -4858,6 +4858,132 @@
       "status": "rejected",
       "score": 6,
       "at": "2026-11-19T14:03:48+00:00"
+    },
+    "hn:50560915": {
+      "name": "When was the last time you thought \"that's bad API design\"?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T02:03:49+00:00"
+    },
+    "hn:50563867": {
+      "name": "Forbear",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T02:03:51+00:00"
+    },
+    "job:891f2d8b50fd8af9": {
+      "name": "Product Designer - Tebra",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T02:03:55+00:00"
+    },
+    "hn:50564793": {
+      "name": "Company docs didn't help our AI agent. Four shortnotes doubled accuracy",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T02:04:00+00:00"
+    },
+    "hn:50562508": {
+      "name": "AgentMall",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T02:04:06+00:00"
+    },
+    "signal:e4c117da4a6ede89": {
+      "name": "Metano Emerges From Stealth With $12 Million Seed Funding for AI Agent Security Platform",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T02:04:10+00:00"
+    },
+    "hn:50560882": {
+      "name": "Openspot",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-20T02:04:12+00:00"
+    },
+    "signal:a279f586847ee550": {
+      "name": "How Metagenics rebuilt B2B and DTC commerce in six months on Shopify",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-20T02:04:16+00:00"
+    },
+    "hn:50563731": {
+      "name": "Design Engineering as a Service",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-20T02:04:21+00:00"
+    },
+    "hn:50563697": {
+      "name": "System Design in Depth",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T02:04:23+00:00"
+    },
+    "hn:50560732": {
+      "name": "Chipload",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-20T02:04:26+00:00"
+    },
+    "hn:50561824": {
+      "name": "Dayfile.app",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T02:04:31+00:00"
+    },
+    "hn:50568763": {
+      "name": "Zeus",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T02:04:35+00:00"
+    },
+    "hn:50568169": {
+      "name": "erXos",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-20T02:04:38+00:00"
+    },
+    "hn:50564417": {
+      "name": "Lintsure",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-20T02:04:41+00:00"
+    },
+    "hn:50561466": {
+      "name": "AI Kitchen Designer",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T02:04:45+00:00"
+    },
+    "hn:50561419": {
+      "name": "Gh-sift",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-20T02:04:48+00:00"
+    },
+    "signal:bfb18bc748aa068a": {
+      "name": "Palo Alto raises annual forecast, signs $4.5 billion deal for Applied Compute",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T02:04:51+00:00"
+    },
+    "signal:aee95ae43dfabc5f": {
+      "name": "London-Based AI Legal Startup Alecto Raises $20M",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T02:04:55+00:00"
+    },
+    "signal:603137121bea53c0": {
+      "name": "To support its 3X growth, Miami-based Jeeves secures $300M in financing capacity, names Alexander Melikian president and CFO",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-20T02:05:10+00:00"
+    },
+    "signal:73393655aa356bf9": {
+      "name": "BrightAI Raises $97M in New Funding to Expand Physical AI for Monitoring Critical Infrastructure",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T02:05:14+00:00"
     }
   },
   "contacted_domains": [
