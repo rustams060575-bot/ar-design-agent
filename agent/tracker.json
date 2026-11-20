@@ -4984,6 +4984,138 @@
       "status": "rejected",
       "score": 6,
       "at": "2026-11-20T02:05:14+00:00"
+    },
+    "job:86f0753b813d3880": {
+      "name": "Senior Frontend Engineer, Foundations - NetBox Labs",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T14:02:33+00:00"
+    },
+    "hn:50571709": {
+      "name": "Prove what your AI agent did",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T14:02:37+00:00"
+    },
+    "job:02c2b375e194c49a": {
+      "name": "Manager, Engineering - Frontend - Wrapbook",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T14:02:42+00:00"
+    },
+    "signal:b504016ad9be7820": {
+      "name": "MHP wins Red Dot Design Award for Aston Martin Online Configurator",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T14:02:45+00:00"
+    },
+    "hn:50571058": {
+      "name": "Vemlora",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T14:02:50+00:00"
+    },
+    "job:33d0a0c1dc6078c6": {
+      "name": "Sales Development Representative - UpCodes",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T14:02:53+00:00"
+    },
+    "job:42a36f319e209f42": {
+      "name": "Product Growth Strategist - Fueled",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-20T14:02:56+00:00"
+    },
+    "hn:50574220": {
+      "name": "Message Boards for Your Agents",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T14:03:01+00:00"
+    },
+    "job:5a5d4226beffc3fb": {
+      "name": "Product Designer - Phantom",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T14:03:05+00:00"
+    },
+    "signal:ac28e8ade226a9a4": {
+      "name": "Remanence Raises $30M in Seed Funding",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T14:03:09+00:00"
+    },
+    "job:bb982e54f6c91cc3": {
+      "name": "Instructional Designer I - CentralReach",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T14:03:12+00:00"
+    },
+    "signal:d8a5659dd65d2432": {
+      "name": "NYC Startup Funding: Series A Deals Fall to 44 From 82 as 16 Mega-Rounds Take 61% of Q3 Cash",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T14:03:15+00:00"
+    },
+    "signal:db1f846f8d3c6a17": {
+      "name": "Defense tech startup Valkryn Systems emerges from stealth after closing $15M seed round",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-20T14:03:29+00:00"
+    },
+    "signal:73e619bbfac5de3e": {
+      "name": "Israeli cybersecurity startup Vero raises $11M to secure enterprise AI",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T14:03:32+00:00"
+    },
+    "signal:8960033009f2e2c9": {
+      "name": "Aquaculture startup raises $6M to build land-based fish farm in Lee County",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T14:03:38+00:00"
+    },
+    "signal:bbaa36261701feb5": {
+      "name": "Israeli startup raises $11 million Seed to automate the growing burden of AI security",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T14:03:41+00:00"
+    },
+    "signal:957487166d55b836": {
+      "name": "Nike Digital Marketing Strategy: Apps, DTC and AI Search",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T14:03:44+00:00"
+    },
+    "signal:8482c15ec573913f": {
+      "name": "Mortgage lender Rate launches DTC home furnishings brand",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-20T14:03:49+00:00"
+    },
+    "signal:ccde96ac241cd851": {
+      "name": "Palo Alto Networks to Buy AI Startup Applied Compute for $4.5 Billion",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-20T14:03:52+00:00"
+    },
+    "signal:5dbee173f063cb53": {
+      "name": "Serial entrepreneur's new AI startup hits $500 million valuation with new funding",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T14:03:57+00:00"
+    },
+    "signal:7680ed2376c4f22b": {
+      "name": "Teenage founder pitches Polemos AI missiles to the military on cost per kill",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-20T14:04:01+00:00"
+    },
+    "signal:21c39a61a2d2ea5d": {
+      "name": "AiPrise Launches Token Sharing to Reduce Duplicate Compliance Checks",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-20T14:04:07+00:00"
     }
   },
   "contacted_domains": [
