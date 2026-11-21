@@ -1,8 +1,8 @@
 // Instagram webhook on Vercel: comments under Reels -> "Motion" -> private reply in Direct with the Telegram funnel link.
 // Logic and the list of environment variables: api/_lib/instagram.js.
 //
-//  GET  /api/instagram   webhook verification handshake (hub.mode / hub.verify_token / hub.challenge)
-//  POST /api/instagram   events; the signature (X-Hub-Signature-256) is checked against IG_APP_SECRET
+//  GET  /api/instagram   webhook verification handshake (META_VERIFY_TOKEN or IG_VERIFY_TOKEN) (hub.mode / hub.verify_token / hub.challenge)
+//  POST /api/instagram   events; the signature (X-Hub-Signature-256) is checked against META_APP_SECRET / IG_APP_SECRET
 
 "use strict";
 
@@ -36,7 +36,7 @@ const log = (event, data) => console.log(JSON.stringify({ ig: event, ...data }))
 module.exports = async (req, res) => {
   if (req.method === "GET") {
     const q = req.query || {};
-    const token = env.get("IG_VERIFY_TOKEN");
+    const token = env.get("META_VERIFY_TOKEN") || env.get("IG_VERIFY_TOKEN");
     if (q["hub.mode"] === "subscribe" && token && String(q["hub.verify_token"] || "") === token) {
       log("verify", { ok: true });
       return res.status(200).send(String(q["hub.challenge"] || ""));
@@ -53,8 +53,9 @@ module.exports = async (req, res) => {
     log("read-error", { error: String(err && err.message) });
     return res.status(400).end();
   }
-  if (!ig.validSignature(raw, req.headers["x-hub-signature-256"], env.get("IG_APP_SECRET"))) {
-    log("rejected", { reason: env.get("IG_APP_SECRET") ? "bad-signature" : "IG_APP_SECRET-not-set" });
+  const secret = env.get("META_APP_SECRET") || env.get("IG_APP_SECRET");
+  if (!ig.validSignature(raw, req.headers["x-hub-signature-256"], secret)) {
+    log("rejected", { reason: secret ? "bad-signature" : "IG_APP_SECRET-not-set" });
     return res.status(401).end();
   }
 
@@ -69,11 +70,13 @@ module.exports = async (req, res) => {
       version: env.get("IG_API_VERSION") || "v21.0",
       host: env.get("IG_GRAPH_HOST") || "graph.facebook.com",
     };
-    const link = env.get("IG_FUNNEL_LINK") || ig.FUNNEL_LINK;
-    const text = process.env.IG_DM_TEXT ? process.env.IG_DM_TEXT.replace("{link}", link) : ig.DM_TEXT(link);
+    const link = env.get("REPLY_LINK") || env.get("IG_FUNNEL_LINK") || ig.FUNNEL_LINK;
+    const custom = process.env.REPLY_MESSAGE || process.env.IG_DM_TEXT;
+    const text = custom ? custom.replace("{link}", link) : ig.DM_TEXT(link);
+    const keywords = ig.parseKeywords(process.env.TRIGGER_KEYWORDS);
 
     for (const c of comments) {
-      const matched = ig.isTrigger(c.text);
+      const matched = ig.isTrigger(c.text, keywords);
       const own = c.fromId && (c.fromId === c.igId || c.fromId === cfg.igUserId); // our own replies must never trigger a DM
       log("comment", { comment: c.commentId, media: c.mediaId, from: c.fromUsername || c.fromId, text: c.text.slice(0, 120), matched, own });
       if (!matched || own || !c.commentId || !once(c.commentId)) continue;

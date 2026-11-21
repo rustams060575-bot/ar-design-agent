@@ -10,7 +10,9 @@
 //   IG_ACCESS_TOKEN    token with instagram_manage_messages (+ instagram_manage_comments) for the Instagram professional account
 //   IG_USER_ID         id of that Instagram professional account (the `entry.id` of the webhook)
 //   optional: IG_API_VERSION (default v21.0), IG_GRAPH_HOST (default graph.facebook.com; graph.instagram.com for Instagram Login tokens),
-//             IG_FUNNEL_LINK, IG_DM_TEXT
+//             TRIGGER_KEYWORDS (comma separated, default "motion"), REPLY_LINK, REPLY_MESSAGE ("{link}" is replaced by the link)
+//   Aliases (the first one that is set wins): META_VERIFY_TOKEN = IG_VERIFY_TOKEN, META_APP_SECRET = IG_APP_SECRET,
+//             IG_FUNNEL_LINK = REPLY_LINK, IG_DM_TEXT = REPLY_MESSAGE
 
 "use strict";
 
@@ -22,9 +24,20 @@ const DM_TEXT = (link) =>
   `${link}\n\n` +
   "Pulsa «Start» en Telegram y te la envío al momento.";
 
-// "Motion" in any case, as a word of its own: "MOTION", "motion!", "Motion 🔥" match; "emotion" does not.
-const TRIGGER = /(^|[^\p{L}\p{N}_])motion($|[^\p{L}\p{N}_])/iu;
-const isTrigger = (text) => TRIGGER.test(String(text || ""));
+// Code words (TRIGGER_KEYWORDS, comma separated). Each one matches in any case as a word of its own:
+// "MOTION", "motion!", "Motion 🔥" match for "motion"; "emotion" does not.
+const DEFAULT_KEYWORDS = ["motion"];
+const escapeRe = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function parseKeywords(raw) {
+  const list = String(raw || "").split(",").map((w) => w.trim().toLowerCase()).filter(Boolean);
+  return list.length ? list : DEFAULT_KEYWORDS;
+}
+function triggerRegex(keywords) {
+  const alt = parseKeywords(Array.isArray(keywords) ? keywords.join(",") : keywords).map(escapeRe).join("|");
+  return new RegExp(`(^|[^\\p{L}\\p{N}_])(?:${alt})($|[^\\p{L}\\p{N}_])`, "iu");
+}
+const DEFAULT_TRIGGER = triggerRegex(DEFAULT_KEYWORDS);
+const isTrigger = (text, keywords) => (keywords ? triggerRegex(keywords) : DEFAULT_TRIGGER).test(String(text || ""));
 
 // Meta signs the RAW body: X-Hub-Signature-256: sha256=<hex hmac of the body with the app secret>.
 function validSignature(rawBody, header, appSecret) {
@@ -85,4 +98,4 @@ async function sendPrivateReply(commentId, text, cfg, doFetch = (...a) => global
   }
 }
 
-module.exports = { FUNNEL_LINK, DM_TEXT, isTrigger, validSignature, extractComments, sendPrivateReply };
+module.exports = { FUNNEL_LINK, DM_TEXT, parseKeywords, isTrigger, validSignature, extractComments, sendPrivateReply };
