@@ -5116,6 +5116,102 @@
       "status": "rejected",
       "score": 5,
       "at": "2026-11-20T14:04:07+00:00"
+    },
+    "hn:50578763": {
+      "name": "Out of Policy",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-21T02:02:38+00:00"
+    },
+    "job:901afe46243125c3": {
+      "name": "Head of Design - Elation Health",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-21T02:02:43+00:00"
+    },
+    "hn:50575068": {
+      "name": "Agent Guard",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-21T02:02:45+00:00"
+    },
+    "hn:50582159": {
+      "name": "A mechanical computer that runs the Rule 110 cellular automata [video]",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-21T02:02:48+00:00"
+    },
+    "signal:e93305303040e43f": {
+      "name": "Exclusive: Stripe founders and Paul Graham back AI agent swarm startup Hoplite with $5.5m",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-21T02:02:52+00:00"
+    },
+    "hn:50575235": {
+      "name": "ChronoStack-move time forward for your Docker Compose stack",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-21T02:02:54+00:00"
+    },
+    "job:476e9ba3c13f41f6": {
+      "name": "Security Engineer - Figma",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T02:02:57+00:00"
+    },
+    "hn:50584109": {
+      "name": "Primeward",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T02:02:59+00:00"
+    },
+    "job:f1d6004312fe63f3": {
+      "name": "Manager, Strategic Sales - Figma",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T02:03:01+00:00"
+    },
+    "signal:7769ad82b55a58cd": {
+      "name": "Theseus Robotics to launch shelf-stocking robot in US supermarkets",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-21T02:03:07+00:00"
+    },
+    "signal:0bf45226989b7184": {
+      "name": "NYC Startup Funding: Series A Falls to 44 From 82",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T02:03:10+00:00"
+    },
+    "signal:b51b354e4a0dd822": {
+      "name": "ICYMI fintech funding round-up: Olyv, Verlo, Previsia, and more",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T02:03:12+00:00"
+    },
+    "signal:e5ed17150476ece7": {
+      "name": "India’s Humyn Labs raises $47M to feed US robotics companies the data they need",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-21T02:03:16+00:00"
+    },
+    "signal:48ce365cccb1511f": {
+      "name": "Mulga Raises $1.77 Million in Pre-Seed Funding to Develop AWS-Compatible Cloud Platform",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-21T02:03:21+00:00"
+    },
+    "signal:0551fe7c7f45724b": {
+      "name": "Latest Wonder restaurant opens its doors in Loudoun",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-21T02:03:25+00:00"
+    },
+    "signal:1af48f21461d9b28": {
+      "name": "LeBron James sues makers of AI sports-betting app, saying they used his likeness and nickname",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T02:03:28+00:00"
     }
   },
   "contacted_domains": [

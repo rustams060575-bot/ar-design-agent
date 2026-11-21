@@ -432,8 +432,22 @@
       "result": {
         "note": "posted by the owner by hand"
       }
+    },
+    {
+      "date": "2026-11-20",
+      "time": "21:00",
+      "slot": "evening",
+      "kind": "reel",
+      "id": "R05",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "instagram": "published:18137059129780255",
+        "facebook": "published:1474396407962346"
+      }
     }
   ],
   "reel_i": 4,
-  "ar02_i": 11
+  "ar02_i": 12
 }
