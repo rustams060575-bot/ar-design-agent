@@ -446,8 +446,22 @@
         "instagram": "published:18137059129780255",
         "facebook": "published:1474396407962346"
       }
+    },
+    {
+      "date": "2026-11-21",
+      "time": "09:00",
+      "slot": "morning",
+      "kind": "post",
+      "id": "C08",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "instagram": "failed: meta 403: Application request limit reached (code 4)",
+        "facebook": "published:1542301175627947_122112950385535097"
+      }
     }
   ],
   "reel_i": 4,
-  "ar02_i": 12
+  "ar02_i": 19
 }

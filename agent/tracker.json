@@ -5212,6 +5212,60 @@
       "status": "rejected",
       "score": 1,
       "at": "2026-11-21T02:03:28+00:00"
+    },
+    "hn:50588359": {
+      "name": "Agentest",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-21T14:02:27+00:00"
+    },
+    "hn:50588314": {
+      "name": "I'm in highschool, what would y'all recommend to learn?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T14:02:29+00:00"
+    },
+    "hn:50587571": {
+      "name": "ClawVet",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-21T14:02:35+00:00"
+    },
+    "hn:50585530": {
+      "name": "How do we get 1 TW a year of orbital compute by 2035?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T14:02:37+00:00"
+    },
+    "hn:50585555": {
+      "name": "I made my visual resume after 10 years",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-21T14:02:41+00:00"
+    },
+    "signal:3f4042ffe91e4371": {
+      "name": "Exclusive | Genesis AI, a Robotics Startup, Raises $500 Million",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-21T14:02:45+00:00"
+    },
+    "signal:0b199ca8ae8062d8": {
+      "name": "Bulgaria’s first unicorn Payhawk raises €255.14 million at €1.82 billion valuation in Goldman Sachs-led Series C round",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-21T14:02:50+00:00"
+    },
+    "signal:419e0cb92b1f7cc4": {
+      "name": "LeBron James sues makers of AI sports-betting app, saying they used his likeness and nickname",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-21T14:02:53+00:00"
+    },
+    "signal:d87be980baaf1a9a": {
+      "name": "Maritime Agent Cloud: $1/Agent VMs, Sleep and Wake (YC F26)",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-21T14:02:58+00:00"
     }
   },
   "contacted_domains": [
