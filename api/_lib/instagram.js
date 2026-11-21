@@ -82,7 +82,16 @@ async function sendPrivateReply(commentId, text, cfg, doFetch = (...a) => global
       body: JSON.stringify({ recipient: { comment_id: commentId }, message: { text } }),
       signal: ctrl.signal,
     });
-    if (res.ok) return { ok: true, status: res.status };
+    if (res.ok) {
+      let messageId = "";
+      try {
+        const j = await res.json();
+        messageId = String((j && j.message_id) || "");
+      } catch (_) {
+        /* no JSON body */
+      }
+      return { ok: true, status: res.status, messageId };
+    }
     let error = "";
     try {
       const j = await res.json();
