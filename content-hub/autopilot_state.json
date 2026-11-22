@@ -460,6 +460,20 @@
         "instagram": "failed: meta 403: Application request limit reached (code 4)",
         "facebook": "published:1542301175627947_122112950385535097"
       }
+    },
+    {
+      "date": "2026-11-21",
+      "time": "21:00",
+      "slot": "evening",
+      "kind": "reel",
+      "id": "R06",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "instagram": "failed: meta 400: API access blocked. (code 200)",
+        "facebook": "published:2939210796436217"
+      }
     }
   ],
   "reel_i": 4,
