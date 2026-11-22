@@ -166,12 +166,25 @@ class Graph:
     def _container(self, params: dict) -> str:
         if self.ig_location_id and "is_carousel_item" not in params and params.get("media_type") != "STORIES":
             params = {**params, "location_id": self.ig_location_id}
-        return self._call("POST", f"{self.ig_id}/media", self.ig_token, **params)["id"]
+        return self._ig_call("POST", f"{self.ig_id}/media", **params)["id"]
+
+    def _ig_call(self, method: str, path: str, **params) -> dict:
+        """Instagram call with token fallback: a dead/blocked IG_ACCESS_TOKEN (code 190 / 200) falls back to the Page / user token."""
+        tokens = [t for t in dict.fromkeys([self.ig_token, self.fb_token, self.user_token]) if t]
+        for idx, token in enumerate(tokens):
+            try:
+                data = self._call(method, path, token, **params)
+                self.ig_token = token  # keep the token that works for the rest of this run
+                return data
+            except RuntimeError as exc:
+                if idx + 1 < len(tokens) and ("code 190)" in str(exc) or "code 200)" in str(exc)):
+                    continue
+                raise
 
     def wait_ready(self, container: str) -> bool:
         """True when FINISHED; False if still processing after the poll budget (a reel can take a minute or more)."""
         for _ in range(self.poll_tries):
-            state = self._call("GET", container, self.ig_token, fields="status_code").get("status_code")
+            state = self._ig_call("GET", container, fields="status_code").get("status_code")
             if state == "FINISHED":
                 return True
             if state in ("ERROR", "EXPIRED"):
@@ -182,7 +195,7 @@ class Graph:
     def finish_instagram(self, container: str) -> str:
         if not self.wait_ready(container):
             raise RuntimeError("instagram container still processing")
-        return self._call("POST", f"{self.ig_id}/media_publish", self.ig_token, creation_id=container)["id"]
+        return self._ig_call("POST", f"{self.ig_id}/media_publish", creation_id=container)["id"]
 
     def create_instagram_container(self, item: dict) -> str:
         caption = item["caption"]
