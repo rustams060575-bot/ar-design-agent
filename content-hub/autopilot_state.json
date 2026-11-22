@@ -455,7 +455,7 @@
       "id": "C08",
       "source": "ar02",
       "live": true,
-      "ok": true,
+      "ok": false,
       "result": {
         "instagram": "failed: meta 403: Application request limit reached (code 4)",
         "facebook": "published:1542301175627947_122112950385535097"
@@ -469,7 +469,7 @@
       "id": "R06",
       "source": "ar02",
       "live": true,
-      "ok": true,
+      "ok": false,
       "result": {
         "instagram": "failed: meta 400: API access blocked. (code 200)",
         "facebook": "published:2939210796436217"

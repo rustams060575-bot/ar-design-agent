@@ -122,20 +122,40 @@ def run(cfg: dict, now: datetime | None = None, force: bool | None = None) -> in
         save_state(state)
         send_report(f"⚠️ james ar02 · {q['id']}: invalid ({'; '.join(problems)})")
         return 0
-    results = {}
+    # Per-platform bookkeeping: a platform already published for this item is never posted twice, and a failed one
+    # (e.g. Instagram "API access blocked" / rate limit) is retried by the next trigger inside the window (cron every 10 min).
+    prior = {}
+    for e in state["log"]:
+        if e.get("source") == "ar02" and e.get("id") == q["id"]:
+            for k, v in (e.get("result") or {}).items():
+                if isinstance(v, str) and v.startswith("published"):
+                    prior[k] = v
+    results = dict(prior)
     for platform in item["platforms"]:
+        if platform in prior:
+            continue
         if not graph.has(platform):
             results[platform] = "skipped: credentials not set"
             continue
-        try:
-            results[platform] = "published:" + (graph.publish_instagram(item) if platform == "instagram" else graph.publish_facebook(item))
-        except (RuntimeError, requests.RequestException) as exc:
-            results[platform] = f"failed: {exc}"
-    entry["result"], entry["ok"] = results, any(v.startswith("published") for v in results.values())
+        for attempt in range(1, 4):  # in-run retries for transient Meta errors (rate limit, temporary failure)
+            try:
+                results[platform] = "published:" + (graph.publish_instagram(item) if platform == "instagram" else graph.publish_facebook(item))
+                break
+            except (RuntimeError, requests.RequestException) as exc:
+                results[platform] = f"failed: {exc}"
+                if attempt < 3 and any(f"code {c})" in str(exc) for c in (1, 2, 4, 17, 32, 341, 368, 613)) or "network error" in str(exc):
+                    time.sleep(30 * attempt)
+                    continue
+                break
+    wanted = [p for p in item["platforms"] if graph.has(p)]
+    entry["result"] = results
+    entry["ok"] = bool(wanted) and all(results.get(p, "").startswith("published") for p in wanted)
     state["log"].append(entry)
     if entry["ok"]:
         state["ar02_i"] = max(state.get("ar02_i", 0), i + 1)
     save_state(state)
-    send_report(f"{'✅' if entry['ok'] else '⚠️'} james ar02 · {today} {slot} · {q['id']} · " + ", ".join(f"{k}: {v.split(':')[0]}" for k, v in results.items()))
+    failed = [p for p in wanted if not results.get(p, "").startswith("published")]
+    send_report(f"{'✅' if entry['ok'] else '⚠️'} james ar02 · {today} {slot} · {q['id']} · " + ", ".join(f"{k}: {v.split(':')[0]}" for k, v in results.items())
+                + (f" · повтор в следующем запуске окна: {', '.join(failed)}" if failed else ""))
     print(f"[ar02] {q['id']}: {results}")
     return 0
