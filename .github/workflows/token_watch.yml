@@ -1,0 +1,23 @@
+name: Meta token watch
+on:
+  schedule:
+    - cron: "0 13 * * *"   # daily, 08:00-09:00 Miami; silent unless the token is invalid or expiring
+  workflow_dispatch:
+    inputs:
+      always_report:
+        description: "1 = send a status message even when healthy"
+        default: "0"
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python agent/token_watch.py
+        working-directory: agent
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ALWAYS_REPORT: ${{ inputs.always_report }}
