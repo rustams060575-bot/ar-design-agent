@@ -5386,6 +5386,108 @@
       "status": "rejected",
       "score": 6,
       "at": "2026-11-22T02:04:11+00:00"
+    },
+    "hn:50598128": {
+      "name": "Agent Doctor",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:04:16+00:00"
+    },
+    "job:e50df697951aad22": {
+      "name": "Senior Frontend Engineer - Endless Commerce - Pear VC",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:04:20+00:00"
+    },
+    "job:6fc8b805b68f7913": {
+      "name": "Manager, Product Design - Carrot",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:04:25+00:00"
+    },
+    "hn:50598355": {
+      "name": "Where the company's employees launch the tools that Claude created",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-22T14:04:28+00:00"
+    },
+    "job:33b25de49468ac02": {
+      "name": "Senior Design Engineer - MetaMask",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:04:32+00:00"
+    },
+    "hn:50599285": {
+      "name": "Retro 3D library, a small game",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-22T14:04:35+00:00"
+    },
+    "hn:50598848": {
+      "name": "A free website check that starts from what your buyers search",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:04:39+00:00"
+    },
+    "signal:5d1618bac264cfda": {
+      "name": "Dreamteam Raises $53M to Challenge Salesforce and HubSpot With AI-Native CRM",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-22T14:04:53+00:00"
+    },
+    "job:8d6befe5d352b43c": {
+      "name": "Product Design Manager, Growth and Engagement - Mural",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:04:59+00:00"
+    },
+    "signal:2341172d6d900f95": {
+      "name": "NYC Startups Raised $5.69B in Q3 2026. It Took 40% Fewer Deals to Do It.",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-22T14:05:02+00:00"
+    },
+    "job:1cf47081a78590bf": {
+      "name": "Product Engineering Lead - Andera - Pear VC",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:05:06+00:00"
+    },
+    "job:26b4eb576b82e612": {
+      "name": "Staff Full Stack Engineer - Mattermost",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-22T14:05:11+00:00"
+    },
+    "signal:ce156bcc1716fc95": {
+      "name": "Boltz Raises $110 Million Series A to Scale Biomolecular AI",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-22T14:05:16+00:00"
+    },
+    "signal:0e4cb936f5da3575": {
+      "name": "Seattle startup Aarden raises $8M to help landowners navigate the AI and energy building boom",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-22T14:05:29+00:00"
+    },
+    "signal:51314e7801cf2047": {
+      "name": "UK-Backed AI Chip Startup Fractile Reaches $7B Valuation in $720M Series C",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-22T14:05:33+00:00"
+    },
+    "signal:7039ea86f684e2e9": {
+      "name": "Lumina Women’s Health emerges from stealth to connect Philly’s women’s health sector",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:05:38+00:00"
+    },
+    "signal:04bf034a9d938762": {
+      "name": "Y Combinator-backed Conviction Launches the First Agentic",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-22T14:05:43+00:00"
     }
   },
   "contacted_domains": [

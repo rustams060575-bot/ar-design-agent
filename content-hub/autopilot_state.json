@@ -502,6 +502,20 @@
         "facebook": "published:2939210796436217",
         "instagram": "published:18139218979737089"
       }
+    },
+    {
+      "date": "2026-11-22",
+      "time": "09:00",
+      "slot": "morning",
+      "kind": "post",
+      "id": "C08",
+      "source": "ar02",
+      "live": true,
+      "ok": false,
+      "result": {
+        "facebook": "published:1542301175627947_122112950385535097",
+        "instagram": "failed: meta 403: Application request limit reached (code 4)"
+      }
     }
   ],
   "reel_i": 4,
