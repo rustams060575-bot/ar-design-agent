@@ -13,7 +13,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - run: python agent/token_watch.py
+      - run: python token_watch.py
         working-directory: agent
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
