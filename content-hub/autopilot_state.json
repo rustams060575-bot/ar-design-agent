@@ -488,6 +488,20 @@
         "facebook": "published:2939210796436217",
         "instagram": "failed: meta 400: API access blocked. (code 200)"
       }
+    },
+    {
+      "date": "2026-11-22",
+      "time": "01:08",
+      "slot": "manual",
+      "kind": "reel",
+      "id": "R06",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "facebook": "published:2939210796436217",
+        "instagram": "published:18139218979737089"
+      }
     }
   ],
   "reel_i": 4,
