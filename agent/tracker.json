@@ -5488,6 +5488,78 @@
       "status": "rejected",
       "score": 6,
       "at": "2026-11-22T14:05:43+00:00"
+    },
+    "hn:50605502": {
+      "name": "Inbox Envoy, an open-source email triage skill for your own AI agent",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-23T02:02:19+00:00"
+    },
+    "hn:50604017": {
+      "name": "Straum",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-23T02:02:22+00:00"
+    },
+    "hn:50605607": {
+      "name": "UltraIterator",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-23T02:02:24+00:00"
+    },
+    "hn:50602535": {
+      "name": "Get Tied of Fast.com And build My own Speed testing site.",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-23T02:02:27+00:00"
+    },
+    "hn:50606408": {
+      "name": "Hammerspoon 2 Beta 1 is released",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-23T02:02:30+00:00"
+    },
+    "hn:50600315": {
+      "name": "Relaticle, an open-source CRM that Claude and ChatGPT can work in",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-23T02:02:34+00:00"
+    },
+    "hn:50606547": {
+      "name": "SaaSStatsHub Signals",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T02:02:38+00:00"
+    },
+    "signal:6eed3ed9dc5635c8": {
+      "name": "$90 million robotics startup snaps up space near Oracle Park",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-23T02:02:43+00:00"
+    },
+    "signal:adfcbd43218a6a5c": {
+      "name": "StepSecurity, led by two Microsoft vets, raises $20M to defend developers’ tools from hackers",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-23T02:03:02+00:00"
+    },
+    "signal:cc42f9a4a7a120b0": {
+      "name": "General Flash Raises $128 Million to Scale US Critical Metals Production",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T02:03:05+00:00"
+    },
+    "signal:9bcfad28ccc9eed1": {
+      "name": "This 16-Year-Old Founded an AI Missile Startup. He’s Targeting ‘Cost per Kill’",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-23T02:03:10+00:00"
+    },
+    "signal:2c553e8cbf35f12e": {
+      "name": "Wonder Unveils AI-Powered Restaurant Builder as Marc Lore Pushes Toward a Fully Automated Food Business",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T02:03:15+00:00"
     }
   },
   "contacted_domains": [
