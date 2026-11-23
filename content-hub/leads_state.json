@@ -131,6 +131,12 @@
    "slot": "evening",
    "checked": 12,
    "approved": 1
+  },
+  {
+   "date": "2026-11-23",
+   "slot": "morning",
+   "checked": 14,
+   "approved": 0
   }
  ]
 }

@@ -5560,6 +5560,90 @@
       "status": "rejected",
       "score": 5,
       "at": "2026-11-23T02:03:15+00:00"
+    },
+    "hn:50610136": {
+      "name": "Crazy simple AI agent orchestration with Markdown and Containers",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-23T14:04:32+00:00"
+    },
+    "job:645419685e0e1586": {
+      "name": "Frontend Software Engineer, Personal Loans - Upstart",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-23T14:04:36+00:00"
+    },
+    "job:a21c7c5d5347402b": {
+      "name": "Senior OR Staff Product Designer - Elation Health",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-23T14:04:40+00:00"
+    },
+    "hn:50606937": {
+      "name": "Just Dashboard, open-source Linux management dashboard",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-23T14:04:46+00:00"
+    },
+    "hn:50611330": {
+      "name": "Carpe",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-23T14:04:49+00:00"
+    },
+    "hn:50609708": {
+      "name": "Hermit CRM a free open-source CRM for solopreneurs",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T14:04:55+00:00"
+    },
+    "hn:50610959": {
+      "name": "WiFriends",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T14:05:01+00:00"
+    },
+    "signal:df69b97ff088bd29": {
+      "name": "Unsiloed AI Raises $7.5M Seed Round to Process Documents for AI Agents",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-23T14:05:06+00:00"
+    },
+    "signal:05141755cf74c35a": {
+      "name": "Fermat raises $8M seed as AI fashion platform triples revenue and prepares New York expansion",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-23T14:05:11+00:00"
+    },
+    "signal:5b447f91b78260b5": {
+      "name": "Arva AI Raises $20M Series A to Automate Financial Crime Compliance at Banks",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T14:05:15+00:00"
+    },
+    "signal:2ae7d4077a2acad3": {
+      "name": "Mortgage lender Rate launches DTC brand with accents, lighting and rugs",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T14:05:21+00:00"
+    },
+    "signal:a049f5f01e98a1e5": {
+      "name": "Ex-Sequoia Boss Backs UK Defense Startup at $450 Million Value",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T14:05:25+00:00"
+    },
+    "signal:508461a7b91dc1d2": {
+      "name": "Valkryn Emerges From Stealth With $17M to Develop Military Robotics Testing Systems",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-23T14:05:30+00:00"
+    },
+    "signal:f35907b8dfcb49e9": {
+      "name": "FluxCap emerges from stealth with legal tech aimed at small teams",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-23T14:05:34+00:00"
     }
   },
   "contacted_domains": [
