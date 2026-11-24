@@ -558,6 +558,20 @@
         "instagram": "published:18104410880557185",
         "facebook": "published:1160175436591678"
       }
+    },
+    {
+      "date": "2026-11-24",
+      "time": "09:00",
+      "slot": "morning",
+      "kind": "post",
+      "id": "C08",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "facebook": "published:1542301175627947_122112950385535097",
+        "instagram": "published:18078230480739384"
+      }
     }
   ],
   "reel_i": 4,
