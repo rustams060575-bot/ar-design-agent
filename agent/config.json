@@ -619,7 +619,125 @@
       "AI startup emerges from stealth",
       "Y Combinator startup launches product",
       "startup launches public beta waitlist United States"
-    ]
+    ],
+    "extra_regions": [
+      {
+        "name": "Казахстан (ext)",
+        "lang": "ru",
+        "hl": "ru",
+        "gl": "KZ",
+        "ceid": "KZ:ru",
+        "queries": [
+          "стартап запустил сайт",
+          "стартап привлек инвестиции",
+          "веб-дизайн студия заказ",
+          "редизайн сайта компания",
+          "разработка MVP стартап",
+          "запуск продукта лендинг",
+          "Kazakhstan startup raises",
+          "Kazakhstan fintech startup launch"
+        ]
+      },
+      {
+        "name": "Узбекистан",
+        "lang": "ru",
+        "hl": "ru",
+        "gl": "UZ",
+        "ceid": "UZ:ru",
+        "queries": [
+          "стартап запустил сайт",
+          "стартап привлек инвестиции",
+          "веб-дизайн студия заказ",
+          "редизайн сайта компания",
+          "разработка MVP стартап",
+          "запуск продукта лендинг",
+          "Uzbekistan startup raises",
+          "Uzbekistan IT startup launch"
+        ]
+      },
+      {
+        "name": "Кыргызстан",
+        "lang": "ru",
+        "hl": "ru",
+        "gl": "KG",
+        "ceid": "KG:ru",
+        "queries": [
+          "стартап запустил сайт",
+          "стартап привлек инвестиции",
+          "веб-дизайн студия заказ",
+          "редизайн сайта компания",
+          "разработка MVP стартап",
+          "запуск продукта лендинг",
+          "Kyrgyzstan startup launch",
+          "Bishkek IT startup"
+        ]
+      },
+      {
+        "name": "Таджикистан",
+        "lang": "ru",
+        "hl": "ru",
+        "gl": "TJ",
+        "ceid": "TJ:ru",
+        "queries": [
+          "стартап запустил сайт",
+          "стартап привлек инвестиции",
+          "веб-дизайн студия заказ",
+          "редизайн сайта компания",
+          "Tajikistan startup",
+          "Dushanbe IT startup"
+        ]
+      },
+      {
+        "name": "Армения",
+        "lang": "en",
+        "hl": "en-US",
+        "gl": "AM",
+        "ceid": "AM:en",
+        "queries": [
+          "startup launches product website",
+          "startup raises seed round",
+          "UI/UX design startup",
+          "MVP development startup",
+          "design engineer hiring",
+          "Armenia startup raises",
+          "Yerevan startup launch",
+          "стартап Армения Ереван"
+        ]
+      },
+      {
+        "name": "Украина",
+        "lang": "uk",
+        "hl": "uk",
+        "gl": "UA",
+        "ceid": "UA:uk",
+        "queries": [
+          "стартап запустив сайт",
+          "стартап залучив інвестиції",
+          "веб-дизайн замовлення",
+          "UI/UX дизайн стартап",
+          "розробка MVP",
+          "Ukraine startup raises",
+          "Ukrainian startup launches product"
+        ]
+      },
+      {
+        "name": "Индия (product startups)",
+        "lang": "en",
+        "hl": "en-IN",
+        "gl": "IN",
+        "ceid": "IN:en",
+        "queries": [
+          "Indian SaaS startup raises Series A",
+          "Indian product startup raises Series B",
+          "Bengaluru startup raises funding",
+          "India fintech startup raises Series A",
+          "India AI startup raises seed",
+          "India D2C brand launches new website",
+          "Indian startup launches product redesign"
+        ]
+      }
+    ],
+    "extra_regions_note": "Added regions: CIS/Armenia/Ukraine/India. Google News RSS, same pipeline as US signals. India = funded product startups only (Series A+/seed rounds), no freelance marketplaces."
   },
   "tg_leads": {
     "_help": "Telegram chat monitor (agent/tg_monitor.py). Chats live in agent/tg_chats.json. All patterns are case-insensitive regexes.",
@@ -686,8 +804,24 @@
       "казино|ставки\\s+на\\s+спорт|букмекер|1xbet|крипто\\w*\\s+(?:сигнал|арбитраж)|арбитраж\\s+трафик",
       "заработ\\w+\\s+(?:от|до|на)\\s+\\d|пассивн\\w+\\s+доход|быстрый\\s+заработок",
       "подпиш(?:ись|итесь)\\s+на|переходи\\w*\\s+по\\s+ссылк|жми\\s+на\\s+ссылк",
-      "\\bairdrop\\b|\\bgiveaway\\b|\\bfree\\s+money\\b"
+      "\\bairdrop\\b|\\bgiveaway\\b|\\bfree\\s+money\\b",
+      "t\\.me/\\w*bot\\b|t\\.me/[^\\s]*\\?start=|[?&]start=|\\bстарт\\s+бот\\w*",
+      "подпишись|подписывайтесь|подписаться\\s+на\\s+(?:канал|наш)|наш\\s+канал|мой\\s+канал|join\\s+(?:our|my)\\s+channel|subscribe\\s+to",
+      "арбитраж\\w*|\\bcpa\\b|\\bтрафик\\w*\\s+(?:лив|с\\s+тикток|на\\s+офер)|\\bоффер\\w*\\s+(?:по|на)\\s+(?:cpa|гембл)|gambl\\w+|гембл\\w+|беттинг|betting|слот[ыа]\\b|\\bslots?\\b",
+      "(?:х|x)\\s?\\d{2,}\\s+(?:за|в\\s+день)|гарантирован\\w+\\s+(?:доход|прибыл)|вложи\\w*\\s+и\\s+получ|ponzi|пирамид\\w+|pump\\s*(?:and|&)\\s*dump|\\bpump\\b.*\\btoken|memecoin|мемкоин\\w*|\\bico\\b",
+      "(?:пройди|пройдите|купи\\w*|запишись|запишитесь)\\s+(?:наш\\s+|мой\\s+)?курс|\\bкурс\\w*\\s+(?:по|для)\\s+\\w+.*(?:скидк|промокод|запис)|\\bwebinar\\b|вебинар\\w*|\\bmasterclass\\b|мастер-?класс\\w*|\\bbootcamp\\b|наставничеств\\w+|менторств\\w+",
+      "\\bбартер\\w*|\\bbarter\\b|\\bswap\\s+services\\b|обмен\\s+услугами|в\\s+обмен\\s+на\\s+(?:рекламу|пиар|услуг)",
+      "\\binternship\\b|\\bintern\\b|\\bтрейни\\b|\\bстажир\\w+|\\bстажировк\\w+|\\bfresher\\w*\\b|\\bunpaid\\b|\\bvolunteer\\w*\\b|волонт[её]р\\w*"
     ],
+    "hr_spam": [
+      "\\b(?:we\\s+are|we're)\\s+(?:a\\s+)?(?:hiring|recruiting)\\s+(?:for|multiple|many)|\\bmultiple\\s+(?:openings|positions|vacancies)\\b|\\bwalk[- ]?in\\s+drive\\b|\\burgent\\s+(?:hiring|opening|requirement)s?\\b|\\bimmediate\\s+joiners?\\b",
+      "\\b(?:recruitment|staffing|manpower|placement)\\s+(?:agency|consultanc\\w+|firm|services?)\\b|\\bconsultancy\\b|\\bcv\\s+to\\s+(?:email|whatsapp)|send\\s+(?:your\\s+)?(?:cv|resume)\\s+(?:to|at)|\\bwhatsapp\\s+(?:me\\s+)?(?:at|on)?\\s*\\+?\\d",
+      "\\boffshore\\s+(?:development|team|outsourc\\w+)|\\boutsourc\\w+\\s+(?:company|services|team)|\\bdedicated\\s+(?:development\\s+)?team\\b|\\bwhite[- ]?label\\b|\\bresell(?:er)?\\b|\\bbulk\\s+(?:work|projects?)\\b|\\bsub-?contract\\w*",
+      "\\bcpm\\b|\\bpay\\s+per\\s+(?:task|click|lead)\\b|\\bwork\\s+from\\s+home\\s+(?:and\\s+)?earn\\b|\\bpart[- ]?time\\s+(?:job|earning)s?\\b|\\bdata\\s+entry\\b|\\bcommission[- ]?based\\b|\\bno\\s+investment\\b|\\bearn\\s+(?:up\\s+to\\s+)?(?:rs\\.?|₹|\\$)\\s*\\d"
+    ],
+    "india_markers": "\\bindia\\b|\\bindian\\b|bengaluru|bangalore|\\bmumbai\\b|\\bdelhi\\b|\\bgurgaon\\b|\\bgurugram\\b|\\bhyderabad\\b|\\bpune\\b|\\bchennai\\b|₹|\\binr\\b|\\blakhs?\\b|\\bcrores?\\b|\\brs\\.?\\s*\\d|\\+91",
+    "india_require": "\\bmvp\\b|\\bsaas\\b|\\bstartup\\b|\\bstart-?up\\b|\\bfunded\\b|\\bseed\\b|\\bseries\\s+[abc]\\b|\\bfounder\\w*\\b|\\bproduct\\s+(?:company|team|design|startup)\\b|\\bui\\s*/?\\s*ux\\b|\\bredesign\\w*|\\bweb\\s*app\\b|\\bdashboard\\b|\\bnext\\.?js\\b|\\breact\\b|\\bfigma\\b|\\bwebsite\\s+(?:redesign|rebuild)\\b",
+    "cis_min_budget_usd": 300,
     "offers": [
       "(?:предлагаю|оказываю|делаю|выполню|возьму)\\s+(?:услуги|заказ\\w*|сайт\\w*|лендинг\\w*)",
       "(?:мо[ёе]|моё|мои)\\s+портфолио|портфолио\\s+в\\s+(?:лс|личк\\w*|профиле)",
@@ -704,7 +838,8 @@
     "cheap": [
       "недорого|бюджетн\\w+\\s+вариант|за\\s+еду|бесплатно|за\\s+отзыв|за\\s+идею|копейк\\w+|на\\s+безвозмездной",
       "\\bfree\\s+of\\s+charge\\b|\\bfor\\s+free\\b|\\bunpaid\\b|\\bcheap(?:est)?\\b|\\blow[- ]budget\\b|\\bfor\\s+exposure\\b",
-      "за\\s+портфолио|по\\s+дружбе|студент\\w*\\s+для\\s+практики"
+      "за\\s+портфолио|по\\s+дружбе|студент\\w*\\s+для\\s+практики",
+      "в\\s+портфолио|для\\s+портфолио|за\\s+отзыв\\w*|в\\s+обмен\\s+на\\s+отзыв|для\\s+(?:кейса|практики|опыта)|for\\s+(?:my\\s+)?portfolio|in\\s+exchange\\s+for\\s+(?:review|feedback|exposure)|for\\s+(?:a\\s+)?(?:review|testimonial)|\\bpro\\s*bono\\b|\\btest\\s+task\\s+(?:unpaid|free)|тестов\\w+\\s+(?:задани\\w+\\s+)?бесплатн\\w+|\\bдёшево\\b|\\bдешево\\b|\\bминимальн\\w+\\s+цен\\w+|\\bсамо[ей]\\s+дешев\\w+|\\blowest\\s+(?:price|rate)\\b|\\bbudget[- ]friendly\\b|\\bvery\\s+low\\s+budget\\b|\\bsmall\\s+budget\\b|небольш\\w+\\s+бюджет|\\bмалый\\s+бюджет"
     ],
     "discovery": {
       "_help": "Automatic search of public chats and channels (agent/tg_discover.py). Nothing is joined; chats are only read.",
@@ -755,7 +890,25 @@
         "freelance frontend",
         "buscamos desarrollador",
         "diseñador ux ui",
-        "bots de telegram encargos"
+        "bots de telegram encargos",
+        "заказы казахстан дизайн",
+        "фриланс казахстан",
+        "фриланс узбекистан",
+        "IT узбекистан работа",
+        "фриланс кыргызстан",
+        "IT бишкек",
+        "армения it работа",
+        "armenia it jobs",
+        "фриланс украина дизайн",
+        "вебдизайн украина",
+        "дизайн сайтів",
+        "UI/UX дизайнер замовлення",
+        "landing page заказ",
+        "сайт для стартапа",
+        "MVP для стартапа",
+        "design engineer",
+        "india startup founders",
+        "india product startups"
       ],
       "topic_words": [
         "design|дизайн|diseñ|\\bux\\b|\\bui\\b|freelanc|фриланс|заказ|вакан|\\bjobs?\\b|\\bwork\\b|startup|стартап|agenc|агентств|\\bai\\b|нейро|бот|автоматиз|\\bapp\\b|мини-?апп",
@@ -766,9 +919,9 @@
         "forex|форекс|трейд|trading|signals|сигнал|крипт|crypto|binance|airdrop|nft|p2p|обменник|займ|кредит",
         "накрутк|подписчик|раскрутк|взлом|hack|карди|cvv|дроп|обнал|наркот|vpn|прокси|proxy|mlm|сетев"
       ],
-      "min_members": 500,
-      "max_total": 50,
-      "max_new_per_run": 10,
+      "min_members": 300,
+      "max_total": 70,
+      "max_new_per_run": 15,
       "rediscovery_hours": 24,
       "sample_size": 100,
       "min_leads_in_sample": 2,

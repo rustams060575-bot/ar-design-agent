@@ -367,10 +367,13 @@ def fetch_signals(cfg: dict) -> list[dict]:
     sg = cfg.get("signals", {})
     if not sg.get("enabled"):
         return []
-    region, leads = sg["region"], []
-    for q in sg.get("queries", []):
+    leads = []
+    jobs = [(sg["region"], q, "en") for q in sg.get("queries", [])]
+    for er in sg.get("extra_regions", []):  # CIS / Armenia / Ukraine / India
+        jobs += [(er, q, er.get("lang", "en")) for q in er.get("queries", [])]
+    for region, q, lang in jobs:
         for lead in fetch_feed(google_news_url(q, region, sg.get("max_age_days", 10)), "news", cfg,
-                               region=region["name"], lang="en", limit=sg.get("per_query", 6)):
+                               region=region["name"], lang=lang, limit=sg.get("per_query", 6)):
             lead["source"] = "signal"
             lead["id"] = make_id("signal", lead["url"])
             leads.append(lead)

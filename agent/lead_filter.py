@@ -25,6 +25,11 @@ CURRENCIES = [
     (r"₽|руб\w*|\bр\b|rub", 1 / 95),
     (r"₸|тенге|kzt", 1 / 480),
     (r"₴|грн|uah", 1 / 41),
+    (r"сум(?:ов|а|ы)?(?![а-яё])|uzs|so['’]?m", 1 / 12500),
+    (r"сомони|tjs", 1 / 10.5),
+    (r"сом(?:ов|а)?(?![а-яё])|kgs", 1 / 87),
+    (r"драм(?:ов|а)?(?![а-яё])|amd", 1 / 390),
+    (r"₹|inr|рупи\w*|\brs\.?", 1 / 84),
 ]
 _NUM = r"(?P<num>\d{1,3}(?:[  .,]\d{3})+|\d+(?:[.,]\d+)?)"
 _MULT = r"(?P<mult>k|к|тыс\.?|тысяч\w*|т\.р\.?)?"
@@ -75,7 +80,10 @@ class Prefilter:
         self.min_budget = float(c.get("min_budget_usd", 300))
         self.keywords = _compile(c["keywords"])
         self.intent = _compile(c["intent"])
-        self.rules = [(name, _compile(c.get(name, []))) for name in ("spam", "offers", "office", "cheap")]
+        self.cis_min_budget = float(c.get("cis_min_budget_usd", self.min_budget))
+        self.rules = [(name, _compile(c.get(name, []))) for name in ("spam", "hr_spam", "offers", "office", "cheap")]
+        self.india = re.compile(c["india_markers"], FLAGS) if c.get("india_markers") else None
+        self.india_require = re.compile(c["india_require"], FLAGS) if c.get("india_require") else None
 
     def check(self, text: str) -> tuple[bool, str, list[str]]:
         """-> (passes, reason, matched keywords). `reason` explains a rejection (useful with --verbose)."""
@@ -90,8 +98,13 @@ class Prefilter:
             return False, "no keyword", []
         if self.intent and not self.intent.search(t):
             return False, "no intent", hits
+        # India: only product / startup requests; generic HR and cheap outsourcing never reach the model.
+        if self.india and self.india.search(t) and self.india_require and not self.india_require.search(t):
+            return False, "india: not a product/startup request", hits
         amounts = budgets_usd(t)
-        if amounts and max(amounts) < self.min_budget:
+        # CIS (Cyrillic) messages: an explicitly stated budget below the stricter threshold is dumping.
+        floor = self.cis_min_budget if re.search(r"[а-яёіїєґ]", t, FLAGS) else self.min_budget
+        if amounts and max(amounts) < floor:
             return False, f"tiny budget (~${max(amounts):.0f})", hits
         return True, "ok", hits
 
