@@ -351,7 +351,7 @@ class Monitor:
         lines += [f"<b>Автор:</b> {author}", f"<b>Совпало:</b> {esc(', '.join(hits[:5]))}", ""]
         if r.get("warnings"):
             lines.append(f"<i>проверьте черновик: {esc('; '.join(r['warnings']))}</i>")
-        lines += ["<b>Черновик отклика</b> (нажмите, чтобы скопировать):", f"<pre>{esc(r['reply'][:1800])}</pre>"]
+        lines += ["Черновик отклика:", "", esc(r["reply"][:1800])]
         buttons = [{"text": "Открыть сообщение", "url": link}]
         if username:
             buttons.append({"text": "Написать автору", "url": f"https://t.me/{username}"})
