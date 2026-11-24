@@ -5644,6 +5644,162 @@
       "status": "rejected",
       "score": 6,
       "at": "2026-11-23T14:05:34+00:00"
+    },
+    "hn:50614327": {
+      "name": "A free creative suite, built in Rust, for AI collaboration",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:02:35+00:00"
+    },
+    "job:4682bc92a9f90889": {
+      "name": "Frontend Engineer, Ads Campaign Manager - Reddit",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-24T02:02:39+00:00"
+    },
+    "hn:50618223": {
+      "name": "Harness vs. Feature Factories",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-24T02:02:41+00:00"
+    },
+    "job:3b242b2698ef4f0e": {
+      "name": "Staff Software Engineer - Elation Health",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-24T02:02:46+00:00"
+    },
+    "hn:50618770": {
+      "name": "Just Dashboard, open-source Linux management dashboard",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:02:52+00:00"
+    },
+    "hn:50616257": {
+      "name": "An in-browser checker for AI agent transcripts (nothing is uploaded)",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:02:57+00:00"
+    },
+    "hn:50621077": {
+      "name": "A React Native math keypad for kids",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-24T02:03:00+00:00"
+    },
+    "hn:50619225": {
+      "name": "Klink",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-24T02:03:03+00:00"
+    },
+    "hn:50613864": {
+      "name": "Diffie",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-24T02:03:08+00:00"
+    },
+    "hn:50616164": {
+      "name": "Ding",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-24T02:03:11+00:00"
+    },
+    "signal:287f2684c9c4e286": {
+      "name": "Barcelona-based Fermat raises €7.26 million for its AI operating system for fashion and luxury brands",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-24T02:03:15+00:00"
+    },
+    "hn:50615222": {
+      "name": "Modeloop",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:03:20+00:00"
+    },
+    "signal:bfd2a2da5bb9db32": {
+      "name": "Hancom Hires U.S. Executive to Launch AI Workforce Platform Nomadian",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:03:25+00:00"
+    },
+    "hn:50620993": {
+      "name": "Tripup",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-24T02:03:29+00:00"
+    },
+    "hn:50620919": {
+      "name": "Want to play with some algebraic curves?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-24T02:03:31+00:00"
+    },
+    "signal:965c16dea373d79a": {
+      "name": "Robotics AI startup ramps up physical space race with downtown SF lease",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-24T02:03:34+00:00"
+    },
+    "hn:50612762": {
+      "name": "SecureVibe",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:03:39+00:00"
+    },
+    "hn:50617240": {
+      "name": "CertNudge",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:03:44+00:00"
+    },
+    "signal:5f24e285baad5de9": {
+      "name": "Startup Valuation Multiples: What Founders Need to Know",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-24T02:03:47+00:00"
+    },
+    "signal:178e3bd0dc79d6da": {
+      "name": "Japan FinTech Observer #191",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-24T02:03:50+00:00"
+    },
+    "signal:97f8bc9bc6f6a152": {
+      "name": "Free Grants and Programs for Small Business",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-24T02:03:52+00:00"
+    },
+    "signal:86ca6d3a9237c5b1": {
+      "name": "A 16-Year-Old’s AI Missile Startup Lands $500K From Y Combinator",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-24T02:03:57+00:00"
+    },
+    "signal:959f0b4db8f28961": {
+      "name": "Kids Type Real Code and Watch 3D Towns Rise in Blockwright's New Coding Platform",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:04:01+00:00"
+    },
+    "signal:3273459cfc04f49d": {
+      "name": "A 16-Year-Old’s AI Missile Startup Lands $500K From Y Combinator",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-24T02:04:05+00:00"
+    },
+    "signal:9c6926628034d7df": {
+      "name": "Hungary's meshapplied joins Y Combinator with $500K offer",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-24T02:04:09+00:00"
+    },
+    "signal:35196d834a17e511": {
+      "name": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-24T02:04:14+00:00"
     }
   },
   "contacted_domains": [
