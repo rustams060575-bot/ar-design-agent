@@ -7600,6 +7600,366 @@
       "status": "rejected",
       "score": 1,
       "at": "2026-11-26T14:08:22+00:00"
+    },
+    "hn:50656688": {
+      "name": "Neui",
+      "status": "rejected",
+      "score": 3,
+      "at": "2026-11-27T02:03:11+00:00"
+    },
+    "signal:9e7ac074caf96121": {
+      "name": "Maple Raises $5.3M Seed to Build a Privacy-Focused Cloud AI Agent",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-27T02:03:15+00:00"
+    },
+    "hn:50657965": {
+      "name": "What do you all think of Rex (Superlogical)?",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:03:18+00:00"
+    },
+    "hn:50661076": {
+      "name": "SonoJS",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:03:22+00:00"
+    },
+    "signal:4c51df5c010b8375": {
+      "name": "Цифровые стартапы из Кыргызстана успешно реализуют в Казахстане",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:03:25+00:00"
+    },
+    "hn:50660683": {
+      "name": "What is the OpenRouter equivalent to launch in 2026?",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:03:28+00:00"
+    },
+    "hn:50659437": {
+      "name": "Décor does HTML widgets for the Mac (you know, like in the old days)",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:03:31+00:00"
+    },
+    "signal:c313f83f448507b1": {
+      "name": "Нефтяники помогут студентам запустить стартапы",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:03:33+00:00"
+    },
+    "signal:366dba0062fb388a": {
+      "name": "Data Security Startup Matters.AI Nets ₹115 Cr From Tanglin Venture Partners, Others",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:03:37+00:00"
+    },
+    "hn:50656233": {
+      "name": "Clockwork",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:03:40+00:00"
+    },
+    "signal:7f8df9878351644e": {
+      "name": "12 женщин из Казахстана, которые строят карьеру в международных tech-компаниях",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-27T02:03:42+00:00"
+    },
+    "job:91b287ebdda60c1e": {
+      "name": "Senior UX Designer (Contractor) - Findem",
+      "status": "alert_only",
+      "score": 8,
+      "at": "2026-11-27T02:03:55+00:00"
+    },
+    "hn:50656050": {
+      "name": "Lockward",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:03:58+00:00"
+    },
+    "hn:50656925": {
+      "name": "Graphvein",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:04:01+00:00"
+    },
+    "hn:50658013": {
+      "name": "Grind, my OpenDocument native office suite built in Rust",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:04:04+00:00"
+    },
+    "hn:50657224": {
+      "name": "BenchSaaS",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:04:08+00:00"
+    },
+    "hn:50659956": {
+      "name": "Dart-TS Bridge",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:04:10+00:00"
+    },
+    "hn:50656826": {
+      "name": "Status page for your AI bots",
+      "status": "rejected",
+      "score": 4,
+      "at": "2026-11-27T02:04:15+00:00"
+    },
+    "signal:c3dbac71064dcd6b": {
+      "name": "От университетской идеи до технологического бизнеса",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-27T02:04:18+00:00"
+    },
+    "signal:980a448d7151d1c5": {
+      "name": "AI Funding News November 23 2026: Six Rounds Total $2.23 Billion, Led by Sierra",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:04:20+00:00"
+    },
+    "signal:e26182cd741aaac7": {
+      "name": "На Акселераторе АлтГУ студентам объяснили юридические тонкости создания технологических стартапов",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:04:23+00:00"
+    },
+    "signal:ac20cda524d14458": {
+      "name": "Роботи готуються до війни: Valkryn залучив $17 млн на системи тестування автономної зброї",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:04:28+00:00"
+    },
+    "signal:f5a37a5e837b764d": {
+      "name": "Unsiloed AI Raises $7.5M Seed to Make Documents as Computable as Databases",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:04:33+00:00"
+    },
+    "signal:b8c29cf50137ebb2": {
+      "name": "Uzbekistan to Create a Laboratory for Film Production Using AI",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:04:35+00:00"
+    },
+    "signal:b6a7447a089ae7f6": {
+      "name": "AI-стартап Mirendil привлек $1 млрд инвестиций в рамках раунда Series A",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:04:41+00:00"
+    },
+    "signal:80cf3744075eeed9": {
+      "name": "Uzbek Airline Launches Charter Flights from Bishkek to Phuket",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:04:44+00:00"
+    },
+    "signal:013da9d5abd2a575": {
+      "name": "Epochal Launches Time Portal to Test Forecasting AI on Web History",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:04:49+00:00"
+    },
+    "signal:6f0c6030a52ed7f7": {
+      "name": "Технологии будущего: как нацпроект помогает университетским стартапам",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:04:52+00:00"
+    },
+    "signal:6c0bc7995b00590f": {
+      "name": "Maple raises $5.3M to build AI products that protect your data, even from itself",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-27T02:04:55+00:00"
+    },
+    "signal:36097d0832662a06": {
+      "name": "Прогнозы по дизайну интерьера на 2027 год: зоны без технологий, удобное хранение и индивидуальные детали",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-27T02:04:58+00:00"
+    },
+    "signal:9653748d27ac5d9b": {
+      "name": "As FEMA pushes recovery onto states, a Miami startup pitches an AI case manager for disaster survivors",
+      "status": "alert_only",
+      "score": 7,
+      "at": "2026-11-27T02:05:12+00:00"
+    },
+    "signal:3562f0c192e598a9": {
+      "name": "16,23 млн ₽ оплат за 13 месяцев: как мы масштабировали рекламу школы дизайна с Telegram Ads и VK Ads",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:05:15+00:00"
+    },
+    "signal:cb8aa3e916bd3ba9": {
+      "name": "Ex-Convoy CEO's new startup emerges from stealth with $277 million",
+      "status": "alert_only",
+      "score": 7,
+      "at": "2026-11-27T02:05:31+00:00"
+    },
+    "signal:c4e94151f9c8dc88": {
+      "name": "Dante Security raises $10 million to put humans in charge of AI agents",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:05:36+00:00"
+    },
+    "signal:e58128a657e01198": {
+      "name": "AI infra startup JohnAIC raises $1.9 Mn in pre-seed round",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:05:40+00:00"
+    },
+    "signal:e02b8ab019cded92": {
+      "name": "Pedestal AI Emerges From Stealth With $4.7M to Bring Agentic AI to Delivery Supply Chains",
+      "status": "alert_only",
+      "score": 7,
+      "at": "2026-11-27T02:05:54+00:00"
+    },
+    "signal:d6a323e69187de1b": {
+      "name": "Выгорание собственника: как работать 80 часов в неделю и не разрушить бизнес",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:05:57+00:00"
+    },
+    "signal:0d49c794de31f925": {
+      "name": "Top 10 Best Dedicated Development Team Providers In India In 2027",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:00+00:00"
+    },
+    "signal:a7ddafa0a90b2728": {
+      "name": "Vegapay Raises $10 Mn In Series A Round Led By Vertex Ventures, Prosus",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:06:03+00:00"
+    },
+    "signal:e2f77486b028b0c4": {
+      "name": "Metano Emerges from Stealth with $12M Seed to Secure Autonomous AI Agents",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-27T02:06:07+00:00"
+    },
+    "signal:26907b65524e60d7": {
+      "name": "Как маркетинговому агентству находить клиентов: 7 рабочих каналов",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:10+00:00"
+    },
+    "signal:a79c564370d6603c": {
+      "name": "Нанять специалиста по качеству или привлечь внешнюю команду: как посчитать и не прогадать",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:13+00:00"
+    },
+    "signal:aa08efcd7e7fe7af": {
+      "name": "Apply Now: Dare to Start Founder-Market Fit Program (Georgia) - fundsforNGOs",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:17+00:00"
+    },
+    "signal:a2b12ecd6dcbdb5d": {
+      "name": "Алиса отвечает на 42% запросов, а Метрика этого не показывает. Что теперь писать клиенту в отчете",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:19+00:00"
+    },
+    "signal:4e02922c1c530f2b": {
+      "name": "Matters.AI raises Rs 115 cr in pre-Series A funding",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:06:23+00:00"
+    },
+    "signal:533352336bda58f2": {
+      "name": "Google Launches ‘Momentum’ to Support India’s Startup Ecosystem",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:26+00:00"
+    },
+    "signal:d595c15be79ea453": {
+      "name": "Scaling Innovative Tech and Digital Startups in Kenya - fundsforNGOs",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:29+00:00"
+    },
+    "signal:bd9c65e6b4132db9": {
+      "name": "Karta AI Raises Rs 28.52 Cr In Seed Round Led By Peer Capital & Cedar Hill Capital",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:06:33+00:00"
+    },
+    "signal:c334baaa0549c83b": {
+      "name": "Someone is going to build a massive company doing this with ChatGPT｜My First Million",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:36+00:00"
+    },
+    "signal:a8483bc1c6eeeeda": {
+      "name": "Karta AI Raises Rs. 28.52 Crores in Seed Funding Round Led by Peer Capital and Cedar Hill Capital",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-27T02:06:40+00:00"
+    },
+    "signal:b4d6bb7c45e6cef6": {
+      "name": "The new hot job in law doesn’t require a JD",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:43+00:00"
+    },
+    "signal:d27187c92268a244": {
+      "name": "India's Bharat Semi raises $24M for programmable AI sensors",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:06:46+00:00"
+    },
+    "signal:90853708355283a0": {
+      "name": "Comment: Fusion hiring boom opens doors to engineers from other sectors",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:49+00:00"
+    },
+    "signal:cc5d712ac47ab381": {
+      "name": "JohnAIC raises $1.9 million for on-premise AI server expansion",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:06:53+00:00"
+    },
+    "signal:57e44c25badaba60": {
+      "name": "Karta AI Raises ₹28.52 Crore in Seed Funding Round Led by Peer Capital and Cedar Hill Capital",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:06:56+00:00"
+    },
+    "signal:f79baceaff293288": {
+      "name": "Round Up: 10 Bike Industry Jobs Available Right Now",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:06:59+00:00"
+    },
+    "signal:7646f24ad2eb2b5d": {
+      "name": "JohnAIC raises $1.9 million to scale on-premise AI server infrastructure",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:07:03+00:00"
+    },
+    "signal:52d9cd464de088ee": {
+      "name": "D2C Brands Build A Multiverse",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:07:05+00:00"
+    },
+    "signal:b553ec1cb1fddef0": {
+      "name": "Who’s hiring in the Conshohocken, Plymouth Meeting, and Lafayette Hill area? 44 local jobs to apply for",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-27T02:07:08+00:00"
+    },
+    "signal:651fa8d16e3ee227": {
+      "name": "GoKwik & PayU Enable Multi-Brand D2C Commerce Experience On ChatGPT",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-27T02:07:13+00:00"
     }
   },
   "contacted_domains": [
