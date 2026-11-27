@@ -1,0 +1,449 @@
+{
+ "at": "2026-11-27T17:52:44+00:00",
+ "instagram": {
+  "account": {
+   "id": "17841451601833501",
+   "biography": "Immersive Digital Design & Flagship Web Engineering",
+   "followers_count": 13,
+   "follows_count": 155,
+   "media_count": 35,
+   "name": "AR Design",
+   "username": "ar_design_agency",
+   "website": "https://withardesign.com"
+  },
+  "publishing_limit": {
+   "data": [
+    {
+     "quota_usage": 2,
+     "config": {
+      "quota_total": 100,
+      "quota_duration": 86400
+     }
+    }
+   ]
+  },
+  "media": [
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-27T15:02:36+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DgP9LqDGzKo/",
+    "insights": {
+     "reach": 0,
+     "views": 0,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "follows": 0
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-27T02:00:59+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DgOjsYbgNN1/",
+    "insights": {
+     "reach": 42,
+     "views": 48,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 2563
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-26T14:01:15+0000",
+    "like_count": 1,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DgNRWwclwKU/",
+    "insights": {
+     "reach": 0,
+     "views": 0,
+     "saved": 0,
+     "shares": 0,
+     "likes": 1,
+     "comments": 0,
+     "total_interactions": 1,
+     "follows": 0
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-26T02:00:59+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DgL-6SCuoWG/",
+    "insights": {
+     "reach": 14,
+     "views": 16,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 1308
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-25T14:01:05+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DgKsjVoADT2/",
+    "insights": {
+     "reach": 0,
+     "views": 1,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "follows": 0
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-25T02:00:54+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DgJaGnANXzi/",
+    "insights": {
+     "reach": 8,
+     "views": 9,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 4533
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-24T17:49:21+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DgIh00cgYB9/",
+    "insights": {
+     "reach": 62,
+     "views": 71,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 2374
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-24T14:01:10+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/DgIHxJlFxgj/",
+    "insights": {
+     "reach": 0,
+     "views": 1,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "follows": 0
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-24T02:00:55+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DgG1T02jbnX/",
+    "insights": {
+     "reach": 23,
+     "views": 30,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 2961
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-23T02:01:01+0000",
+    "like_count": 0,
+    "comments_count": 2,
+    "permalink": "https://www.instagram.com/reel/DgEQhDpjlgw/",
+    "insights": {
+     "reach": 6,
+     "views": 9,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 2,
+     "total_interactions": 2,
+     "ig_reels_avg_watch_time": 4693
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-22T18:23:58+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DgDcLICgUkU/",
+    "insights": {
+     "reach": 48,
+     "views": 58,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 6298
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-22T06:08:39+0000",
+    "like_count": 1,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DgCID6qk3LQ/",
+    "insights": {
+     "reach": 42,
+     "views": 50,
+     "saved": 0,
+     "shares": 0,
+     "likes": 1,
+     "comments": 0,
+     "total_interactions": 1,
+     "ig_reels_avg_watch_time": 2444
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-21T02:00:59+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/Df_G7RzjC9c/",
+    "insights": {
+     "reach": 38,
+     "views": 51,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 2928
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-18T20:49:30+0000",
+    "like_count": 0,
+    "comments_count": 2,
+    "permalink": "https://www.instagram.com/reel/Df5ZqqNAP8j/",
+    "insights": {
+     "reach": 4,
+     "views": 5,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 2,
+     "total_interactions": 2,
+     "ig_reels_avg_watch_time": 5353
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-17T19:04:53+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/Df2o97lAAXm/",
+    "insights": {
+     "reach": 3,
+     "views": 3,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "follows": 0
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-16T22:33:16+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/Df0b94mmS7u/",
+    "insights": {
+     "reach": 5,
+     "views": 6,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 3918
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-16T17:24:40+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/Dfz4tGWgP7t/",
+    "insights": {
+     "reach": 1,
+     "views": 1,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "follows": 0
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "REELS",
+    "media_type": "VIDEO",
+    "timestamp": "2026-11-16T02:00:59+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/reel/DfyO9RtlVHD/",
+    "insights": {
+     "reach": 15,
+     "views": 16,
+     "saved": 0,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 0,
+     "ig_reels_avg_watch_time": 1281
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-15T20:37:00+0000",
+    "like_count": 1,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/Dfxp60tFkV3/",
+    "insights": {
+     "reach": 8,
+     "views": 9,
+     "saved": 0,
+     "shares": 0,
+     "likes": 1,
+     "comments": 0,
+     "total_interactions": 1,
+     "follows": 0
+    },
+    "public": "public (200)"
+   },
+   {
+    "media_product_type": "FEED",
+    "media_type": "CAROUSEL_ALBUM",
+    "timestamp": "2026-11-15T14:01:16+0000",
+    "like_count": 0,
+    "comments_count": 0,
+    "permalink": "https://www.instagram.com/p/Dfw8nKBGAmh/",
+    "insights": {
+     "reach": 5,
+     "views": 8,
+     "saved": 1,
+     "shares": 0,
+     "likes": 0,
+     "comments": 0,
+     "total_interactions": 1,
+     "follows": 0
+    },
+    "public": "public (200)"
+   }
+  ],
+  "account_reach_7d": {
+   "data": [
+    {
+     "id": "17841451601833501/insights/reach/day",
+     "name": "reach",
+     "period": "day",
+     "title": "Охваченные аккаунты",
+     "description": "Число уникальных аккаунтов, которые видели ваш контент хотя бы один раз, в том числе в объявлениях. К контенту относятся публикации, истории, видео Reels, обычные видео и прямые эфиры. Отличие охвата от показов заключается в том, что последние могут включать многократные просмотры контента одним и тем же аккаунтом. Эта метрика является приблизительной и находится в разработке.",
+     "total_value": {
+      "value": 43
+     }
+    },
+    {
+     "id": "17841451601833501/insights/views/day",
+     "name": "views",
+     "period": "day",
+     "title": "Просмотры",
+     "description": "Число воспроизведений или показов вашего контента. К контенту относятся видео Reels, публикации, истории.",
+     "total_value": {
+      "value": 49
+     }
+    }
+   ],
+   "paging": {
+    "previous": "https://graph.facebook.com/v27.0/17841451601833501/insights?metric=reach%2Cviews&period=day&metric_type=total_value&access_token=***&since=1795456414&until=1795629214",
+    "next": "https://graph.facebook.com/v27.0/17841451601833501/insights?metric=reach%2Cviews&period=day&metric_type=total_value&access_token=***&since=1795802016&until=1795974816"
+   }
+  }
+ },
+ "facebook": {
+  "page": {
+   "name": "AR Design",
+   "link": "https://www.facebook.com/1542301175627947",
+   "website": "https://withardesign.com/",
+   "fan_count": 0,
+   "followers_count": 0,
+   "is_published": true,
+   "verification_status": "not_verified",
+   "id": "1542301175627947"
+  },
+  "posts": []
+ }
+}
