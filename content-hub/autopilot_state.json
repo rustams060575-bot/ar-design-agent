@@ -642,8 +642,22 @@
         "instagram": "published:18111585428632977",
         "facebook": "published:1028732442894406"
       }
+    },
+    {
+      "date": "2026-11-27",
+      "time": "10:02",
+      "slot": "morning",
+      "kind": "post",
+      "id": "C11",
+      "source": "ar02",
+      "live": true,
+      "ok": true,
+      "result": {
+        "instagram": "published:18125540998957005",
+        "facebook": "published:1542301175627947_122115041115535097"
+      }
     }
   ],
   "reel_i": 4,
-  "ar02_i": 24
+  "ar02_i": 33
 }
