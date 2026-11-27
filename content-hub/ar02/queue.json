@@ -686,5 +686,43 @@
     "order": 40,
     "caption_ig": "An intelligent interface should make the next step easier.\n\nNot ask people to explain everything twice.\n\nExploring context-aware digital experiences at AR Design.\n\nConcept demo.\n\n#AIDesign #UXDesign #AIIntegration #DigitalProducts #SaaS",
     "caption_fb": "An intelligent interface should make the next step easier, not ask people to explain everything twice.\n\nExploring context-aware digital experiences at AR Design. Concept demo, no real customer data."
+  },
+  {
+    "kind": "carousel",
+    "files_ig": [
+      "content-hub/ar02/C14/C14_01.png",
+      "content-hub/ar02/C14/C14_02.png",
+      "content-hub/ar02/C14/C14_03.png",
+      "content-hub/ar02/C14/C14_04.png",
+      "content-hub/ar02/C14/C14_05.png",
+      "content-hub/ar02/C14/C14_06.png",
+      "content-hub/ar02/C14/C14_07.png"
+    ],
+    "files_fb": [
+      "content-hub/ar02/C14/C14_01.png",
+      "content-hub/ar02/C14/C14_02.png",
+      "content-hub/ar02/C14/C14_03.png",
+      "content-hub/ar02/C14/C14_04.png",
+      "content-hub/ar02/C14/C14_05.png",
+      "content-hub/ar02/C14/C14_06.png",
+      "content-hub/ar02/C14/C14_07.png"
+    ],
+    "id": "C14",
+    "order": 41,
+    "caption_ig": "What happens when a website stops feeling like a collection of pages?\n\nAn exploration of spatial storytelling, cinematic interaction and digital experiences, built from our Living Galaxy study.\n\n#WebDesign #UXDesign #InteractiveDesign #DigitalExperience",
+    "caption_fb": "What happens when a website stops feeling like a collection of pages?\n\nAn AR Design exploration of spatial storytelling and cinematic interaction: scrolling as movement, transitions as continuity, space as story."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R27/R27_a-world-inside-a-website.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R27/R27_a-world-inside-a-website.mp4"
+    ],
+    "id": "R27",
+    "order": 42,
+    "caption_ig": "We are exploring a different relationship between people and digital spaces.\n\nLess navigation. More discovery.\n\nA concept for a cinematic web experience, in development at AR Design.\n\n#ImmersiveWeb #WebExperience #CreativeDevelopment #DigitalDesign",
+    "caption_fb": "We are exploring a different relationship between people and digital spaces. Less navigation. More discovery.\n\nA concept for a cinematic web experience, in development at AR Design."
   }
 ]
