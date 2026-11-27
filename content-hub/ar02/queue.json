@@ -559,5 +559,132 @@
     "order": 33,
     "caption_ig": "Attention is not always loud.\n\nSometimes, a single object in the right space says more than an entire screen of information.\n\nA visual study by AR Design, built from frames of GRAVITY, our original motion experiment.\n\n#ArtDirection #VisualDesign #DesignThinking #CreativeStudio",
     "caption_fb": "Attention is not always loud.\n\nSometimes, a single object in the right space says more than an entire screen of information. Contrast, order, space, movement and surprise: five principles, one marble sphere.\n\nA visual study by AR Design."
+  },
+  {
+    "kind": "carousel",
+    "files_ig": [
+      "content-hub/ar02/C12/C12_01.png",
+      "content-hub/ar02/C12/C12_02.png",
+      "content-hub/ar02/C12/C12_03.png",
+      "content-hub/ar02/C12/C12_04.png",
+      "content-hub/ar02/C12/C12_05.png",
+      "content-hub/ar02/C12/C12_06.png",
+      "content-hub/ar02/C12/C12_07.png"
+    ],
+    "files_fb": [
+      "content-hub/ar02/C12/C12_01.png",
+      "content-hub/ar02/C12/C12_02.png",
+      "content-hub/ar02/C12/C12_03.png",
+      "content-hub/ar02/C12/C12_04.png",
+      "content-hub/ar02/C12/C12_05.png",
+      "content-hub/ar02/C12/C12_06.png",
+      "content-hub/ar02/C12/C12_07.png"
+    ],
+    "id": "C12",
+    "order": 34,
+    "caption_ig": "Luxury is not a color palette.\n\nIt is the discipline of making every detail earn its place.\n\nSave this as a visual reference for your next project.\n\n#LuxuryDesign #ArtDirection #Typography #BrandDesign",
+    "caption_fb": "Luxury is not a color palette.\n\nIt is the discipline of making every detail earn its place: one typeface, one focal point, a restrained palette, generous space and motion that never interrupts.\n\nSave this as a visual reference for your next project."
+  },
+  {
+    "kind": "carousel",
+    "files_ig": [
+      "content-hub/ar02/C13/C13_01.png",
+      "content-hub/ar02/C13/C13_02.png",
+      "content-hub/ar02/C13/C13_03.png",
+      "content-hub/ar02/C13/C13_04.png",
+      "content-hub/ar02/C13/C13_05.png",
+      "content-hub/ar02/C13/C13_06.png",
+      "content-hub/ar02/C13/C13_07.png"
+    ],
+    "files_fb": [
+      "content-hub/ar02/C13/C13_01.png",
+      "content-hub/ar02/C13/C13_02.png",
+      "content-hub/ar02/C13/C13_03.png",
+      "content-hub/ar02/C13/C13_04.png",
+      "content-hub/ar02/C13/C13_05.png",
+      "content-hub/ar02/C13/C13_06.png",
+      "content-hub/ar02/C13/C13_07.png"
+    ],
+    "id": "C13",
+    "order": 35,
+    "caption_ig": "The most interesting part of digital filmmaking is not the software.\n\nIt is what happens when technical precision meets artistic intention.\n\nA study in digital light by AR Design. Every particle is computed, not filmed.\n\n#CGI #CreativeTechnology #Blender3D #DigitalCinema",
+    "caption_fb": "The most interesting part of digital filmmaking is not the software.\n\nIt is what happens when technical precision meets artistic intention. Geometry, light, camera and timing, built in code at AR Design."
+  },
+  {
+    "kind": "carousel",
+    "files_ig": [
+      "content-hub/ar02/C15/C15_01.png",
+      "content-hub/ar02/C15/C15_02.png",
+      "content-hub/ar02/C15/C15_03.png",
+      "content-hub/ar02/C15/C15_04.png",
+      "content-hub/ar02/C15/C15_05.png",
+      "content-hub/ar02/C15/C15_06.png",
+      "content-hub/ar02/C15/C15_07.png"
+    ],
+    "files_fb": [
+      "content-hub/ar02/C15/C15_01.png",
+      "content-hub/ar02/C15/C15_02.png",
+      "content-hub/ar02/C15/C15_03.png",
+      "content-hub/ar02/C15/C15_04.png",
+      "content-hub/ar02/C15/C15_05.png",
+      "content-hub/ar02/C15/C15_06.png",
+      "content-hub/ar02/C15/C15_07.png"
+    ],
+    "id": "C15",
+    "order": 36,
+    "caption_ig": "A beautiful interface can earn attention.\n\nA thoughtful system can make that attention useful.\n\nAt AR Design, we explore both.\n\nConcept demo.\n\n#ProductDesign #AIUX #SaaSDesign #DigitalStrategy",
+    "caption_fb": "A beautiful interface can earn attention. A thoughtful system can make that attention useful.\n\nAt AR Design, we design both: from the first question a visitor asks to the moment they confirm the next step.\n\nConcept demo."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R24/R24_defying-gravity.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R24/R24_defying-gravity.mp4"
+    ],
+    "id": "R24",
+    "order": 37,
+    "caption_ig": "An impossible space. A simple object. One continuous illusion.\n\nGRAVITY is an original motion experiment exploring perception, architecture and movement.\n\nCreated by AR Design.\n\n#MotionDesign #CreativeDirection #3DArt #Blender3D #ARDesign",
+    "caption_fb": "An impossible space. A simple object. One continuous illusion.\n\nGRAVITY is an original motion experiment by AR Design, exploring perception, architecture and movement."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R25/R25_remove-the-noise.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R25/R25_remove-the-noise.mp4"
+    ],
+    "id": "R25",
+    "order": 38,
+    "caption_ig": "Luxury is rarely about adding more.\n\nIt is about knowing what deserves to remain.\n\nAn interface study by AR Design. Fictional brand.\n\n#QuietLuxury #WebDesign #UIDesign #Minimalism #CreativeDirection",
+    "caption_fb": "Luxury is rarely about adding more. It is about knowing what deserves to remain.\n\nAn interface study by AR Design, built on a fictional brand."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R26/R26_from-nothing-to-light.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R26/R26_from-nothing-to-light.mp4"
+    ],
+    "id": "R26",
+    "order": 39,
+    "caption_ig": "Where mathematics becomes movement, and movement becomes emotion.\n\nA study in digital light by AR Design.\n\n#DigitalArt #CreativeCoding #MotionGraphics #VisualEngineering",
+    "caption_fb": "Where mathematics becomes movement, and movement becomes emotion.\n\nA study in digital light by AR Design. Every particle is computed in code, not filmed."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R28/R28_the-website-that-remembers.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R28/R28_the-website-that-remembers.mp4"
+    ],
+    "id": "R28",
+    "order": 40,
+    "caption_ig": "An intelligent interface should make the next step easier.\n\nNot ask people to explain everything twice.\n\nExploring context-aware digital experiences at AR Design.\n\nConcept demo.\n\n#AIDesign #UXDesign #AIIntegration #DigitalProducts #SaaS",
+    "caption_fb": "An intelligent interface should make the next step easier, not ask people to explain everything twice.\n\nExploring context-aware digital experiences at AR Design. Concept demo, no real customer data."
   }
 ]
