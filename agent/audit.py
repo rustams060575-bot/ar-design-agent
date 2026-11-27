@@ -124,6 +124,15 @@ def run_audit(cfg: dict | None = None) -> int:
               "facebook": facebook(g) if g.has("facebook") else {"error": "no facebook credentials"}}
     text = json.dumps(report, ensure_ascii=False, indent=1)
     print(re.sub(r"access_token=[^&\"\s]+", "access_token=***", text))
+    try:  # saved in the repo so the weekly review can read it (public raw URL); token-free by construction
+        out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "content-hub", "audit")
+        os.makedirs(out, exist_ok=True)
+        clean = re.sub(r"access_token=[^&\"\s]+", "access_token=***", text)
+        for name in (f"{report['at'][:10]}.json", "latest.json"):
+            with open(os.path.join(out, name), "w", encoding="utf-8") as fh:
+                fh.write(clean)
+    except OSError as exc:
+        print("[audit] save failed:", exc)
     try:
         from telegram_bot import send_text
         send_text(summary(report))
