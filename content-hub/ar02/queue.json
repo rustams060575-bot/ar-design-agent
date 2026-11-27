@@ -534,5 +534,30 @@
     "order": 32,
     "caption_ig": "Not every website needs rebuilding. DM PROJECT with your URL, your goal, and what isn’t working. We’ll discuss whether the task is focused or structural.\n\n#webdesign #uxdesign #websitedesign #designagency #uidesign",
     "caption_fb": "Not every website needs rebuilding. Message us: PROJECT with your URL, your goal, and what isn’t working. We’ll discuss whether the task is focused or structural."
+  },
+  {
+    "kind": "carousel",
+    "files_ig": [
+      "content-hub/ar02/C11/C11_01.png",
+      "content-hub/ar02/C11/C11_02.png",
+      "content-hub/ar02/C11/C11_03.png",
+      "content-hub/ar02/C11/C11_04.png",
+      "content-hub/ar02/C11/C11_05.png",
+      "content-hub/ar02/C11/C11_06.png",
+      "content-hub/ar02/C11/C11_07.png"
+    ],
+    "files_fb": [
+      "content-hub/ar02/C11/C11_01.png",
+      "content-hub/ar02/C11/C11_02.png",
+      "content-hub/ar02/C11/C11_03.png",
+      "content-hub/ar02/C11/C11_04.png",
+      "content-hub/ar02/C11/C11_05.png",
+      "content-hub/ar02/C11/C11_06.png",
+      "content-hub/ar02/C11/C11_07.png"
+    ],
+    "id": "C11",
+    "order": 33,
+    "caption_ig": "Attention is not always loud.\n\nSometimes, a single object in the right space says more than an entire screen of information.\n\nA visual study by AR Design, built from frames of GRAVITY, our original motion experiment.\n\n#ArtDirection #VisualDesign #DesignThinking #CreativeStudio",
+    "caption_fb": "Attention is not always loud.\n\nSometimes, a single object in the right space says more than an entire screen of information. Contrast, order, space, movement and surprise: five principles, one marble sphere.\n\nA visual study by AR Design."
   }
 ]
