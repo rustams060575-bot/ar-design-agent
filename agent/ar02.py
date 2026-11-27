@@ -43,10 +43,11 @@ def slot_of(et: datetime) -> str | None:
     return None
 
 
-def next_item(queue: list, state: dict, slot: str):
-    """Next unpublished queue item for the slot: carousel in the morning, reel in the evening, any kind for a manual run."""
+def next_item(queue: list, state: dict, slot: str, kind: str | None = None):
+    """Next unpublished queue item for the slot: carousel in the morning, reel in the evening, any kind for a manual run
+    (a manual run may name the kind: SEARCH_QUERY "now carousel" / "now reel")."""
     done = {e.get("id") for e in state.get("log", []) if e.get("source") == "ar02" and e.get("ok")}
-    want = SLOT_KIND.get(slot)
+    want = SLOT_KIND.get(slot) or kind
     for i, q in enumerate(queue):
         if q["id"] not in done and (want is None or q["kind"] == want):
             return i, q
@@ -79,14 +80,16 @@ def run(cfg: dict, now: datetime | None = None, force: bool | None = None) -> in
     graph = mp.Graph()
     live = graph.live
     et = (now or datetime.now(timezone.utc)).astimezone(ZoneInfo(TZ))
-    force = (os.getenv("SEARCH_QUERY", "").strip().lower() == "now") if force is None else force  # manual: "now" publishes the next item
+    words = os.getenv("SEARCH_QUERY", "").strip().lower().split()
+    force = (words[:1] == ["now"]) if force is None else force  # manual: "now" publishes the next item
+    manual_kind = words[1] if len(words) > 1 and words[1] in ("carousel", "reel") else None  # "now carousel" / "now reel"
     slot = slot_of(et) or ("manual" if force else None)
     today = et.strftime("%Y-%m-%d")
     if slot is None:
         print(f"[ar02] {et.strftime('%Y-%m-%d %H:%M %Z')}: outside the 09:00 / 21:00 New York windows, nothing to do")
         # The exact-time external trigger (cron-job.org -> /api/cron) is a workflow_dispatch. If one lands outside both windows the
         # timezone of the trigger and of this script disagree: say so loudly instead of silently skipping the slot.
-        if os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch" and os.getenv("SEARCH_QUERY", "").strip().lower() != "now":
+        if os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch" and words[:1] != ["now"]:
             send_report(f"⚠️ james ar02 · trigger arrived at {et.strftime('%H:%M %Z')} ({TZ}), outside the 09:00 / 21:00 windows: nothing published. "
                         f"If this was the cron-job.org slot job, its timezone must be {TZ}.")
         return 0
@@ -95,7 +98,7 @@ def run(cfg: dict, now: datetime | None = None, force: bool | None = None) -> in
     if any(e.get("date") == today and e.get("slot") == slot and e.get("ok") and e.get("source") == "ar02" for e in state["log"]):
         print(f"[ar02] {today} {slot}: already published, nothing to do")
         return 0
-    i, q = next_item(queue, state, slot)
+    i, q = next_item(queue, state, slot, manual_kind if slot == "manual" else None)
     if q is None:
         kind = SLOT_KIND.get(slot, "item")
         print(f"[ar02] no unpublished {kind} left in the queue: nothing published (old templates are disabled)")
