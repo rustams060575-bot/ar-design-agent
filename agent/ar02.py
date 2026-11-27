@@ -29,6 +29,14 @@ REPO = Path(__file__).resolve().parent.parent
 QUEUE = REPO / "content-hub" / "ar02" / "queue.json"
 TZ = "America/New_York"
 SLOT_KIND = {"morning": "carousel", "evening": "reel"}
+CAROUSEL_DAYS = {0, 2, 4}  # Mon/Wed/Fri mornings = carousel; other mornings = reel (audit 2026-11-27: reels reach non-followers, carousels barely do)
+
+
+def slot_kind(slot: str, day=None) -> str | None:
+    """Kind wanted for a slot on a New York date: evening = reel; morning = carousel on CAROUSEL_DAYS, otherwise reel."""
+    if slot == "morning" and day is not None and day.weekday() not in CAROUSEL_DAYS:
+        return "reel"
+    return SLOT_KIND.get(slot)
 
 
 WINDOWS = {"morning": ((9, 0), (10, 30)), "evening": ((21, 0), (22, 30))}  # America/New_York; GitHub cron may start late, never early
@@ -43,15 +51,52 @@ def slot_of(et: datetime) -> str | None:
     return None
 
 
-def next_item(queue: list, state: dict, slot: str, kind: str | None = None):
+def next_item(queue: list, state: dict, slot: str, kind: str | None = None, day=None):
     """Next unpublished queue item for the slot: carousel in the morning, reel in the evening, any kind for a manual run
     (a manual run may name the kind: SEARCH_QUERY "now carousel" / "now reel")."""
     done = {e.get("id") for e in state.get("log", []) if e.get("source") == "ar02" and e.get("ok")}
-    want = SLOT_KIND.get(slot) or kind
-    for i, q in enumerate(queue):
-        if q["id"] not in done and (want is None or q["kind"] == want):
+    want = slot_kind(slot, day) or kind
+    iso = day.isoformat() if day is not None else None
+    # an item may carry "date" (YYYY-MM-DD): it waits until that day, and on that day it takes the slot first (holiday posts)
+    open_ = [(i, q) for i, q in enumerate(queue) if q["id"] not in done and not (iso and q.get("date") and q["date"] > iso)]
+    if iso and slot in SLOT_KIND:
+        due = [(i, q) for i, q in open_ if q.get("date") == iso]
+        if due:
+            return next(((i, q) for i, q in due if q["kind"] == want), due[0])
+    for i, q in open_:
+        if want is None or q["kind"] == want:
             return i, q
+    if want and slot in SLOT_KIND and open_:  # that kind ran out: publish the other kind rather than skip the slot
+        return open_[0]
     return None, None
+
+
+def runway(queue: list, state: dict, day) -> tuple[str, int, int]:
+    """Last New York date the queue still fills (simulated slot by slot), plus unpublished reels / carousels."""
+    from datetime import timedelta
+    log = list(state.get("log", []))
+    done = {e.get("id") for e in log if e.get("source") == "ar02" and e.get("ok")}
+    left = [q for q in queue if q["id"] not in done]
+    last, d = None, day
+    for _ in range(400):
+        d = d + timedelta(days=1)
+        for slot in ("morning", "evening"):
+            _, q = next_item(queue, {"log": log}, slot, None, d)
+            if q is None:
+                return (last or "—"), sum(x["kind"] == "reel" for x in left), sum(x["kind"] == "carousel" for x in left)
+            log.append({"source": "ar02", "ok": True, "id": q["id"]}); last = d.isoformat()
+    return last, sum(x["kind"] == "reel" for x in left), sum(x["kind"] == "carousel" for x in left)
+
+
+def _runway_note(queue, state, day) -> str:
+    try:
+        last, reels, cars = runway(queue, state, day)
+    except Exception as exc:  # noqa: BLE001 - a report line must never break publishing
+        return f" · запас: ошибка расчёта ({type(exc).__name__})"
+    from datetime import date
+    days = (date.fromisoformat(last) - day).days if last != "—" else 0
+    warn = " ⚠️ меньше недели, нужен новый контент" if days < 7 else ""
+    return f"\nВ очереди: {reels} рилсов, {cars} каруселей · хватит до {last}{warn}"
 
 
 def media_ready(paths: list[str], wait: int = 90) -> bool:
@@ -98,7 +143,7 @@ def run(cfg: dict, now: datetime | None = None, force: bool | None = None) -> in
     if any(e.get("date") == today and e.get("slot") == slot and e.get("ok") and e.get("source") == "ar02" for e in state["log"]):
         print(f"[ar02] {today} {slot}: already published, nothing to do")
         return 0
-    i, q = next_item(queue, state, slot, manual_kind if slot == "manual" else None)
+    i, q = next_item(queue, state, slot, manual_kind if slot == "manual" else None, et.date())
     if q is None:
         kind = SLOT_KIND.get(slot, "item")
         print(f"[ar02] no unpublished {kind} left in the queue: nothing published (old templates are disabled)")
@@ -159,6 +204,7 @@ def run(cfg: dict, now: datetime | None = None, force: bool | None = None) -> in
     save_state(state)
     failed = [p for p in wanted if not results.get(p, "").startswith("published")]
     send_report(f"{'✅' if entry['ok'] else '⚠️'} james ar02 · {today} {slot} · {q['id']} · " + ", ".join(f"{k}: {v.split(':')[0]}" for k, v in results.items())
-                + (f" · повтор в следующем запуске окна: {', '.join(failed)}" if failed else ""))
+                + (f" · повтор в следующем запуске окна: {', '.join(failed)}" if failed else "")
+                + _runway_note(queue, state, et.date()))
     print(f"[ar02] {q['id']}: {results}")
     return 0

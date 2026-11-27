@@ -1323,7 +1323,8 @@
     "id": "C39",
     "order": 66,
     "caption_ig": "Happy holidays from the AR Design studio. Thank you for following our work this year.\n\nSend this to someone you want to thank.\n\n#HappyHolidays #CreativeStudio #DigitalArt #ARDesign #MotionDesign",
-    "caption_fb": "Happy holidays from the AR Design studio. Thank you for following our work this year.\n\nSend this to someone you want to thank."
+    "caption_fb": "Happy holidays from the AR Design studio. Thank you for following our work this year.\n\nSend this to someone you want to thank.",
+    "date": "2026-12-25"
   },
   {
     "kind": "carousel",
@@ -1373,7 +1374,8 @@
     "id": "C41",
     "order": 68,
     "caption_ig": "A look back at what the AR Design studio created and explored in 2026. Thank you for following along.\n\n#YearInReview #CreativeStudio #MotionDesign #WebDesign #ARDesign",
-    "caption_fb": "A look back at what the AR Design studio created and explored in 2026. Thank you for following along."
+    "caption_fb": "A look back at what the AR Design studio created and explored in 2026. Thank you for following along.",
+    "date": "2026-12-26"
   },
   {
     "kind": "carousel",
@@ -1398,7 +1400,8 @@
     "id": "C42",
     "order": 69,
     "caption_ig": "Our view on where small business websites are heading in 2027. Opinion, not statistics.\n\nWhich one will you try first?\n\n#WebDesignTrends #WebDesign2027 #UXDesign #SmallBusiness #ARDesign",
-    "caption_fb": "Our view on where small business websites are heading in 2027. Opinion, not statistics.\n\nWhich one will you try first?"
+    "caption_fb": "Our view on where small business websites are heading in 2027. Opinion, not statistics.\n\nWhich one will you try first?",
+    "date": "2026-12-28"
   },
   {
     "kind": "carousel",
@@ -1448,7 +1451,8 @@
     "id": "C44",
     "order": 71,
     "caption_ig": "A simple January website reset in five steps. Save it for your first work day of the year.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
-    "caption_fb": "A simple January website reset in five steps. Save it for your first work day of the year."
+    "caption_fb": "A simple January website reset in five steps. Save it for your first work day of the year.",
+    "date": "2026-12-30"
   },
   {
     "kind": "carousel",
@@ -1473,7 +1477,8 @@
     "id": "C45",
     "order": 72,
     "caption_ig": "Happy New Year from the AR Design studio. Thank you for being here early.\n\nSend this to someone starting something new in 2027.\n\n#HappyNewYear #NewYear2027 #CreativeStudio #DigitalArt #ARDesign",
-    "caption_fb": "Happy New Year from the AR Design studio. Thank you for being here early.\n\nSend this to someone starting something new in 2027."
+    "caption_fb": "Happy New Year from the AR Design studio. Thank you for being here early.\n\nSend this to someone starting something new in 2027.",
+    "date": "2026-12-31"
   },
   {
     "kind": "reel",
@@ -1681,7 +1686,8 @@
     "id": "R44",
     "order": 88,
     "caption_ig": "Happy holidays from the AR Design studio. Thank you for watching our work this year.\n\n#HappyHolidays #DigitalArt #MotionDesign #CreativeStudio #ARDesign",
-    "caption_fb": "Happy holidays from the AR Design studio. Thank you for watching our work this year."
+    "caption_fb": "Happy holidays from the AR Design studio. Thank you for watching our work this year.",
+    "date": "2026-12-25"
   },
   {
     "kind": "reel",
@@ -1720,7 +1726,8 @@
     "id": "R47",
     "order": 91,
     "caption_ig": "Three website habits to leave in 2026. Which one are you dropping first? Tell us in the comments.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
-    "caption_fb": "Three website habits to leave in 2026. Which one are you dropping first? Tell us in the comments."
+    "caption_fb": "Three website habits to leave in 2026. Which one are you dropping first? Tell us in the comments.",
+    "date": "2026-12-27"
   },
   {
     "kind": "reel",
@@ -1746,7 +1753,8 @@
     "id": "R49",
     "order": 93,
     "caption_ig": "A four-step website reset for the new year. Save it for your first work day of 2027.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
-    "caption_fb": "A four-step website reset for the new year. Save it for your first work day of 2027."
+    "caption_fb": "A four-step website reset for the new year. Save it for your first work day of 2027.",
+    "date": "2026-12-30"
   },
   {
     "kind": "reel",
@@ -1759,6 +1767,267 @@
     "id": "R50",
     "order": 94,
     "caption_ig": "Happy New Year from AR Design. Thank you for being here early. See you in 2027.\n\n#HappyNewYear #NewYear2027 #DigitalArt #CreativeStudio #ARDesign",
-    "caption_fb": "Happy New Year from AR Design. Thank you for being here early. See you in 2027."
+    "caption_fb": "Happy New Year from AR Design. Thank you for being here early. See you in 2027.",
+    "date": "2026-12-31"
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R51/R51_flowers-speak-louder-can-i-order-some.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R51/R51_flowers-speak-louder-can-i-order-some.mp4"
+    ],
+    "id": "R51",
+    "order": 95,
+    "caption_ig": "A florist site full of poetry and no way to order. One fix later: delivery time, prices and one button.\n\nSend this to your local florist.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "A florist site full of poetry and no way to order. One fix later: delivery time, prices and one button.\n\nSend this to your local florist.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R52/R52_your-website-has-5-seconds.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R52/R52_your-website-has-5-seconds.mp4"
+    ],
+    "id": "R52",
+    "order": 96,
+    "caption_ig": "Five questions every visitor asks before they scroll. Does your homepage answer them?\n\nSend this to a business owner friend.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Five questions every visitor asks before they scroll. Does your homepage answer them?\n\nSend this to a business owner friend."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R53/R53_burst-pipe-at-midnight-which-site-do-you.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R53/R53_burst-pipe-at-midnight-which-site-do-you.mp4"
+    ],
+    "id": "R53",
+    "order": 97,
+    "caption_ig": "Nobody with water on the floor reads a slogan. Show the problem you solve, the phone button and a price promise.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Nobody with water on the floor reads a slogan. Show the problem you solve, the phone button and a price promise.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R54/R54_before-the-shape-noise.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R54/R54_before-the-shape-noise.mp4"
+    ],
+    "id": "R54",
+    "order": 98,
+    "caption_ig": "Every project starts as noise. The work is finding the shape.\n\nLiving Galaxy, an original study by AR Design.\n\n#MotionDesign #3DArt #CreativeDirection #DigitalArt #ARDesign",
+    "caption_fb": "Every project starts as noise. The work is finding the shape.\n\nLiving Galaxy, an original study by AR Design."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R55/R55_capturing-moments-so-does-every-phone.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R55/R55_capturing-moments-so-does-every-phone.mp4"
+    ],
+    "id": "R55",
+    "order": 99,
+    "caption_ig": "Every photographer captures moments. Clients want to know: what kind of photos, where, and what it costs.\n\nSend this to a photographer you know.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Every photographer captures moments. Clients want to know: what kind of photos, where, and what it costs.\n\nSend this to a photographer you know.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R56/R56_your-homepage-is-not-about-you.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R56/R56_your-homepage-is-not-about-you.mp4"
+    ],
+    "id": "R56",
+    "order": 100,
+    "caption_ig": "The most common homepage mistake: talking about yourself first. Lead with the visitor's problem.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "The most common homepage mistake: talking about yourself first. Lead with the visitor's problem."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R57/R57_financial-excellence-for-whom.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R57/R57_financial-excellence-for-whom.mp4"
+    ],
+    "id": "R57",
+    "order": 101,
+    "caption_ig": "Accounting sites love the word \"excellence.\" A small business owner wants to know: do you do my kind of taxes, and what does it cost?\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Accounting sites love the word \"excellence.\" A small business owner wants to know: do you do my kind of taxes, and what does it cost?\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R58/R58_pampering-your-pets-how-much.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R58/R58_pampering-your-pets-how-much.mp4"
+    ],
+    "id": "R58",
+    "order": 102,
+    "caption_ig": "Pet owners book on their phones. Show services, prices by size and a booking button.\n\nSend this to your dog's groomer.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Pet owners book on their phones. Show services, prices by size and a booking button.\n\nSend this to your dog's groomer.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R59/R59_light-decides-where-you-look.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R59/R59_light-decides-where-you-look.mp4"
+    ],
+    "id": "R59",
+    "order": 103,
+    "caption_ig": "Light decides where you look. On a website, contrast does the same job.\n\nGRAVITY, an original 3D study by AR Design.\n\n#MotionDesign #3DArt #CreativeDirection #DigitalArt #ARDesign",
+    "caption_fb": "Light decides where you look. On a website, contrast does the same job.\n\nGRAVITY, an original 3D study by AR Design."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R60/R60_a-great-website-does-3-things.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R60/R60_a-great-website-does-3-things.mp4"
+    ],
+    "id": "R60",
+    "order": 104,
+    "caption_ig": "Three things a small business website has to do. Everything else is decoration.\n\nSave this for your next website update.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Three things a small business website has to do. Everything else is decoration.\n\nSave this for your next website update."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R61/R61_driven-by-passion-can-you-fix-my-brakes.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R61/R61_driven-by-passion-can-you-fix-my-brakes.mp4"
+    ],
+    "id": "R61",
+    "order": 105,
+    "caption_ig": "Car owners search for a repair, not a passion. Name the jobs you do and promise a written estimate.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Car owners search for a repair, not a passion. Name the jobs you do and promise a written estimate.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R62/R62_more-than-coffee-but-when-are-you-open.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R62/R62_more-than-coffee-but-when-are-you-open.mp4"
+    ],
+    "id": "R62",
+    "order": 106,
+    "caption_ig": "Café visitors want hours, location and the menu. Put them first, and make ordering ahead easy.\n\nSend this to your favorite café.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Café visitors want hours, location and the menu. Put them first, and make ordering ahead easy.\n\nSend this to your favorite café.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R63/R63_many-points-one-picture.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R63/R63_many-points-one-picture.mp4"
+    ],
+    "id": "R63",
+    "order": 107,
+    "caption_ig": "Many points, one picture. Good content works the same way.\n\nAn original particle study by AR Design.\n\n#MotionDesign #3DArt #CreativeDirection #DigitalArt #ARDesign",
+    "caption_fb": "Many points, one picture. Good content works the same way.\n\nAn original particle study by AR Design."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R64/R64_people-read-your-whole-homepage.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R64/R64_people-read-your-whole-homepage.mp4"
+    ],
+    "id": "R64",
+    "order": 108,
+    "caption_ig": "Two homepage myths. Visitors scan, and fewer choices make it easier to decide.\n\nSend this to someone redesigning their site.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Two homepage myths. Visitors scan, and fewer choices make it easier to decide.\n\nSend this to someone redesigning their site."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R65/R65_find-your-inner-light-is-it-for-beginner.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R65/R65_find-your-inner-light-is-it-for-beginner.mp4"
+    ],
+    "id": "R65",
+    "order": 109,
+    "caption_ig": "New students have one worry: is this for me? Say it is, make the first class easy and show the schedule.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "New students have one worry: is this for me? Say it is, make the first class easy and show the schedule.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R66/R66_every-planner-says-dreams-come-true.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R66/R66_every-planner-says-dreams-come-true.mp4"
+    ],
+    "id": "R66",
+    "order": 110,
+    "caption_ig": "Couples compare several planners in one evening. The one that shows packages and prices makes it easy to reach out.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Couples compare several planners in one evening. The one that shows packages and prices makes it easy to reach out.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R67/R67_motion-with-a-direction.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R67/R67_motion-with-a-direction.mp4"
+    ],
+    "id": "R67",
+    "order": 111,
+    "caption_ig": "Motion with a direction. On a website, animation should guide the eye, not perform.\n\nLiving Galaxy, by AR Design.\n\n#MotionDesign #3DArt #CreativeDirection #DigitalArt #ARDesign",
+    "caption_fb": "Motion with a direction. On a website, animation should guide the eye, not perform.\n\nLiving Galaxy, by AR Design."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R68/R68_before-you-pay-for-a-redesign.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R68/R68_before-you-pay-for-a-redesign.mp4"
+    ],
+    "id": "R68",
+    "order": 112,
+    "caption_ig": "Three questions to ask before you pay for a website redesign. Sometimes a rewrite beats a rebuild.\n\nSend this to someone about to redesign.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Three questions to ask before you pay for a website redesign. Sometimes a rewrite beats a rebuild.\n\nSend this to someone about to redesign."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R69/R69_clean-living-elevated-what-does-it-cost.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R69/R69_clean-living-elevated-what-does-it-cost.mp4"
+    ],
+    "id": "R69",
+    "order": 113,
+    "caption_ig": "Cleaning customers want a price before anything else. An instant estimate makes booking easy.\n\nConcept demo, fictional business.\n\n#WebDesign #SmallBusiness #UXDesign #WebsiteTips #ARDesign",
+    "caption_fb": "Cleaning customers want a price before anything else. An instant estimate makes booking easy.\n\nConcept demo, fictional business."
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R70/R70_clear-is-the-new-premium.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R70/R70_clear-is-the-new-premium.mp4"
+    ],
+    "id": "R70",
+    "order": 114,
+    "caption_ig": "Premium is not louder or busier. It is easier to understand.\n\nThat is how we design at AR Design.\n\n#WebDesign #LuxuryDesign #Minimalism #UXDesign #ARDesign",
+    "caption_fb": "Premium is not louder or busier. It is easier to understand.\n\nThat is how we design at AR Design."
   }
 ]

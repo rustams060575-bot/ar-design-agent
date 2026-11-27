@@ -40,7 +40,7 @@ def public_status(url: str) -> str:
     return "public (200)" if r.status_code == 200 and "login" not in r.url else f"http {r.status_code}"
 
 
-IG_METRICS = ["reach", "views", "saved", "shares", "likes", "comments", "total_interactions"]
+IG_METRICS = ["reach", "views", "saved", "shares", "likes", "comments", "total_interactions", "ig_reels_avg_watch_time", "follows"]
 
 
 def media_insights(g: Graph, media_id: str) -> dict | str:
@@ -108,7 +108,8 @@ def summary(report: dict) -> str:
     for m in ig.get("media", [])[:8]:
         i = m.get("insights")
         i = i if isinstance(i, dict) else {"err": str(i)[:60]}
-        lines.append(f"- {m.get('media_product_type')} {str(m.get('timestamp'))[:16]}: reach {i.get('reach')}, views {i.get('views')}, saves {i.get('saved')}, shares {i.get('shares')}, likes {m.get('like_count')}")
+        lines.append(f"- {m.get('media_product_type')} {str(m.get('timestamp'))[:16]}: reach {i.get('reach')}, views {i.get('views')}, saves {i.get('saved')}, shares {i.get('shares')}, likes {m.get('like_count')}"
+                     + (f", avg watch {round(i['ig_reels_avg_watch_time'] / 1000, 1)}s" if isinstance(i.get('ig_reels_avg_watch_time'), (int, float)) else ""))
     pg = fb.get("page", {})
     lines.append(f"FB {pg.get('name')}: подписчиков {pg.get('followers_count')}, опубликована {pg.get('is_published')}")
     for p in fb.get("posts", [])[:5]:

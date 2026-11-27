@@ -3,6 +3,7 @@ name: Outreach agent
 on:
   schedule:                # james autopilot: posts + stories to Instagram and the Facebook Page (UTC)
     - cron: "0 15 * * 1"      # monday 10:00 ET (11:00 EDT): weekly strategy + reel concepts + linkedin drafts
+    - cron: "0 16 * * 1"      # monday 11:00 ET: reach audit (reach, views, watch time, shares) -> Telegram
     - cron: "30 14 * * 1-6"   # 10:30 ET mon-sat: comment drafts for the day (engage)
     # ar02 publishing slots, 09:00 (carousel) and 21:00 (reel) America/New_York. UTC is fixed, New York is not, so each slot has a winter and a
     # summer UTC hour; agent/ar02.py only acts when the New York clock is inside the slot window and never twice per slot.
@@ -78,7 +79,7 @@ jobs:
         run: python agent/scraper.py
         env:
           # Inputs go through env (never interpolated into the shell command) to avoid script injection.
-          ACTION: ${{ inputs.action || (github.event.schedule == '0 15 * * 1' && 'weekly') || (github.event.schedule == '30 14 * * 1-6' && 'engage') || (github.event_name == 'schedule' && 'autopilot') || 'search' }}
+          ACTION: ${{ inputs.action || (github.event.schedule == '0 15 * * 1' && 'weekly') || (github.event.schedule == '0 16 * * 1' && 'audit') || (github.event.schedule == '30 14 * * 1-6' && 'engage') || (github.event_name == 'schedule' && 'autopilot') || 'search' }}
           SEARCH_QUERY: ${{ inputs.query }}
           LEAD_ID: ${{ inputs.lead_id }}
           SCHEDULED: ${{ inputs.scheduled }}
