@@ -2043,5 +2043,19 @@
     "caption_ig": "Learn more. About us. Contact. Three doors, zero answers.\n\nSend this to someone whose homepage has too many buttons.\n\n#UXDesign #WebDesign #BadUX #LuxuryDesign #ARDesign",
     "caption_fb": "Learn more. About us. Contact. Three doors, zero answers.\n\nSend this to someone whose homepage has too many buttons.",
     "date": "2026-11-28"
+  },
+  {
+    "kind": "reel",
+    "files_ig": [
+      "content-hub/ar02/R72/R72_pov-you-just-wanted-a-croissant.mp4"
+    ],
+    "files_fb": [
+      "content-hub/ar02/R72/R72_pov-you-just-wanted-a-croissant.mp4"
+    ],
+    "id": "R72",
+    "order": 116,
+    "caption_ig": "Cookie banners in real life. She pressed Accept All. The banner stayed.\n\nSend this to someone whose cookie banner covers half the screen.\n\n#UXDesign #WebDesign #BadUX #DesignHumor #ARDesign",
+    "caption_fb": "Cookie banners in real life. She pressed Accept All. The banner stayed.\n\nSend this to someone whose cookie banner covers half the screen.",
+    "date": "2026-11-29"
   }
 ]
