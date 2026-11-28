@@ -261,7 +261,7 @@ async function naturalImpl(message, text, { tg, updateId, spoken = false }) {
   const chat = message.chat.id;
   const echo = spoken ? `🎙 «${String(text).slice(0, 200)}»\n` : "";
   const say = (t, extra = {}) => tg("sendMessage", { chat_id: chat, text: (echo + t).slice(0, 4000), disable_web_page_preview: true,
-                                                     reply_to_message_id: message.message_id, ...extra });
+                                                     reply_to_message_id: message.message_id, allow_sending_without_reply: true, ...extra });
   if (r.ask) {
     await store.update((d) => { d.nl_last = now(); }, "director: nl context [skip ci]");
     await say(`Уточните, пожалуйста: ${r.ask.map((a) => NL_HUMAN[a]).join(" или ")}?`, {
