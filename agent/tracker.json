@@ -8680,6 +8680,366 @@
       "status": "rejected",
       "score": 2,
       "at": "2026-11-28T02:06:37+00:00"
+    },
+    "hn:50675433": {
+      "name": "Zero-egress ~0.04ms 6-layer deterministic firewall for AI agent payouts",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:03:08+00:00"
+    },
+    "signal:1cc520fc3c4eff9c": {
+      "name": "Andreessen Horowitz (a16z) leads AI agent startup Linq’s $90 mn Series B at $1 bn valuation",
+      "status": "alert_only",
+      "score": 7,
+      "at": "2026-11-28T14:03:24+00:00"
+    },
+    "signal:4909420ae80924aa": {
+      "name": "Заключительный день форума посвящён креативной экономике",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:03:27+00:00"
+    },
+    "signal:c755cff12f5557bd": {
+      "name": "Сооснователи xAI запустили стартап, который учит ИИ предсказывать будущее",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:03:31+00:00"
+    },
+    "hn:50677742": {
+      "name": "NateUI, React components where the theme changes the whole look",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:03:35+00:00"
+    },
+    "hn:50677734": {
+      "name": "MCP server to Make LLMs duel",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:03:37+00:00"
+    },
+    "hn:50676994": {
+      "name": "DecksMD",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:03:42+00:00"
+    },
+    "signal:9a369bbf302bf6eb": {
+      "name": "From Finnable To M — Indian Startups Raised About $147 Mn This Week",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:03:45+00:00"
+    },
+    "hn:50676699": {
+      "name": "Turbotap",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:03:48+00:00"
+    },
+    "signal:8091e9f1956b1d2e": {
+      "name": "Сооснователи xAI запустили стартап, который учит ИИ предсказывать будущее",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:03:54+00:00"
+    },
+    "signal:239e61f41990d2f0": {
+      "name": "Прикривають до 8% фронту: український оборонний стартап зібрав понад $1 млн інвестицій",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:03:57+00:00"
+    },
+    "hn:50673844": {
+      "name": "AI Face Shape Detection and Custom Beard Design",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:04:02+00:00"
+    },
+    "signal:98a1dcb404984abb": {
+      "name": "Pramo Selvaratnam, Partner at MVP, on Identifying Scalable Startups and Building Businesses for Global Markets",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:05+00:00"
+    },
+    "signal:4e9ef175ef4b9e74": {
+      "name": "Парни из Грузии вложили $150 тысяч в стартап, который готовит города к беспилотному такси",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:04:09+00:00"
+    },
+    "signal:fd18a979b269ebaf": {
+      "name": "Адылбек Касымалиев вручил президентские стипендии студентам на молодежном форуме",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-28T14:04:12+00:00"
+    },
+    "hn:50677444": {
+      "name": "Figma rejected our plugin, so we open-sourced it",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:15+00:00"
+    },
+    "signal:1422aa0a994c3726": {
+      "name": "Из Таджикистана в Кремниевую долину: как Хамзаали Наимзода строит бизнес и объединяет таджикское tech-сообщество в США",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:04:18+00:00"
+    },
+    "signal:7acc4846eb17225f": {
+      "name": "Стартапы из Центральной Азии, которые привлекли инвестиции в ноябре 2026 года",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:22+00:00"
+    },
+    "signal:4bd00da811392221": {
+      "name": "Стартап Embo у сфері ШІ для роботів залучив $110 млн початкового фінансування під проводом A16z",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:04:27+00:00"
+    },
+    "signal:9e767815b085e043": {
+      "name": "Collison brothers lead $5.5M seed in AI coding startup Hoplite",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:04:31+00:00"
+    },
+    "signal:4ed659985118e5fc": {
+      "name": "French Startup Arsenals Unveils Modular AUV Designed for Rapid Production",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:04:35+00:00"
+    },
+    "signal:697d494aeaec3c2e": {
+      "name": "India’s AI funding nearly doubles to $1.6 billion, but a handful of deals drive the surge: Report",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:37+00:00"
+    },
+    "signal:872eadb08d52266d": {
+      "name": "10 найкращих генераторів коду на основі ШІ для вайб-кодингу (листопад 2026)",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:40+00:00"
+    },
+    "signal:2f7f39d61cacacc6": {
+      "name": "Форум «ТехПред-2026» посвятят развитию технологических стартапов в России",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:43+00:00"
+    },
+    "signal:d0fbb0e12361d6dc": {
+      "name": "Robotics startup Embo raises $110 million in seed funding to build world-model AI for robots",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:04:47+00:00"
+    },
+    "signal:dc7c036d1c18f440": {
+      "name": "Для команд Акселератора АлтГУ прошло занятие по воронкам продаж для технологических стартапов",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:49+00:00"
+    },
+    "signal:d8d4d3ef3a76078b": {
+      "name": "NAD испытает Kreuger K200 в боевых условиях: как западные стартапы продвигают свои дроны через Украину на международный рынок",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:52+00:00"
+    },
+    "signal:eb32d6301f51dd16": {
+      "name": "Ферчук: Минцифры планирует создать фонд для масштабирования инноваций с участием частного капитала",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:04:55+00:00"
+    },
+    "signal:a5c7f18607c6bdfe": {
+      "name": "Repeat Entrepreneurs Raise $22 Million for Health-AI Startup Aevius",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:05:00+00:00"
+    },
+    "signal:62281956b11bb9f9": {
+      "name": "Funding and acquisitions in Indian startups this week [Nov 23- Nov 28]",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:02+00:00"
+    },
+    "signal:e1579fb038850801": {
+      "name": "ТОП-20 программ для дизайна интерьера 2026 года: создание онлайн планировки, визуализация интерьера и перепланировка квартир по фото",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:05+00:00"
+    },
+    "signal:61c7714aca73bf18": {
+      "name": "Top USA App Developers (2026)",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:08+00:00"
+    },
+    "signal:6410f263686c3b8e": {
+      "name": "Ahead — лучшая B2B SEO компания: как системная поисковая оптимизация и синергия каналов кратно масштабируют сложный бизнес",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:12+00:00"
+    },
+    "signal:4e2fface0351c5e1": {
+      "name": "Реклама начинает разговаривать: Google генерирует объявления под вопрос человека, а настройку кампаний сводит к брифу для ИИ",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:14+00:00"
+    },
+    "signal:2dbe5b4e8aeb5822": {
+      "name": "Physical AI startup Humyn Labs raises $47M in Series A",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:05:18+00:00"
+    },
+    "signal:c49c6307ac781c1a": {
+      "name": "Biomolecular AI Startup Boltz Raises $110M Series A Led by Bessemer",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:05:23+00:00"
+    },
+    "signal:3f4c0415ab6d4f2a": {
+      "name": "Porsche 911 Turbo S VIII (992) Рестайлинг, 2026",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-28T14:05:26+00:00"
+    },
+    "signal:d3750fd1090e7ea1": {
+      "name": "Indian digital lending firm Finnable raises $43.8m in series C",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:05:29+00:00"
+    },
+    "signal:1e164638ffacc5aa": {
+      "name": "Startup Roundup: Ecosystem, Mergers, Acquisitions and Funding News this week",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:32+00:00"
+    },
+    "signal:58cd864637391499": {
+      "name": "EA может показать игру про Железного человека на The Game Awards 2026",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:35+00:00"
+    },
+    "signal:cfde1f77127b53ed": {
+      "name": "Vegapay raises $10M in Series A round co-led by Vertex Ventures, Prosus",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:05:39+00:00"
+    },
+    "signal:6b50b969c12a6757": {
+      "name": "Walmart убрала Apple Pay из своего приложения и сайта",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:41+00:00"
+    },
+    "signal:9bb6575578f9933c": {
+      "name": "whereable.ai Raises US$2.26 Million in Pre-Series A Funding to Advance World Model-Based Autonomous Driving",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:05:45+00:00"
+    },
+    "signal:2ce28e62fa7077c0": {
+      "name": "Robots and Robotics Jobs in 2026: Career Outlook + FAQ",
+      "status": "rejected",
+      "score": 0,
+      "at": "2026-11-28T14:05:48+00:00"
+    },
+    "signal:dd7fcfa66cb46304": {
+      "name": "Artavazd Minasyan: In Ten Years, Armenia’s IT Sector Has Grown to Account for 7% of the Country’s Economy",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:51+00:00"
+    },
+    "signal:58542bdc0d97a2c5": {
+      "name": "India’s AI funding boom has a concentration problem: 10 deals corner 90% of capital",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:05:54+00:00"
+    },
+    "signal:81006775964a3089": {
+      "name": "Lakshya Aerotech Raises Rs 2.5 Crore Seed Funding to Turn Physical AI Research Into Market-Ready Products",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:05:57+00:00"
+    },
+    "signal:6ba7d09098c9e92f": {
+      "name": "Armenia's Foldink builds all-Armenian multi-material bioprinter with TI-3D",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:06:00+00:00"
+    },
+    "signal:78c91840e04cbf29": {
+      "name": "NVIDIA Vice President: Armenia May Become a Major AI Laboratory",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:06:02+00:00"
+    },
+    "signal:0ce389962f01e53f": {
+      "name": "Former DOGE employees' AB startup valued at $1.4 billion",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:06:08+00:00"
+    },
+    "signal:8e5a70dc9e43094f": {
+      "name": "Power, Chips, and Politics: Inside Armenia’s Big Bet on AI",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:06:10+00:00"
+    },
+    "signal:35ff7144eaefb00f": {
+      "name": "AI cloud startup Marlowe secures $277m in seed funding",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:06:15+00:00"
+    },
+    "signal:47a9ceb0b1cf9623": {
+      "name": "Rev Lebaredian: Armenia cannot build a full-fledged AI economy alone — it needs to bring the entire region together",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:06:17+00:00"
+    },
+    "signal:2ffdcf6e11698e9b": {
+      "name": "Former Imperva executives raise $10 million Seed to secure AI agents inside companies",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:06:22+00:00"
+    },
+    "signal:b7d3034b2d5297a5": {
+      "name": "Firebird projects contribution of up to 10% of Armenia's GDP",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:06:24+00:00"
+    },
+    "signal:2356dce97a2aecf9": {
+      "name": "Everful Secures $48.5M Series A to Scale AI-Powered Factory-Direct Sourcing",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:06:29+00:00"
+    },
+    "signal:977d0fba44839ebc": {
+      "name": "Agon raises $70M at a $450M valuation to build gamified, synthetic training for defence AI",
+      "status": "rejected",
+      "score": 5,
+      "at": "2026-11-28T14:06:34+00:00"
+    },
+    "signal:090ce20026726cd8": {
+      "name": "AIVC Launches With $112 Million to Turn Enterprise AI Projects Into Companies",
+      "status": "rejected",
+      "score": 2,
+      "at": "2026-11-28T14:06:38+00:00"
+    },
+    "signal:886ed92fe2aa7e6b": {
+      "name": "Omni X Emerges From Stealth With AI Built to Protect Cities and Soldiers From Drone Threats",
+      "status": "rejected",
+      "score": 6,
+      "at": "2026-11-28T14:06:42+00:00"
+    },
+    "signal:fbe18c0dc622ea33": {
+      "name": "YC Startup School London: Free Feb. 6 Event, 1 Day",
+      "status": "rejected",
+      "score": 1,
+      "at": "2026-11-28T14:06:44+00:00"
     }
   },
   "contacted_domains": [
