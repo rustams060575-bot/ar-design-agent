@@ -404,6 +404,8 @@ async function onVoice(msg, updateId, trace = {}) {
   }
   if (!text) trace.result = "no-speech";
   if (!text) return tg("sendMessage", { chat_id: chat, text: "🎙 Не разобрал речь. Скажите ещё раз чётче или напишите текстом." });
+  // AR Remote Director: spoken production commands are executed (text reply), everything else goes on as before.
+  if (await arDirector.handleNatural(msg, text, { tg, updateId, spoken: true })) { trace.result = "director"; return; }
 
   // Spoken join command: "вступи в @name" is recognised and executed; the transcript is echoed so a misheard name is visible.
   const scanReq = scan.scanIntent(text);
@@ -594,7 +596,10 @@ module.exports = async (req, res) => {
         // AR Remote Director first: it claims only its own commands (/film, /revise, /status, …) and returns false otherwise.
         const forDirector = message && message.text ? await arDirector.handleOwnerMessage(message, { tg, updateId: update.update_id }) : false;
         const forChannel = !forDirector && message ? await channel.handleOwnerMessage(message, { downloadFile: downloadTelegramFile }) : false;
-        if (forDirector || forChannel) { /* handled by the director or channel module */ }
+        // Plain-language production control ("приостанови производство"): only clearly production-related phrases.
+        const forNatural = !forDirector && !forChannel && message && message.text && !message.text.startsWith("/")
+          ? await arDirector.handleNatural(message, message.text, { tg, updateId: update.update_id }) : false;
+        if (forDirector || forChannel || forNatural) { /* handled by the director or channel module */ }
         else if (message && (message.voice || message.audio)) await onVoice(message, update.update_id, trace);
         else if (message && message.text) await onMessage(message, update.update_id);
         else if (callback) await onCallback(callback);

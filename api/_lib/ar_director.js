@@ -11,6 +11,7 @@
 const crypto = require("crypto");
 const env = require("./env");
 const { createStore } = require("./store");
+const nl = require("./ar_nl");
 
 const PATH = "director_queue.json";
 const MAX_TEXT = 3500;
@@ -168,6 +169,8 @@ async function decide(store, action, arg) {
 
 // Inline buttons from the local engine's plan message: ard:approve:<id> / ard:reject:<id>.
 async function handleCallback(cb, { tg }) {
+  const nm = /^ard:nl:(auto|pause|continue|preview|status|approve|retry):(\d+)$/.exec(cb.data || "");
+  if (nm) return handleNaturalCallback(cb, nm, { tg });
   const m = /^ard:(approve|reject):(\d+)$/.exec(cb.data || "");
   if (!m) return false;
   const store = queueStore();
@@ -180,4 +183,105 @@ async function handleCallback(cb, { tg }) {
   return true;
 }
 
-module.exports = { handleOwnerMessage, handleCallback, parse, statusText, HELP };
+// ---------------------------------------------------------------- natural language (Russian) production control
+// Local rules only (ar_nl.js): no LLM, no shell. Claims a plain message only when it is clearly about production:
+// production words, or a live production / a recent production conversation and a short phrase. Everything else
+// returns false and James answers as before. Each Telegram update / clarification is executed at most once.
+const NL_HUMAN = { auto: "работать самостоятельно до финала", pause: "поставить на паузу", continue: "продолжить",
+                   preview: "прислать превью", status: "рассказать о статусе", approve: "утвердить дубль", retry: "переделать дубль" };
+const now = () => Math.floor(Date.now() / 1000);
+
+function naturalStatus(doc) {
+  const p = doc.production;
+  if (!p || !p.project) return "Сейчас активного производства нет.";
+  const mins = age(p.updated);
+  return [
+    `${p.project}: ${p.state || "—"}${p.paused ? " (на паузе)" : ""}, режим ${p.mode === "auto" ? "автономный" : "по шагам"}.`,
+    p.scene ? `Сейчас ${p.scene}${p.take ? `, дубль ${p.take}` : ""} — ${p.stage || "—"}.` : null,
+    p.progress ? `Прогресс: ${p.progress}.` : null,
+    p.eta ? `До финала ${p.eta.replace(/^≈/, "примерно ").replace(" до финала", "")}.` : null,
+    p.error ? `Есть ошибка: ${String(p.error).slice(0, 200)}` : "Ошибок нет.",
+    mins !== null && mins > 10 ? `⚠️ Данные от движка ${mins} мин назад.` : null,
+  ].filter(Boolean).join("\n");
+}
+
+async function nlExecute(store, action, { message, dedup, withStatus }) {
+  const doc0 = await store.read();
+  if (action === "status") {
+    await store.update((doc) => { doc.nl_last = now(); }, "director: nl context [skip ci]");
+    return naturalStatus(doc0);
+  }
+  const { result } = await store.update((doc) => {
+    doc.nl_done = (doc.nl_done || []).slice(-80);
+    if (doc.nl_done.includes(dedup)) return { dup: true };
+    doc.nl_done.push(dedup);
+    doc.nl_last = now();
+    if (action === "pause") { doc.paused = true; return { paused: true, worker: doc.worker }; }
+    if (action === "continue" || action === "auto") doc.paused = false;
+    const id = ++doc.seq;
+    doc.requests.push({ id, key: `nl:${dedup}`, cmd: `prod_${action}`, text: "", nl: true, status: "new", created: now(),
+                        message_id: message ? message.message_id : null, update_id: null, history: [] });
+    if (doc.requests.length > 200) doc.requests = doc.requests.filter((r, i, a) => ACTIVE.includes(r.status) || i >= a.length - 150);
+    return { id, worker: doc.worker };
+  }, `director: nl ${action} [skip ci]`);
+  if (result.dup) return "Эту команду я уже выполнил — повторно не запускаю.";
+  const mins = age(result.worker && result.worker.last_seen);
+  const offline = mins === null || mins > 10 ? "\n⚠️ Локальный движок сейчас не на связи — выполнится, как только он подключится." : "";
+  const p = doc0.production || {};
+  const where = p.scene ? `${p.scene}${p.take ? `, дубль ${p.take}` : ""}` : "текущая сцена";
+  const text = {
+    pause: `Готово — поставил производство на паузу. Текущий этап (${p.stage || "—"}) доработает, после этого движок безопасно остановится и подтвердит. Продолжить: «продолжай».`,
+    auto: `Понял, дальше работаю самостоятельно до финального клипа — без промежуточных согласований. Команда #${result.id} передана движку, подтверждение придёт через полминуты.`,
+    continue: `Хорошо, продолжаю производство (#${result.id}). Движок подтвердит через полминуты.`,
+    preview: `Сейчас пришлю, что уже получилось (#${result.id}).`,
+    approve: `Отлично, утверждаю: ${where} (#${result.id}). Движок подтвердит отдельным сообщением.`,
+    retry: `Хорошо, переделаю: ${where} получит новый дубль, текущий сохраню (#${result.id}).`,
+  }[action];
+  return text + offline + (withStatus ? `\n\n${naturalStatus(doc0)}` : "");
+}
+
+// Never let natural-language handling break James: any error means "not mine" and James answers as usual.
+async function handleNatural(message, text, opts) {
+  try { return await naturalImpl(message, text, opts); }
+  catch (err) { console.error("ar_director natural:", err && err.message); return false; }
+}
+
+async function naturalImpl(message, text, { tg, updateId, spoken = false }) {
+  const c = nl.classify(text);
+  if (!c.intents.length || c.words > 25) return false;
+  const store = queueStore();
+  if (!store.enabled) return false;
+  const doc = await store.read();
+  const p = doc.production;
+  const live = !!(p && p.project && p.updated && now() - p.updated < 3 * 3600 && !/готово/.test(p.state || ""));
+  const recent = !!(doc.nl_last && now() - doc.nl_last < 20 * 60);
+  if (!(c.prodWords || ((live || recent) && c.words <= 10))) return false;
+  const r = nl.resolve(c.intents);
+  if (!r) return false;
+  const chat = message.chat.id;
+  const echo = spoken ? `🎙 «${String(text).slice(0, 200)}»\n` : "";
+  const say = (t, extra = {}) => tg("sendMessage", { chat_id: chat, text: (echo + t).slice(0, 4000), disable_web_page_preview: true,
+                                                     reply_to_message_id: message.message_id, ...extra });
+  if (r.ask) {
+    await store.update((d) => { d.nl_last = now(); }, "director: nl context [skip ci]");
+    await say(`Уточните, пожалуйста: ${r.ask.map((a) => NL_HUMAN[a]).join(" или ")}?`, {
+      reply_markup: { inline_keyboard: [r.ask.map((a) => ({ text: NL_HUMAN[a][0].toUpperCase() + NL_HUMAN[a].slice(1), callback_data: `ard:nl:${a}:${message.message_id}` }))] } });
+    return true;
+  }
+  const dedup = typeof updateId === "number" ? `u:${updateId}` : `m:${message.message_id}`;
+  await say(await nlExecute(store, r.action, { message, dedup, withStatus: r.withStatus }));
+  return true;
+}
+
+async function handleNaturalCallback(cb, m, { tg }) {
+  const store = queueStore();
+  const text = store.enabled ? await nlExecute(store, m[1], { message: cb.message, dedup: `cb:${m[2]}` }) : `Очередь недоступна: ${store.reason}`;
+  try { await tg("answerCallbackQuery", { callback_query_id: cb.id, text: text.slice(0, 190) }); } catch (_) { /* expired */ }
+  if (cb.message) {
+    try { await tg("editMessageReplyMarkup", { chat_id: cb.message.chat.id, message_id: cb.message.message_id, reply_markup: { inline_keyboard: [] } }); } catch (_) { /* edited */ }
+    await tg("sendMessage", { chat_id: cb.message.chat.id, text });
+  }
+  return true;
+}
+
+module.exports = { handleOwnerMessage, handleCallback, handleNatural, parse, statusText, HELP };
