@@ -37,6 +37,7 @@ const channel = require("./_lib/channel");
 const joiner = require("./_lib/join");
 const scan = require("./_lib/scan");
 const { handleClient, handleFunnelCallback, handleLeadAction, renderAdmin } = require("./_lib/client_flow");
+const arDirector = require("./_lib/ar_director"); // AR Remote Director: owner-only production queue (additive)
 
 const START_TEXT =
   "👋 AR Design · персональный агент\n\n" +
@@ -508,6 +509,7 @@ async function onMessage(msg, updateId) {
 
 async function onCallback(cb) {
   const chat = cb.message && cb.message.chat.id;
+  if ((cb.data || "").startsWith("ard:")) return arDirector.handleCallback(cb, { tg });
   if ((cb.data || "").startsWith("ls:")) return handleLeadAction(cb, { tg, env });
   if ((cb.data || "").startsWith("ch:")) return channel.handleCallback(cb, {});
   const [action, ...rest] = (cb.data || "").split(":");
@@ -589,8 +591,10 @@ module.exports = async (req, res) => {
         errChat = chat;
         // Channel module first: media, /post, /idea and voice/text notes that belong to a post draft. Everything else
         // (false) continues to the assistant exactly as before.
-        const forChannel = message ? await channel.handleOwnerMessage(message, { downloadFile: downloadTelegramFile }) : false;
-        if (forChannel) { /* handled by the channel module */ }
+        // AR Remote Director first: it claims only its own commands (/film, /revise, /status, …) and returns false otherwise.
+        const forDirector = message && message.text ? await arDirector.handleOwnerMessage(message, { tg, updateId: update.update_id }) : false;
+        const forChannel = !forDirector && message ? await channel.handleOwnerMessage(message, { downloadFile: downloadTelegramFile }) : false;
+        if (forDirector || forChannel) { /* handled by the director or channel module */ }
         else if (message && (message.voice || message.audio)) await onVoice(message, update.update_id, trace);
         else if (message && message.text) await onMessage(message, update.update_id);
         else if (callback) await onCallback(callback);
