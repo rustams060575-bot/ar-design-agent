@@ -15,7 +15,9 @@ const { createStore } = require("./store");
 const PATH = "director_queue.json";
 const MAX_TEXT = 3500;
 const ACTIVE = ["new", "proposed", "approved", "running"];
-const QUEUE_CMDS = ["film", "revise", "regen", "brief", "preview", "report"];
+const QUEUE_CMDS = ["film", "revise", "regen", "brief", "preview", "report", "retry", "continue", "auto"];
+// Production control (active local production, e.g. NUMERO_1): bare commands are forwarded to the local controller.
+const PROD_CMDS = ["retry", "continue", "auto"];
 const LOCAL_CMDS = ["status", "ar_queue", "approve", "reject", "pause", "ar_help"];
 const ICON = { new: "📥", proposed: "📝", approved: "✅", running: "⚙️", done: "🎬", failed: "❌", rejected: "✖️" };
 
@@ -30,6 +32,10 @@ const HELP =
   "/approve <id> · /reject <id> — подтвердить или отклонить план\n" +
   "/status — состояние движка · /ar_queue — очередь производства\n" +
   "/pause on|off — пауза запуска новых задач\n\n" +
+  "Управление текущим производством (без параметров):\n" +
+  "/status — сцена, прогресс, ошибки · /preview — актуальное превью\n" +
+  "/approve — утвердить дубль · /retry — повторить текущую сцену\n" +
+  "/pause — безопасная пауза · /continue — продолжить · /auto — автономно до финала\n\n" +
   "GPU-работа начинается только после /approve. /queue остаётся командой контент-очереди James.";
 
 const empty = () => ({ version: 1, seq: 0, paused: false, requests: [], worker: null });
@@ -62,7 +68,22 @@ function statusText(doc) {
     `Пауза: ${doc.paused ? "⏸ включена" : "нет"}`,
     running ? `Сейчас: ⚙️ #${running.id} ${running.cmd}` : "Сейчас: простаивает",
     `Заявки: ${Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(", ") || "нет"}`,
+    productionText(doc.production),
   ].filter(Boolean).join("\n");
+}
+
+function productionText(p) {
+  if (!p || !p.project) return null;
+  const mins = age(p.updated);
+  return [
+    "",
+    `🎬 Производство ${p.project}: ${p.state || "—"}${p.paused ? " · ⏸ пауза" : ""} · режим ${p.mode === "auto" ? "auto" : "по шагам"}`,
+    p.scene ? `Сцена: ${p.scene}${p.take ? ` (дубль ${p.take})` : ""} · этап: ${p.stage || "—"}` : null,
+    p.progress ? `Прогресс: ${p.progress}` : null,
+    p.eta ? `Оценка: ${p.eta}` : null,
+    p.error ? `⚠️ Ошибка: ${String(p.error).slice(0, 300)}` : "Ошибок нет",
+    mins !== null ? `Обновлено ${mins} мин назад` : null,
+  ].filter((x) => x !== null).join("\n");
 }
 
 async function handleOwnerMessage(message, { tg, updateId }) {
@@ -85,11 +106,29 @@ async function handleOwnerMessage(message, { tg, updateId }) {
   if (cmd.name === "pause") {
     const on = !/^(off|нет|выкл|0)$/i.test(cmd.arg);
     await store.update((doc) => { doc.paused = on; }, `director: pause ${on} [skip ci]`);
-    return done(on ? "⏸ Пауза: новые задачи не запускаются (текущая доработает)." : "▶️ Пауза снята.");
+    return done(on ? "⏸ Пауза: новые задачи не запускаются; текущее производство остановится безопасно после текущего этапа. Продолжить: /continue" : "▶️ Пауза снята.");
   }
-  if (cmd.name === "approve" || cmd.name === "reject") return done(await decide(store, cmd.name, cmd.arg));
-
-  if (!cmd.arg) return done(`Нужны параметры. /ar_help — формат команд.`);
+  // bare /approve and /preview address the active production; with an argument they keep their queue meaning
+  const prod = PROD_CMDS.includes(cmd.name) || (!cmd.arg && (cmd.name === "approve" || cmd.name === "preview"));
+  if (!prod && (cmd.name === "approve" || cmd.name === "reject")) return done(await decide(store, cmd.name, cmd.arg));
+  if (!prod && !cmd.arg) return done(`Нужны параметры. /ar_help — формат команд.`);
+  if (prod) {
+    const { result } = await store.update((doc) => {
+      const prev = typeof updateId === "number" && doc.requests.find((r) => r.update_id === updateId);
+      if (prev) return { dup: prev.id };
+      const id = ++doc.seq;
+      if (cmd.name === "continue" || cmd.name === "auto") doc.paused = false;
+      doc.requests.push({ id, key: `prod:${cmd.name}:${Date.now()}`, cmd: `prod_${cmd.name}`, text: cmd.arg || "", status: "new",
+                          created: Math.floor(Date.now() / 1000), message_id: message.message_id,
+                          update_id: typeof updateId === "number" ? updateId : null, history: [] });
+      if (doc.requests.length > 200) doc.requests = doc.requests.filter((r, i, a) => ACTIVE.includes(r.status) || i >= a.length - 150);
+      return { id, worker: doc.worker };
+    }, `director: prod ${cmd.name} [skip ci]`);
+    if (result.dup) return done(`↩️ Команда уже получена: #${result.dup}`);
+    const mins = age(result.worker && result.worker.last_seen);
+    return done(`📥 /${cmd.name} → локальное производство (#${result.id}). Ответ движка придёт в течение ~30 с.` +
+                (mins === null || mins > 10 ? "\n⚠️ Локальный движок сейчас не на связи — команда выполнится при подключении." : ""));
+  }
   const key = crypto.createHash("sha256").update(`${cmd.name}\n${cmd.arg}`).digest("hex").slice(0, 16);
   const { result } = await store.update((doc) => {
     const prev = typeof updateId === "number" && doc.requests.find((r) => r.update_id === updateId);
