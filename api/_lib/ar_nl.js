@@ -7,6 +7,7 @@
 const norm = (s) => String(s || "").toLowerCase().replace(/ё/g, "е").replace(/[^a-zа-я0-9\s]+/g, " ").replace(/\s+/g, " ").trim();
 
 const PATTERNS = {
+  night: [/ (пош(ел|ла)|иду|ухожу|ложусь) спать /],
   auto: [/автоном/, /самостоят/, / сам(а|и)? (дальше|до) /, / без меня /, / до (самого )?(конца|финал)/, / весь (фильм|ролик|клип)/,
          / не (жди|спрашивай)/, / на автомат/, / автомат/, / auto /],
   pause: [/ пауз/, /приостан/, / останов/, / стоп /, /притормоз/, / подожди/, / погоди/, / тормозни/, / замри/],
@@ -56,6 +57,7 @@ function resolve(intents) {
   s.delete("status");
   if (s.has("pause") && (s.has("continue") || s.has("auto"))) return { ask: ["pause", "continue"] };
   if (s.has("approve") && s.has("retry")) return { ask: ["approve", "retry"] };
+  if (s.has("night")) return { action: "night", withStatus: false };
   for (const a of ["auto", "retry", "approve", "pause", "continue", "preview"]) if (s.has(a)) return { action: a, withStatus };
   return withStatus ? { action: "status" } : null;
 }

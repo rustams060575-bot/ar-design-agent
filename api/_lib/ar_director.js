@@ -187,7 +187,7 @@ async function handleCallback(cb, { tg }) {
 // Local rules only (ar_nl.js): no LLM, no shell. Claims a plain message only when it is clearly about production:
 // production words, or a live production / a recent production conversation and a short phrase. Everything else
 // returns false and James answers as before. Each Telegram update / clarification is executed at most once.
-const NL_HUMAN = { auto: "работать самостоятельно до финала", pause: "поставить на паузу", continue: "продолжить",
+const NL_HUMAN = { night: "запустить ночную смену", auto: "работать самостоятельно до финала", pause: "поставить на паузу", continue: "продолжить",
                    preview: "прислать превью", status: "рассказать о статусе", approve: "утвердить дубль", retry: "переделать дубль" };
 const now = () => Math.floor(Date.now() / 1000);
 
@@ -217,7 +217,7 @@ async function nlExecute(store, action, { message, dedup, withStatus }) {
     doc.nl_done.push(dedup);
     doc.nl_last = now();
     if (action === "pause") { doc.paused = true; return { paused: true, worker: doc.worker }; }
-    if (action === "continue" || action === "auto") doc.paused = false;
+    if (action === "continue" || action === "auto" || action === "night") doc.paused = false;
     const id = ++doc.seq;
     doc.requests.push({ id, key: `nl:${dedup}`, cmd: `prod_${action}`, text: "", nl: true, status: "new", created: now(),
                         message_id: message ? message.message_id : null, update_id: null, history: [] });
@@ -230,6 +230,7 @@ async function nlExecute(store, action, { message, dedup, withStatus }) {
   const p = doc0.production || {};
   const where = p.scene ? `${p.scene}${p.take ? `, дубль ${p.take}` : ""}` : "текущая сцена";
   const text = {
+    night: `🌙 Принял. Проверяю компьютер и запускаю ночную смену (#${result.id}) — подтверждение придёт через полминуты.`,
     pause: `Готово — поставил производство на паузу. Текущий этап (${p.stage || "—"}) доработает, после этого движок безопасно остановится и подтвердит. Продолжить: «продолжай».`,
     auto: `Понял, дальше работаю самостоятельно до финального клипа — без промежуточных согласований. Команда #${result.id} передана движку, подтверждение придёт через полминуты.`,
     continue: `Хорошо, продолжаю производство (#${result.id}). Движок подтвердит через полминуты.`,
@@ -255,7 +256,7 @@ async function naturalImpl(message, text, { tg, updateId, spoken = false }) {
   const p = doc.production;
   const live = !!(p && p.project && p.updated && now() - p.updated < 3 * 3600 && !/готово/.test(p.state || ""));
   const recent = !!(doc.nl_last && now() - doc.nl_last < 20 * 60);
-  if (!(c.prodWords || ((live || recent) && c.words <= 10))) return false;
+  if (!(c.intents.includes("night") || c.prodWords || ((live || recent) && c.words <= 10))) return false;
   const r = nl.resolve(c.intents);
   if (!r) return false;
   const chat = message.chat.id;
